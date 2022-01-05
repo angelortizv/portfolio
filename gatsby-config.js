@@ -6,7 +6,7 @@ module.exports = {
     description:
       'Angelo Ortiz Vega is a Computer Engineering Student based in Costa Rica. Professional in technical support to end-users and computer equipment. With strong programming skills and passion for quality and writing clean, readable code that is scalable and works well.',
     siteUrl: 'https://angelortizv-portfolio.netlify.app', // No trailing slash allowed!
-    image: '/og.png', // Path to your image you placed in the 'static' folder
+    image: 'src/images/landing.png',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
