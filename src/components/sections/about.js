@@ -122,7 +122,16 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Node.js', 'Python', 'Java'];
+  const skills = [
+    'JavaScript (ES6+)',
+    'TypeScript',
+    'React',
+    'Angular',
+    'Node.js',
+    'Python',
+    'Java',
+    'C/C++',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -132,10 +141,10 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! I'm Angelo Ortiz Vega, a Computer Engineering Student based in Costa Rica. I
-              enjoy creating things that live on the internet, whether that be websites,
-              applications, or anything in between. My goal is to always build products that scale
-              and impacts millions of people.
+              I'm Angelo Ortiz Vega, a Computer Engineering Student based in Costa Rica. I enjoy
+              creating things that live on the internet, whether that be websites, applications, or
+              anything in between. My goal is to always build products that scale and impacts
+              millions of people.
             </p>
 
             <p>
@@ -149,7 +158,8 @@ const About = () => {
               hardware and software. Traditionally, Computer Engineering ({' '}
               <a
                 href="https://www.tec.ac.cr/programas-academicos/licenciatura-ingenieria-computadores"
-                target="_blank" rel="noreferrer"
+                target="_blank"
+                rel="noreferrer"
               >
                 C.E.
               </a>
