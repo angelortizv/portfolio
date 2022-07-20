@@ -125,7 +125,7 @@ const About = () => {
   const skills = [
     'JavaScript (ES6+)',
     'TypeScript',
-    'React',
+    'React/React Native',
     'Angular',
     'Node.js',
     'Python',
@@ -159,8 +159,7 @@ const About = () => {
               <a
                 href="https://www.tec.ac.cr/programas-academicos/licenciatura-ingenieria-computadores"
                 target="_blank"
-                rel="noreferrer"
-              >
+                rel="noreferrer">
                 C.E.
               </a>
               ), has been considered as a combination of Computer Science and Electronic

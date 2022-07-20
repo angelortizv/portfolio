@@ -64,9 +64,10 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I'm a Computer Engineering Student based in Costa Rica. Professional in technical support to
-        end-users and computer equipment. With strong programming skills and passion for quality and
-        writing clean, readable code that is scalable and works well.
+        Advanced student of the Computer Engineering Career at the Technological Institute of Costa
+        Rica. Professional with more than 2 years of experience in digital product development, with
+        strong programming skills and a passion for quality and writing clean code that is scalable
+        and works well.
       </p>
     </>
   );
