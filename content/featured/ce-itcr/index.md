@@ -3,6 +3,7 @@ date: '2'
 title: 'Portafolio de Proyectos CE-ITCR'
 cover: './demo.png'
 external: 'https://ce-itcr.github.io'
+github: 'https://github.com/ce-itcr'
 tech:
   - Java
   - Python

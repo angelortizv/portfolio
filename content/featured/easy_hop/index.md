@@ -1,7 +1,7 @@
 ---
 date: '1'
 title: 'Easy Hop - Driver App'
-cover: './demo.png'
+cover: './demo2.png'
 external: 'https://www.easyhop.co/'
 tech:
   - React Native
