@@ -6,10 +6,10 @@ module.exports = {
       name: 'GitHub',
       url: 'https://github.com/angelortizv',
     },
-    // {
-    //   name: 'Instagram',
-    //   url: 'https://www.instagram.com/angelortizv',
-    // },
+    {
+      name: 'Instagram',
+      url: 'https://www.instagram.com/angelortizv',
+    },
     {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/angelortizv',

@@ -65,7 +65,7 @@ const Hero = () => {
     <>
       <p>
         Advanced student of the Computer Engineering Career at the Technological Institute of Costa
-        Rica. Professional with more than 2 years of experience in digital product development, with
+        Rica. Professional with more than 4 years of experience in digital product development, with
         strong programming skills and a passion for quality and writing clean code that is scalable
         and works well.
       </p>
