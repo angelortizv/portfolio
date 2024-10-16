@@ -3,7 +3,7 @@ date: '2021-12-06'
 title: 'Software Developer'
 company: 'Freelancer'
 location: 'Cartago, Costa Rica'
-range: 'Jun 2020 - Present'
+range: 'Jun 2020 - Jan 2024'
 url: 'https://angelortizv-portfolio.netlify.app/'
 ---
 

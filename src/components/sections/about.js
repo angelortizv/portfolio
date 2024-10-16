@@ -124,9 +124,7 @@ const About = () => {
 
   const skills = [
     'JavaScript (ES6+)',
-    'TypeScript',
-    'React/React Native',
-    'Angular',
+    'React',
     'Node.js',
     'Python',
     'Java',
@@ -141,7 +139,7 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              I'm Angelo Ortiz Vega, a Computer Engineering Student based in Costa Rica. I enjoy
+              Hello! My name is Angelo Ortiz Vega, a Computer Engineering Student based in Costa Rica. I enjoy
               creating things that live on the internet, whether that be websites, applications, or
               anything in between. My goal is to always build products that scale and impacts
               millions of people.
@@ -155,23 +153,17 @@ const About = () => {
               </a>{' '}
               ). Computer Engineer is based on sciences and technologies that allow the design,
               construction, implementation and maintenance of computer system components in both
-              hardware and software. Traditionally, Computer Engineering ({' '}
-              <a
-                href="https://www.tec.ac.cr/programas-academicos/licenciatura-ingenieria-computadores"
-                target="_blank"
-                rel="noreferrer">
-                C.E.
-              </a>
-              ), has been considered as a combination of Computer Science and Electronic
-              Engineering.
+              hardware and software. 
             </p>
 
             <p>
-              I always find myself learning new technologies that I consider important in a software
-              developer's path.
+              I also work as a professor of UX Design and Artificial Intelligence at {' '} 
+              <a href="https://ucreativa.ac.cr/" target="_blank" rel="noreferrer">
+              Universidad Creativa
+              </a>{' '}.
             </p>
 
-            <p>Here are a few technologies I’ve been working with recently:</p>
+            <p>Here are a few technologies I've been working with recently:</p>
           </div>
 
           <ul className="skills-list">
