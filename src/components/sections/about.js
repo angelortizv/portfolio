@@ -153,13 +153,13 @@ const About = () => {
               </a>{' '}
               ). Computer Engineer is based on sciences and technologies that allow the design,
               construction, implementation and maintenance of computer system components in both
-              hardware and software. 
+              hardware and software.
             </p>
 
             <p>
-              I also work as a professor of UX Design and Artificial Intelligence at {' '} 
+              I also work as a professor of UX Design and Artificial Intelligence at {' '}
               <a href="https://ucreativa.ac.cr/" target="_blank" rel="noreferrer">
-              Universidad Creativa
+                Universidad Creativa
               </a>{' '}.
             </p>
 
@@ -169,13 +169,22 @@ const About = () => {
           <ul className="skills-list">
             {skills && skills.map((skill, i) => <li key={i}>{skill}</li>)}
           </ul>
+
+
+          <p>
+            When I'm not at the computer, I'm usually hiking, reading, hanging out with my friends, or making {' '}
+            <a href="https://open.spotify.com/playlist/20xTpMDhxDFpACSRXHZzOC?si=2050bd00d9b048bb" target="_blank" rel="noreferrer">
+              Spotify
+            </a>{' '} playlists.
+          </p>
+
         </StyledText>
 
         <StyledPic>
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/angelortizv.jpg"
+              src="../../images/angelortizv-hiking.jpeg"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
@@ -183,6 +192,7 @@ const About = () => {
             />
           </div>
         </StyledPic>
+
       </div>
     </StyledAboutSection>
   );
