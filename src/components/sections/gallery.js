@@ -67,6 +67,47 @@ const StyledPhoto = styled.li`
   }
 `;
 
+const Modal = styled.div`
+  display: ${({ isVisible }) => (isVisible ? 'flex' : 'none')};
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  .modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .close-button {
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      background: white;
+      color: black;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+`;
+
 const Gallery = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -89,6 +130,9 @@ const Gallery = () => {
   }
 
   const [showMore, setShowMore] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+
   const revealTitle = useRef(null);
   const revealPhotos = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -104,6 +148,16 @@ const Gallery = () => {
   const firstSix = photos.slice(0, GRID_LIMIT);
   const photosToShow = showMore ? photos : firstSix;
 
+  const openModal = (image) => {
+    setSelectedImage(image);
+    setIsModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+    setIsModalVisible(false);
+  };
+
   return (
     <StyledGallerySection>
       <h2 className="numbered-heading" ref={revealTitle}>
@@ -112,32 +166,43 @@ const Gallery = () => {
 
       <ul className="gallery-grid">
         <TransitionGroup component={null}>
-          {photosToShow.map(({ node }, i) => (
-            <CSSTransition
-              key={i}
-              classNames="fadeup"
-              timeout={300}
-              exit={false}>
-              <StyledPhoto
-                ref={el => (revealPhotos.current[i] = el)}>
-                <div className="photo-inner">
-                  <img
-                    src={node.childImageSharp.gatsbyImageData.images.fallback.src}
-                    alt={node.name}
-                  />
-                  <div className="photo-description">{node.name}</div>
-                </div>
-              </StyledPhoto>
-            </CSSTransition>
-          ))}
+          {photosToShow.map(({ node }, i) => {
+            const imageData = node.childImageSharp?.gatsbyImageData?.images?.fallback?.src;
+            if (!imageData) return null; // Salta si no hay imagen válida
+
+            return (
+              <CSSTransition
+                key={i}
+                classNames="fadeup"
+                timeout={300}
+                exit={false}>
+                <StyledPhoto ref={el => (revealPhotos.current[i] = el)} onClick={() => openModal(imageData)}>
+                  <div className="photo-inner">
+                    <img src={imageData} alt={node.name} />
+                    <div className="photo-description">{node.name}</div>
+                  </div>
+                </StyledPhoto>
+              </CSSTransition>
+            );
+          })}
         </TransitionGroup>
       </ul>
+
 
       {photos.length > GRID_LIMIT && (
         <button className="more-button" onClick={() => setShowMore(!showMore)}>
           {showMore ? 'Show Less' : 'Show More'}
         </button>
       )}
+
+      <Modal isVisible={isModalVisible}>
+        <div className="modal-content">
+          <button className="close-button" onClick={closeModal}>
+            &times;
+          </button>
+          {selectedImage && <img src={selectedImage} alt="Selected" />}
+        </div>
+      </Modal>
     </StyledGallerySection>
   );
 };
