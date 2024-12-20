@@ -1,13 +1,21 @@
 ---
-date: '2022-06-27'
+date: '2022-12-05'
 title: 'Associate Professor'
 company: 'Universidad Creativa'
 location: 'San José, Costa Rica'
 range: 'Apr 2022 - Present'
-url: 'https://www.linkedin.com/in/angelortizv/'
+url: 'https://ucreativa.ac.cr/'
 ---
 
-- Planning and delivery of courses for the UX Design Certification, including: Ideation of Solutions and delivery of Proofs of Concept with Wireframes; Principles of design, interaction and usability for its application in prototyping.
-- Creation of learning resources for teachers and students that include computer software and web-based applications.
-- Periodic evaluation of student progress offering individualized instruction where required.
-- Main resources: High and low fidelity prototyping, Design Thinking Process, Component-based design-development, Heuristic evaluation and performance data analysis, Documentation of processes and specifications.
+Planned and taught courses for the UX Design Certification and Artificial Intelligence Certification, designing comprehensive programs that bridge theoretical concepts with real-world applications.
+
+Key Contributions:
+
+- Conducted periodic evaluations of student progress, providing individualized instruction to address diverse learning needs.
+- Integrated real-world case studies, collaborative projects, and innovative teaching methodologies to enhance student engagement and outcomes.
+- Mentored students in developing impactful capstone projects and prototypes aligned with industry standards.
+- Structured and developed the entire certification, including courses such as Research for Digital Experiences, Solution Ideation, Principles of Design, Interaction & Usability, Heuristic Analysis, Accessibility, and Testing.
+- Delivered classes focused on creating medium-to-high fidelity prototypes using design principles and guidelines to ensure better product outcomes.
+- Taught courses such as Applied Artificial Intelligence and Fundamentals of Machine Learning & Deep Learning for the AI Certification.
+
+This role has allowed me to inspire and guide future professionals, ensuring they acquire the skills and knowledge necessary to thrive in the rapidly evolving fields of UX Design and Artificial Intelligence.
