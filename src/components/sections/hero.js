@@ -3,6 +3,8 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
+import { translations } from '../../config';
+import TypeAnimation from 'react-type-animation';
 // import { email } from '@config';
 
 const StyledHeroSection = styled.section`
@@ -45,9 +47,26 @@ const StyledHeroSection = styled.section`
   }
 `;
 
+
+const shuffleArray = array => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
+
+  const seq = [];
+  for (const greeting of shuffleArray(translations)) {
+    seq.push(`✨❯ ${greeting.flag} 👋 ${greeting.text}`);
+    seq.push(1000);
+    seq.push(`✨❯`);
+    seq.push(1000);
+  }
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -58,7 +77,8 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = <h1>Hi, my name is</h1>;
+  const one = <TypeAnimation cursor={true} sequence={seq} wrapper='h1' repeat={Infinity}/>;
+  //const one = <TypeAnimation cursor={true} sequence={seq} wrapper="h1" repeat={Infinity} />;
   const two = <h2 className="big-heading">Angelo Ortiz.</h2>;
   const three = <h3 className="big-heading">I build software that scale.</h3>;
   const four = (

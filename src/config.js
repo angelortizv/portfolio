@@ -60,4 +60,32 @@ module.exports = {
     viewFactor,
     viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
   }),
+
+
+  translations: [
+    {
+      language: 'English',
+      symbol: 'en',
+      text: 'Hi, my name is',
+      flag: '🇬🇧',
+    },
+    {
+      language: 'Spanish',
+      symbol: 'es',
+      text: 'Hola, mi nombre es',
+      flag: '🇨🇷',
+    },
+    {
+      language: 'Italian',
+      symbol: 'it',
+      text: 'Ciao, mi chiamo',
+      flag: '🇮🇹',
+    },
+    {
+      language: 'French',
+      symbol: 'fr',
+      text: `Salut je m'appelle`,
+      flag: '🇫🇷',
+    },
+  ],
 };

@@ -160,7 +160,8 @@ const About = () => {
               I also work as a professor of UX Design and Artificial Intelligence at {' '}
               <a href="https://ucreativa.ac.cr/" target="_blank" rel="noreferrer">
                 Universidad Creativa
-              </a>{' '}.
+              </a>{' '}
+              where I've taught courses such as Applied Artificial Intelligence and Fundamentals of Machine Learning & Deep Learning for the AI Certification.
             </p>
 
             <p>Here are a few technologies I've been working with recently:</p>
