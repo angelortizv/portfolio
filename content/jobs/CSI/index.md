@@ -4,6 +4,7 @@ title: 'Electronic Technician'
 company: 'Closure Systems'
 location: 'Cartago, Costa Rica'
 range: 'Sep 2016 - Feb 2017'
+type: 'On-site'
 url: 'https://www.csiclosures.com/'
 ---
 

@@ -67,18 +67,40 @@ const StyledCredit = styled.div`
   }
 `;
 
+const Heart = styled.div`
+  width: 100px;
+  height: 100px;
+  position: relative;
+  background: url(https://cssanimation.rocks/images/posts/steps/heart.png) no-repeat;
+  background-position: 0 0;
+  cursor: pointer;
+  animation: fave-heart 1s steps(28);
+  &:hover {
+    background-position: -2800px 0;
+    transition: background 1s steps(28);
+  }
+  @keyframes fave-heart {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: -2800px 0;
+    }
+  }
+`;
+
 const Footer = () => (
   <StyledFooter>
     <StyledSocialLinks>
       <ul>
         {socialMedia &&
-            socialMedia.map(({ name, url }, i) => (
-              <li key={i}>
-                <a href={url} aria-label={name}>
-                  <Icon name={name} />
-                </a>
-              </li>
-            ))}
+          socialMedia.map(({ name, url }, i) => (
+            <li key={i}>
+              <a href={url} aria-label={name}>
+                <Icon name={name} />
+              </a>
+            </li>
+          ))}
       </ul>
     </StyledSocialLinks>
 
@@ -89,8 +111,8 @@ const Footer = () => (
         <div>Designed by Brittany Chiang</div>
       </a>
       <br />
-      <a href="https://github.com/angelortizv/portfolio">
-        <div>Built by Angelo Ortiz</div>
+      <a>
+        <div>Built with<Heart />by Angelo Ortiz</div>
       </a>
     </StyledCredit>
   </StyledFooter>

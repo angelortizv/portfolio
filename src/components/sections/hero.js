@@ -38,7 +38,6 @@ const StyledHeroSection = styled.section`
 
   p {
     margin: 20px 0 0;
-    max-width: 540px;
   }
 
   .email-link {
@@ -80,14 +79,13 @@ const Hero = () => {
   const one = <TypeAnimation cursor={true} sequence={seq} wrapper='h1' repeat={Infinity}/>;
   //const one = <TypeAnimation cursor={true} sequence={seq} wrapper="h1" repeat={Infinity} />;
   const two = <h2 className="big-heading">Angelo Ortiz.</h2>;
-  const three = <h3 className="big-heading">I build software that scale.</h3>;
+  const three = <h3 className="big-heading" style={{fontSize: 42}}>Computer Engineering student, university lecturer, UXer, technology and AI enthusiast.</h3>;
   const four = (
     <>
       <p>
-        Advanced student of the Computer Engineering Career at the Technological Institute of Costa
-        Rica. Professional with more than 4 years of experience in digital product development, with
-        strong programming skills and a passion for quality and writing clean code that is scalable
-        and works well.
+      Advanced Computer Engineering student at the Technological Institute of Costa Rica. 
+      Professional with over 4 years of experience in digital product development, strong programming skills, and a passion for quality. 
+      Interested in <b>AI and ML,</b> with a focus on building intelligent and high-performance solutions.
       </p>
     </>
   );
