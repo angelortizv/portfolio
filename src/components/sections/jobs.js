@@ -156,8 +156,15 @@ const StyledTabPanel = styled.div`
     }
   }
 
-  .range {
+  .location {
+    margin: 0;
     margin-bottom: 25px;
+    font-family: var(--font-mono);
+    font-style: italic;
+    font-size: var(--fz-xxs);
+  }
+
+  .range {
     color: var(--light-slate);
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
@@ -273,7 +280,7 @@ const Jobs = () => {
           {jobsData &&
             jobsData.map(({ node }, i) => {
               const { frontmatter, html } = node;
-              const { title, url, company, range } = frontmatter;
+              const { title, url, company, range, location } = frontmatter;
 
               return (
                 <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
@@ -295,6 +302,7 @@ const Jobs = () => {
                     </h3>
 
                     <p className="range">{range}</p>
+                    <p className="location">{location}</p>
 
                     <div dangerouslySetInnerHTML={{ __html: html }} />
                   </StyledTabPanel>
