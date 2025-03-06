@@ -7,7 +7,7 @@ range: 'Apr 2022 - Present'
 url: 'https://ucreativa.ac.cr/'
 ---
 
-Planned and taught courses for the UX Design Certification and Artificial Intelligence Certification, designing comprehensive programs that bridge theoretical concepts with real-world applications.
+Planned and taught courses for the Artificial Intelligence Certification and UX Design Certification, designing comprehensive programs that bridge theoretical concepts with real-world applications.
 
 Key Contributions:
 

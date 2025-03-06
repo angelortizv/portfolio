@@ -15,6 +15,28 @@ import {
   IconPlayStore,
   IconStar,
   IconTwitter,
+  IconGatsby,
+  IconTypeScript,
+  IconPython,
+  IconHtml,
+  IconCss,
+  IconR,
+  IconGraphQL,
+  IconPostgreSQL,
+  IconGit,
+  IconElasticSearch,
+  IconReact,
+  IconAngular,
+  IconTableau,
+  IconOracle,
+  IconRedis,
+  IconAws,
+  IconDocker,
+  IconFirebase,
+  IconGcp,
+  IconKafka,
+  IconJenkins,
+  IconRestAPI,
 } from '@components/icons';
 
 const Icon = ({ name }) => {
@@ -47,6 +69,50 @@ const Icon = ({ name }) => {
       return <IconStar />;
     case 'Twitter':
       return <IconTwitter />;
+    case 'Gatsby':
+      return <IconGatsby />;
+    case 'TypeScript':
+      return <IconTypeScript />;
+    case 'Python':
+      return <IconPython />;
+    case 'HTML':
+      return <IconHtml />;
+    case 'CSS':
+      return <IconCss />;
+    case 'R':
+      return <IconR />;
+    case 'GraphQL':
+      return <IconGraphQL />;
+    case 'PostgreSQL':
+      return <IconPostgreSQL />;
+    case 'Git':
+      return <IconGit />;
+    case 'Elasticsearch':
+      return <IconElasticSearch />;
+    case 'React':
+      return <IconReact />;
+    case 'Angular':
+      return <IconAngular />;
+    case 'Tableau':
+      return <IconTableau />;
+    case 'Oracle DB':
+      return <IconOracle />;
+    case 'Redis':
+      return <IconRedis />;
+    case 'AWS':
+      return <IconAws />;
+    case 'Docker':
+      return <IconDocker />;
+    case 'Firebase':
+      return <IconFirebase />;
+    case 'GCP':
+      return <IconGcp />;
+    case 'Kafka':
+      return <IconKafka />;
+    case 'REST API':
+      return <IconRestAPI />;
+    case 'Jenkins':
+      return <IconJenkins />;
     default:
       return <IconExternal />;
   }

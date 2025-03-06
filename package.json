@@ -51,6 +51,7 @@
     "gatsby-source-filesystem": "^3.4.0",
     "gatsby-transformer-remark": "^4.1.0",
     "gatsby-transformer-sharp": "^3.4.0",
+    "graphql-scalars": "^1.24.1",
     "lodash": "^4.17.19",
     "prismjs": "^1.25.0",
     "prop-types": "^15.7.2",
@@ -79,5 +80,8 @@
     "husky": "^6.0.0",
     "lint-staged": "^10.1.2",
     "prettier": "^2.2.1"
+  },
+  "overrides": {
+    "graphql": "15.5.0"
   }
 }
