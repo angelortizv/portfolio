@@ -79,7 +79,7 @@ const Hero = () => {
   const one = <TypeAnimation cursor={true} sequence={seq} wrapper='h1' repeat={Infinity}/>;
   //const one = <TypeAnimation cursor={true} sequence={seq} wrapper="h1" repeat={Infinity} />;
   const two = <h2 className="big-heading">Angelo Ortiz.</h2>;
-  const three = <h3 className="big-heading" style={{fontSize: 42}}>Computer Engineering student, university lecturer, UXer, technology and AI enthusiast.</h3>;
+  const three = <h3 className="big-heading" style={{fontSize: 36}}>Computer Engineering student, university lecturer, UXer, technology and AI enthusiast.</h3>;
   const four = (
     <>
       <p>
