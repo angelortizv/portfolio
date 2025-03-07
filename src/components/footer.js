@@ -70,6 +70,7 @@ const StyledCredit = styled.div`
 const Heart = styled.div`
   width: 100px;
   height: 100px;
+  margin-left: 5px;
   position: relative;
   background: url(https://cssanimation.rocks/images/posts/steps/heart.png) no-repeat;
   background-position: 0 0;
