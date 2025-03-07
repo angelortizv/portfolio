@@ -84,7 +84,6 @@ const Hero = () => {
     <>
       <p>
       Advanced Computer Engineering student at the Technological Institute of Costa Rica. 
-      Professional with over 4 years of experience in digital product development, strong programming skills, and a passion for quality. 
       Interested in <b>AI and ML,</b> with a focus on building intelligent and high-performance solutions.
       </p>
     </>

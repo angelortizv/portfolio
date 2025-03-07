@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
+import AboutFooter from '../aboutFooter';
 
 const StyledAboutSection = styled.section`
 
@@ -174,6 +175,7 @@ const About = () => {
               alt="Headshot"
             />
           </div>
+          <AboutFooter />
         </StyledPic>
 
       </div>
