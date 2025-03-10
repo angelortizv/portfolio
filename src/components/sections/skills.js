@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Icon } from '@components/icons';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const StyledSkillsSection = styled.section`
   max-width: 1000px;
@@ -26,14 +27,17 @@ const Skill = styled.li`
   color: #fff;
   font-size: var(--fz-sm);
   margin: 0.5rem;
-  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-7px);
+    color: var(--green);
+  }
 `;
 
 const SkillIcon = styled.div`
   width: 3.5rem;
   padding: 1rem;
   height: 3.5rem;
-  overflow: hidden;
 `;
 
 const SkillName = styled.p`
@@ -87,14 +91,22 @@ const Skills = () => {
         <div key={category}>
           <SectionTitle>{category}</SectionTitle>
           <SkillsContainer>
-            {skills.map((s, k) => (
-              <Skill key={k}>
-                <SkillIcon>
-                  <Icon name={s} />
-                </SkillIcon>
-                <SkillName>{s}</SkillName>
-              </Skill>
-            ))}
+            <TransitionGroup component={null}>
+              {skills.map((s, k) => (
+                <CSSTransition
+                  key={k}
+                  classNames="fadeup"
+                  timeout={300}
+                  exit={false}>
+                  <Skill>
+                    <SkillIcon>
+                      <Icon name={s} />
+                    </SkillIcon>
+                    <SkillName>{s}</SkillName>
+                  </Skill>
+                </CSSTransition>
+              ))}
+            </TransitionGroup>
           </SkillsContainer>
         </div>
       ))}
