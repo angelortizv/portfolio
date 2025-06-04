@@ -105,17 +105,21 @@ const Footer = () => (
       </ul>
     </StyledSocialLinks>
 
-    <ScrollToTop className="scrollToTop" />
-
     <StyledCredit tabindex="-1">
       <a href="https://github.com/bchiang7/v4">
         <div>Designed by Brittany Chiang</div>
       </a>
       <br />
       <a>
-        <div>Built with<Heart />by Angelo Ortiz</div>
+        <div>
+          Built with
+          <Heart />
+          by Angelo Ortiz
+        </div>
       </a>
     </StyledCredit>
+
+    <ScrollToTop className="scrollToTop" />
   </StyledFooter>
 );
 

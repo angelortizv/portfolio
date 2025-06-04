@@ -74,7 +74,7 @@ const StyledHamburgerButton = styled.button`
       top: ${props => (props.menuOpen ? `0` : `-10px`)};
       opacity: ${props => (props.menuOpen ? 0 : 1)};
       transition: ${({ menuOpen }) =>
-    menuOpen ? 'var(--ham-before-active)' : 'var(--ham-before)'};
+        menuOpen ? 'var(--ham-before-active)' : 'var(--ham-before)'};
     }
     &:after {
       width: ${props => (props.menuOpen ? `100%` : `80%`)};
@@ -267,7 +267,7 @@ const Menu = () => {
               </ol>
             )}
 
-            <a href="/cv.pdf" className="resume-link">
+            <a href="/cv-062025.pdf" className="resume-link">
               Resume
             </a>
           </nav>

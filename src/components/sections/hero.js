@@ -46,7 +46,6 @@ const StyledHeroSection = styled.section`
   }
 `;
 
-
 const shuffleArray = array => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -76,15 +75,23 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = <TypeAnimation cursor={true} sequence={seq} wrapper='h1' repeat={Infinity}/>;
+  const one = <TypeAnimation cursor={true} sequence={seq} wrapper="h1" repeat={Infinity} />;
   //const one = <TypeAnimation cursor={true} sequence={seq} wrapper="h1" repeat={Infinity} />;
   const two = <h2 className="big-heading">Angelo Ortiz.</h2>;
-  const three = <h3 className="big-heading" style={{fontSize: 36}}>Computer Engineering student, university lecturer, UXer, technology and AI enthusiast.</h3>;
+  const three = (
+    <h3 className="big-heading" style={{ fontSize: 30 }}>
+      Computer Engineer, AI & Data, Full Stack Development, University Lecturer.
+    </h3>
+  );
   const four = (
     <>
       <p>
-      Advanced Computer Engineering student at the Technological Institute of Costa Rica. 
-      Interested in <b>AI and ML,</b> with a focus on building intelligent and high-performance solutions.
+        I am a software engineer with over four years of experience developing digital products,
+        combining technical expertise with a strong understanding of business needs and user
+        experience. I've worked with startups and organizations to build scalable, efficient systems
+        using modern technologies. For the past three years, I've also worked as a university
+        lecturer, teaching courses in Artificial Intelligence, Data Analysis, Full Stack
+        Development, and UX Design.
       </p>
     </>
   );

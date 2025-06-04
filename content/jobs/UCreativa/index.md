@@ -8,8 +8,10 @@ type: 'Remote'
 url: 'https://ucreativa.ac.cr/'
 ---
 
-- Conducted periodic evaluations of student progress, providing individualized instruction to address diverse learning needs.
-- Integrated real-world case studies, collaborative projects, and innovative teaching methodologies to enhance student engagement and outcomes.
-- Mentored students in developing impactful capstone projects and prototypes aligned with industry standards.
-- Structured and developed the entire UX certification, including courses such as Research for Digital Experiences, Solution Ideation, Principles of Design, Interaction & Usability.
-- Taught courses such as Python for Artificial Intelligence, Applied Artificial Intelligence and Fundamentals of Machine Learning & Deep Learning for the AI Certification.
+Developed and delivered courses for the Advanced Technical Certificate in Artificial Intelligence, Advanced Technical Certificate in Full Stack Web Development, and the UX Design Certification, creating well-rounded programs that connect foundational theory with practical, real-world use cases. Key Contributions:
+
+- Assessed student progress through periodic evaluations and provided tailored support to accommodate diverse learning styles.
+- Enriched the learning experience by incorporating real-world case studies, collaborative projects, and innovative teaching methodologies.
+- Mentored students in the development of capstone projects and functional prototypes aligned with current industry practices.
+- Structured and authored the complete UX Design Certification program, including courses such as Research for Digital Experiences, Solution Ideation, Design Principles, and Interaction & Usability.
+- Taught core courses within the AI Certification Program, including Python for AI, Applied Artificial Intelligence, and Fundamentals of Machine Learning & Deep Learning.

@@ -144,11 +144,39 @@ const Gallery = () => {
   }, []);
 
   const GRID_LIMIT = 6;
-  const photos = data.photos.edges.filter(({ node }) => node);
-  const firstSix = photos.slice(0, GRID_LIMIT);
-  const photosToShow = showMore ? photos : firstSix;
 
-  const openModal = (image) => {
+  const prioritizedNames = [
+    'Chirripo - 14 de Septiembre 2024',
+    'Turrialba - 2024',
+    'Aranjuez - 26 Octubre 2024',
+  ];
+
+  const photos = data.photos.edges.filter(({ node }) => node);
+
+  const prioritizedPhotos = [];
+  const otherPhotos = [];
+
+  photos.forEach(photo => {
+    if (prioritizedNames.includes(photo.node.name)) {
+      prioritizedPhotos.push(photo);
+    } else {
+      otherPhotos.push(photo);
+    }
+  });
+
+  // Aleatoriza el resto
+  const shuffledOthers = otherPhotos.sort(() => Math.random() - 0.5);
+
+  // Une ambos arreglos
+  const orderedPhotos = [...prioritizedPhotos, ...shuffledOthers];
+
+  const firstSix = orderedPhotos.slice(0, GRID_LIMIT);
+  const photosToShow = showMore ? orderedPhotos : firstSix;
+
+  //const firstSix = photos.slice(0, GRID_LIMIT);
+  //const photosToShow = showMore ? photos : firstSix;
+
+  const openModal = image => {
     setSelectedImage(image);
     setIsModalVisible(true);
   };
@@ -168,15 +196,14 @@ const Gallery = () => {
         <TransitionGroup component={null}>
           {photosToShow.map(({ node }, i) => {
             const imageData = node.childImageSharp?.gatsbyImageData?.images?.fallback?.src;
-            if (!imageData) return null; // Salta si no hay imagen válida
+            if (!imageData) return null;
 
             return (
-              <CSSTransition
-                key={i}
-                classNames="fadeup"
-                timeout={300}
-                exit={false}>
-                <StyledPhoto ref={el => (revealPhotos.current[i] = el)} onClick={() => openModal(imageData)}>
+              <CSSTransition key={i} classNames="fadeup" timeout={300} exit={false}>
+                <StyledPhoto
+                  ref={el => (revealPhotos.current[i] = el)}
+                  onClick={() => openModal(imageData)}
+                >
                   <div className="photo-inner">
                     <img src={imageData} alt={node.name} />
                     <div className="photo-description">{node.name}</div>
@@ -187,7 +214,6 @@ const Gallery = () => {
           })}
         </TransitionGroup>
       </ul>
-
 
       {photos.length > GRID_LIMIT && (
         <button className="more-button" onClick={() => setShowMore(!showMore)}>
