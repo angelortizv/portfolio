@@ -110,11 +110,9 @@ const Footer = () => (
         <div>Designed by Brittany Chiang</div>
       </a>
       <br />
-      <a>
+      <a href='https://www.angelortizv.com/authors/angelo-ortiz-vega/'>
         <div>
-          Built with
-          <Heart />
-          by Angelo Ortiz
+          Built by Angelo Ortiz
         </div>
       </a>
     </StyledCredit>

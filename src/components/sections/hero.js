@@ -86,12 +86,10 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        I am a software engineer with over four years of experience developing digital products,
-        combining technical expertise with a strong understanding of business needs and user
-        experience. I've worked with startups and organizations to build scalable, efficient systems
-        using modern technologies. For the past three years, I've also worked as a university
-        lecturer, teaching courses in Artificial Intelligence, Data Analysis, Full Stack
-        Development, and UX Design.
+        Software Engineer with over four years of experience developing scalable and efficient digital products for startups 
+        and organizations, combining technical expertise with strong problem-solving skills, business insight, and 
+        user-centered design. Skilled in Python development with frameworks such as Flask and FastAPI, cloud integrations 
+        with AWS, and modern full stack technologies including React, Angular, and Nodejs.
       </p>
     </>
   );

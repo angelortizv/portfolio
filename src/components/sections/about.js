@@ -130,38 +130,50 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello! My name is Angelo Ortiz Vega, a Computer Engineering Student based in Costa Rica. I enjoy
-              creating things that live on the internet, whether that be websites, applications, or
-              anything in between. My goal is to always build products that scale and impacts
-              millions of people.
+              Hello! I am <strong>Angelo Ortiz Vega</strong>, a <strong>Software Engineer and AI Practitioner</strong> with over four years of experience
+              developing scalable and efficient digital products for startups and organizations. I combine technical expertise in
+              software engineering with strong problem-solving skills, business insight, and user-centered design.
+              Skilled in <strong>Python</strong> development with frameworks such as <strong>Flask</strong> and <strong>FastAPI</strong>,
+              cloud integrations with <strong>AWS</strong>, and modern full stack technologies including <strong>React</strong>,
+              <strong>Angular</strong>, and <strong>Node.js</strong>.
             </p>
 
             <p>
-              I am currently studying a degree in Computer Engineering at the Technological
-              Institute of Costa Rica. ({' '}
+              My work in <strong>Artificial Intelligence</strong> spans building and integrating <strong>machine learning models</strong>
+              into production systems, designing <strong>data pipelines</strong>, and applying automation to optimize workflows.
+              I’ve developed predictive systems, intelligent agents, and RPA solutions using frameworks like
+              <strong>scikit-learn</strong>, <strong>TensorFlow</strong>, and <strong>PyTorch</strong>.
+              I’m passionate about bridging the gap between AI research and real-world applications that improve efficiency,
+              sustainability, and user experience.
+            </p>
+
+            <p>
+              I am currently completing a degree in <strong>Computer Engineering</strong> at the
               <a href="https://www.tec.ac.cr/" target="_blank" rel="noreferrer">
-                ITCR
-              </a>{' '}
-              ). Computer Engineer is based on sciences and technologies that allow the design,
-              construction, implementation and maintenance of computer system components in both
-              hardware and software.
+                Technological Institute of Costa Rica
+              </a>, strengthening my theoretical and analytical foundation.
+              The program focuses on the sciences and technologies that enable the design, construction, implementation,
+              and maintenance of computer systems — both hardware and software.
             </p>
 
             <p>
-              I also work as a professor of Artificial Intelligence and UX Design at {' '}
+              In parallel, I have worked as a <strong>university lecturer</strong> for over three years, teaching
+              <strong>Artificial Intelligence</strong>, <strong>Data Analysis</strong>, <strong>Full Stack Development</strong>, and
+              <strong>UX Design</strong> at
               <a href="https://ucreativa.ac.cr/" target="_blank" rel="noreferrer">
-                Universidad Creativa
-              </a>{' '}
-              where I've taught courses such as Applied Artificial Intelligence and Fundamentals of Machine Learning & Deep Learning for the AI Certification.
+                Universidad Creativa de Costa Rica
+              </a>,
+              with a focus on practical, project-based learning and real-world applications.
             </p>
 
             <p>
-              When I'm not at the computer, I'm usually hiking, reading, hanging out with my friends, or making {' '}
-              <a href="https://open.spotify.com/playlist/20xTpMDhxDFpACSRXHZzOC?si=2050bd00d9b048bb" target="_blank" rel="noreferrer">
+              When I’m not at the computer, I’m usually hiking, reading, hanging out with friends,
+              or curating <a href="https://open.spotify.com/playlist/20xTpMDhxDFpACSRXHZzOC?si=2050bd00d9b048bb" target="_blank" rel="noreferrer">
                 Spotify
-              </a>{' '} playlists.
+              </a> playlists.
             </p>
           </div>
+
         </StyledText>
 
         <StyledPic>
