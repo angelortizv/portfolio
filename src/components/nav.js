@@ -36,9 +36,9 @@ const StyledHeader = styled.header`
 
   @media (prefers-reduced-motion: no-preference) {
     ${props =>
-      props.scrollDirection === 'up' &&
-      !props.scrolledToTop &&
-      css`
+    props.scrollDirection === 'up' &&
+    !props.scrolledToTop &&
+    css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
         background-color: var(--bg-color);
@@ -46,9 +46,9 @@ const StyledHeader = styled.header`
       `};
 
     ${props =>
-      props.scrollDirection === 'down' &&
-      !props.scrolledToTop &&
-      css`
+    props.scrollDirection === 'down' &&
+    !props.scrolledToTop &&
+    css`
         height: var(--nav-scroll-height);
         transform: translateY(calc(var(--nav-scroll-height) * -1));
         box-shadow: 0 10px 30px -10px var(--bg-color-shadow);
@@ -140,10 +140,20 @@ const Nav = ({ isHome }) => {
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const prefersReducedMotion = usePrefersReducedMotion();
 
-  const IsDark =
-    getComputedStyle(document.documentElement).getPropertyValue('--bg-color') ===
-    Colors.dark['--bg-color'];
-  const [IsDarkMode, setIsDarkMode] = useState(IsDark);
+  // const IsDark =
+  //   getComputedStyle(document.documentElement).getPropertyValue('--bg-color') ===
+  //   Colors.dark['--bg-color'];
+  // const [IsDarkMode, setIsDarkMode] = useState(IsDark);
+
+  const [IsDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const currentBg = getComputedStyle(document.documentElement).getPropertyValue('--bg-color');
+      const isDark = currentBg.trim() === Colors.dark['--bg-color'];
+      setIsDarkMode(isDark);
+    }
+  }, []);
 
   const handleScroll = () => {
     setScrolledToTop(window.pageYOffset < 50);
