@@ -5,6 +5,7 @@ import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 import { translations } from '../../config';
 import TypeAnimation from 'react-type-animation';
+import { useLanguage } from '../../hooks/LanguageContext';
 // import { email } from '@config';
 
 const StyledHeroSection = styled.section`
@@ -75,28 +76,26 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
+  const { t } = useLanguage();
+
   const one = <TypeAnimation cursor={true} sequence={seq} wrapper="h1" repeat={Infinity} />;
   //const one = <TypeAnimation cursor={true} sequence={seq} wrapper="h1" repeat={Infinity} />;
   const two = <h2 className="big-heading">Angelo Ortiz.</h2>;
   const three = (
     <h3 className="big-heading" style={{ fontSize: 30 }}>
-      Computer Engineer, AI & Data, Full Stack Development, University Lecturer.
+      {t("hero_txt_keywords")}
     </h3>
   );
   const four = (
     <>
       <p>
-        Software Engineer with over four years of experience developing scalable and efficient
-        digital products for startups and organizations, combining technical expertise with strong
-        problem-solving skills, business insight, and user-centered design. Skilled in Python
-        development with frameworks such as Flask and FastAPI, cloud integrations with AWS, and
-        modern full stack technologies including React, Angular, and Nodejs.
+        {t("hero_txt_about")}
       </p>
     </>
   );
   const five = (
     <a className="email-link" href="/angelo-v2.pdf" target="_blank" rel="noreferrer">
-      View Resume
+      {t("hero_btn_resume")}
     </a>
   );
 

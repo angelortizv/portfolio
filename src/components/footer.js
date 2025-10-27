@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Icon } from '@components/icons';
 import { socialMedia } from '@config';
 import ScrollToTop from './scrollToTop';
+import { useLanguage } from '../hooks/LanguageContext';
 
 const StyledFooter = styled.footer`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -90,35 +91,38 @@ const Heart = styled.div`
   }
 `;
 
-const Footer = () => (
-  <StyledFooter>
-    <StyledSocialLinks>
-      <ul>
-        {socialMedia &&
-          socialMedia.map(({ name, url }, i) => (
-            <li key={i}>
-              <a href={url} aria-label={name}>
-                <Icon name={name} />
-              </a>
-            </li>
-          ))}
-      </ul>
-    </StyledSocialLinks>
+const Footer = () => {
+  const { t } = useLanguage();
 
-    <StyledCredit tabindex="-1">
-      <a href="https://github.com/bchiang7/v4">
-        <div>Designed by Brittany Chiang</div>
-      </a>
-      <br />
-      <a href='https://www.angelortizv.com/authors/angelo-ortiz-vega/'>
-        <div>
-          Built by Angelo Ortiz
-        </div>
-      </a>
-    </StyledCredit>
+  return (
+    <StyledFooter>
+      <StyledSocialLinks>
+        <ul>
+          {socialMedia &&
+            socialMedia.map(({ name, url }, i) => (
+              <li key={i}>
+                <a href={url} aria-label={name}>
+                  <Icon name={name} />
+                </a>
+              </li>
+            ))}
+        </ul>
+      </StyledSocialLinks>
 
-    <ScrollToTop className="scrollToTop" />
-  </StyledFooter>
-);
+      <StyledCredit tabindex="-1">
+        <a href="https://github.com/bchiang7/v4">
+          <div>{t("footer_text_designed")} Brittany Chiang</div>
+        </a>
+        <br />
+        <a href='https://www.angelortizv.com/authors/angelo-ortiz-vega/'>
+          <div>
+            {t("footer_text_build")} Angelo Ortiz
+          </div>
+        </a>
+      </StyledCredit>
+
+      <ScrollToTop className="scrollToTop" />
+    </StyledFooter>)
+}
 
 export default Footer;

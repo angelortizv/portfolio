@@ -6,6 +6,7 @@ import { srConfig } from '@config';
 import { KEY_CODES } from '@utils';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
+import { useLanguage } from '../../hooks/LanguageContext';
 
 const StyledJobsSection = styled.section`
   .inner {
@@ -173,6 +174,7 @@ const Jobs = () => {
           node {
             frontmatter {
               title
+              desc
               company
               location
               range
@@ -193,6 +195,8 @@ const Jobs = () => {
   const tabs = useRef([]);
   const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
+
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -243,7 +247,7 @@ const Jobs = () => {
 
   return (
     <StyledJobsSection id="jobs" ref={revealContainer}>
-      <h2 className="numbered-heading">Where I’ve Worked</h2>
+      <h2 className="numbered-heading">{t("experience_text_title")}</h2>
 
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
@@ -273,7 +277,8 @@ const Jobs = () => {
           {jobsData &&
             jobsData.map(({ node }, i) => {
               const { frontmatter, html } = node;
-              const { title, url, company, range, type, location } = frontmatter;
+              const { title, url, company, range, type, location, desc } = frontmatter;
+              const jobKeys = Array.isArray(t("jobs_" + desc)) ? t("jobs_" + desc) : [t("jobs_" + desc)];
 
               return (
                 <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
@@ -286,7 +291,7 @@ const Jobs = () => {
                     hidden={activeTabId !== i}
                   >
                     <h3>
-                      <span>{title}</span>
+                      <span>{t(title)}</span>
                       <span className="company">
                         &nbsp;@&nbsp;
                         <a href={url} className="inline-link">
@@ -299,7 +304,14 @@ const Jobs = () => {
                       {range} | {location} | {type}
                     </p>
 
-                    <div dangerouslySetInnerHTML={{ __html: html }} />
+                    <ul>
+                      {jobKeys.map((i, index) => (
+                        <li key={index}>{t(i)}</li>
+                      ))}
+                    </ul>
+
+
+
                   </StyledTabPanel>
                 </CSSTransition>
               );

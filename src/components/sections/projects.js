@@ -6,6 +6,7 @@ import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
+import { useLanguage } from '../../hooks/LanguageContext';
 
 const StyledProjectsSection = styled.section`
   display: flex;
@@ -194,6 +195,8 @@ const Projects = () => {
   const revealProjects = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
 
+  const { t } = useLanguage();
+
   useEffect(() => {
     if (prefersReducedMotion) {
       return;
@@ -264,10 +267,10 @@ const Projects = () => {
 
   return (
     <StyledProjectsSection>
-      <h2 ref={revealTitle}>Other Noteworthy Projects</h2>
+      <h2 ref={revealTitle}>{t("archive_text_title")}</h2>
 
       <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
-        view the archive
+        {t("archive_text_subtitle")}
       </Link>
 
       <ul className="projects-grid">

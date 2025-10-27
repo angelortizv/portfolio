@@ -7,6 +7,7 @@ import styled from 'styled-components';
 import { navDelay } from '@utils';
 import { Layout } from '@components';
 import { usePrefersReducedMotion } from '@hooks';
+import { LanguageProvider } from '../hooks/LanguageContext';
 
 const StyledMainContainer = styled.main`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -49,21 +50,23 @@ const NotFoundPage = ({ location }) => {
   );
 
   return (
-    <Layout location={location}>
-      <Helmet title="Page Not Found" />
+    <LanguageProvider>
+      <Layout location={location}>
+        <Helmet title="Page Not Found" />
 
-      {prefersReducedMotion ? (
-        <>{content}</>
-      ) : (
-        <TransitionGroup component={null}>
-          {isMounted && (
-            <CSSTransition timeout={500} classNames="fadeup">
-              {content}
-            </CSSTransition>
-          )}
-        </TransitionGroup>
-      )}
-    </Layout>
+        {prefersReducedMotion ? (
+          <>{content}</>
+        ) : (
+          <TransitionGroup component={null}>
+            {isMounted && (
+              <CSSTransition timeout={500} classNames="fadeup">
+                {content}
+              </CSSTransition>
+            )}
+          </TransitionGroup>
+        )}
+      </Layout>
+    </LanguageProvider>
   );
 };
 

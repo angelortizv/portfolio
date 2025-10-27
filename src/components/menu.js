@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { navLinks } from '@config';
 import { KEY_CODES } from '@utils';
 import { useOnClickOutside } from '@hooks';
+import { useLanguage } from '../hooks/LanguageContext';
 
 const StyledMenu = styled.div`
   display: none;
@@ -148,6 +149,8 @@ const Menu = () => {
   const buttonRef = useRef(null);
   const navRef = useRef(null);
 
+  const { t } = useLanguage();
+
   let menuFocusables;
   let firstFocusableEl;
   let lastFocusableEl;
@@ -242,13 +245,13 @@ const Menu = () => {
           <nav ref={navRef}>
             {navLinks && (
               <ol>
-                {navLinks.map(({ url, name }, i) => (
-                  <li key={i}>
+                {navLinks.map(({ url, name }, i) => {
+                  return <li key={i}>
                     <Link to={url} onClick={() => setMenuOpen(false)}>
-                      {name}
+                      {t("menu_text_" + name)}
                     </Link>
-                  </li>
-                ))}
+                  </li>;
+                })}
               </ol>
             )}
 

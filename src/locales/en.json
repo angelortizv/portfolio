@@ -1,0 +1,75 @@
+{
+  "menu_text_about": "About",
+  "menu_text_experience": "Experience",
+  "menu_text_work": "Projects",
+  "menu_text_gallery": "Gallery",
+  "menu_text_contact": "Contact",
+
+  "hero_txt_keywords": "Computer Engineer, AI & Data, Full Stack Development, University Lecturer.",
+  "hero_txt_about": "Software Engineer with over four years of experience developing scalable and efficient digital products for startups and organizations, combining technical expertise with strong problem-solving skills, business insight, and user-centered design. Skilled in Python development with frameworks such as Flask and FastAPI, cloud integrations with AWS, and modern full stack technologies including React, Angular, and Nodejs.",
+  "hero_btn_resume": "View Resume",
+
+  "about_text_title": "About Me",
+  "about_text_tec": "Technological Institute of Costa Rica",
+  "about_text_desc_1": "Hello! I am Angelo Ortiz Vega, a Software Engineer and AI Practitioner with over four years of experience developing scalable and efficient digital products for startups and organizations. I combine technical expertise in software engineering with strong problem-solving skills, business insight, and user-centered design. Skilled in Python development with frameworks such as Flask and FastAPI, cloud integrations with AWS, and modern full stack technologies including React,Angular, and Node.js.",
+  "about_text_desc_2": "My work in Artificial Intelligence spans building and integrating machine learning modelsinto production systems, designing data pipelines, and applying automation to optimize workflows. I've developed predictive systems, intelligent agents, and RPA solutions using frameworks likescikit-learn, TensorFlow, and PyTorch. I'm passionate about bridging the gap between AI research and real-world applications that improve efficiency, sustainability, and user experience.",
+  "about_text_desc_3_1": "I am currently completing a degree in Computer Engineering at the",
+  "about_text_desc_3_2": "strengthening my theoretical and analytical foundation. The program focuses on the sciences and technologies that enable the design, construction, implementation, and maintenance of computer systems — both hardware and software.",
+  "about_text_desc_4_1": "In parallel, I have worked as a university lecturer for over three years, teachingArtificial Intelligence, Data Analysis, Full Stack Development, andUX Design at",
+  "about_text_desc_4_2": "with a focus on practical, project-based learning and real-world applications.",
+  "about_text_desc_5": "When I'm not at the computer, I'm usually hiking, reading, hanging out with friends, or curating ",
+
+  "skills_text_title": "Skills & Stack",
+
+  "experience_text_title": "Where I've Worked",
+  "job_title_ucreativa": "University Lecturer",
+  "jobs_ucreativa": [
+    "Enriched the learning experience by incorporating real-world case studies, collaborative projects, and innovative teaching methodologies.",
+    "Mentored students in the development of capstone projects and functional prototypes aligned with current industry practices.",
+    "Delivered courses in Python for AI, Applied AI, and Machine Learning & Deep Learning, with emphasis on backend development, API creation, and deployment on AWS cloud services.",
+    "Structured and authored the complete UX Design Certification program, including courses such as Research for Digital Experiences, Solution Ideation, Design Principles, and Interaction & Usability."
+  ],
+
+  "job_title_freelancer1": "Software Engineer",
+  "jobs_freelancer1": [
+    "Delivered end-to-end software solutions for startups and diverse clients, combining robust backend development,cloud integration, process automation, and frontend development.",
+    "Focused on building scalable, maintainable, and efficient systems using modern technologies and best engineering practices. "
+  ],
+
+  "job_title_csi": "Electronic Technician",
+  "jobs_csi": [
+    "Corrective and preventive maintenance of electrical equipment.",
+    "Support to engineers in the development and design of electronic equipment that will improve the cap production process.",
+    "Accompaniment in the elaboration of the main electrical maintenance plan of the plant."
+  ],
+
+  "projects_text_title": "Some Things I've Built",
+  "projects_text_featured": "Featured Project",
+  "projects_angelortizvcom": "angelortizv.com is a website where whenever I have the opportunity, I leave a few minutes of what I am doing to share what I am learning or what I am thinking.",
+  "projects_easyhop": "Easy Hop is the only platform in Costa Rica that connects private group shuttles with visitors in both rural, and touristic destinations. Within the project I was in charge of developing the mobile application for drivers, whose main function was to see the stopping points on a map and validate passenger tickets.",
+  "projects_topspinai": "Table tennis is a fast-paced and dynamic sport where coaches, players and analysts require accurate tools to assess performance in real-time. The absence of advanced systems that can process and analyse high-resolution video to detect critical events such as ball bounces and net hits limits users' ability to make informed decisions. TopspinAI addresses this need by providing an automated system that uses artificial intelligence for ball detection and semantic segmentation, improving analysis and decision making during matches.",
+  "projects_uxarc": "ux-arc is a personal blog and repository dedicated to sharing knowledge, experiences, and resources about the world of user experience design. Over the years, I have collected valuable information on various aspects of digital design, and this space was born with the intention of organizing and disseminating that knowledge in an accessible way for those looking to improve their skills and understanding in the field of UX.",
+  "projects_ceitcr": "ce-itcr is the repository where the programming projects that I have carried out throughout my career in Computer Engineering courses are housed. The respective documentation on each course and code is on github.",
+
+  "archive_text_title": "Other Noteworthy Projects",
+  "archive_text_subtitle": "view the archive",
+
+  "gallery_text_title": "Some things from my life in pictures",
+  "gallery_text_less": "Show Less",
+  "gallery_text_more": "Show More",
+
+  "contact_text_over": "What's Next?",
+  "contact_text_title": "Get In Touch",
+  "contact_text_desc": "Although I'm not currently looking for freelance opportunities, my inbox is always open. If you have any questions or just want to say hello, I'll do my best to get back to you!",
+  "contact_btn_hello": "Say Hello",
+
+  "footer_text_designed": "Designed by",
+  "footer_text_build": "Built by",
+
+  "full_archive_text_title": "Archive",
+  "full_archive_text_subtitle": "A big list of things I've worked on",
+  "full_archive_text_table_year": "Year",
+  "full_archive_text_table_title": "Title",
+  "full_archive_text_table_made": "Made at",
+  "full_archive_text_table_tech": "Built with"
+}

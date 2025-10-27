@@ -8,6 +8,7 @@ import sr from '@utils/sr';
 import { Layout } from '@components';
 import { Icon } from '@components/icons';
 import { usePrefersReducedMotion } from '@hooks';
+import { LanguageProvider, useLanguage } from '../hooks/LanguageContext';
 
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
@@ -136,6 +137,8 @@ const ArchivePage = ({ location, data }) => {
   const revealProjects = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
 
+  const { t } = useLanguage();
+
   useEffect(() => {
     if (prefersReducedMotion) {
       return;
@@ -152,18 +155,18 @@ const ArchivePage = ({ location, data }) => {
 
       <main>
         <header ref={revealTitle}>
-          <h1 className="big-heading">Archive</h1>
-          <p className="subtitle">A big list of things I've worked on</p>
+          <h1 className="big-heading">{t("full_archive_text_title")}</h1>
+          <p className="subtitle">{t("full_archive_text_subtitle")}</p>
         </header>
 
         <StyledTableContainer ref={revealTable}>
           <table>
             <thead>
               <tr>
-                <th>Year</th>
-                <th>Title</th>
-                <th className="hide-on-mobile">Made at</th>
-                <th className="hide-on-mobile">Built with</th>
+                <th>{t("full_archive_text_table_year")}</th>
+                <th>{t("full_archive_text_table_title")}</th>
+                <th className="hide-on-mobile">{t("full_archive_text_table_made")}</th>
+                <th className="hide-on-mobile">{t("full_archive_text_table_tech")}</th>
                 <th>Link</th>
               </tr>
             </thead>

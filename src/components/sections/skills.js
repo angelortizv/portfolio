@@ -4,6 +4,7 @@ import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { Icon } from '@components/icons';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { useLanguage } from '../../hooks/LanguageContext';
 
 const StyledSkillsSection = styled.section`
   max-width: 1000px;
@@ -63,6 +64,8 @@ const SkillsContainer = styled.ul`
 const Skills = () => {
   const revealContainer = useRef(null);
 
+  const { t } = useLanguage();
+
   useEffect(() => {
     if (sr) {
       sr.reveal(revealContainer.current, srConfig());
@@ -86,7 +89,7 @@ const Skills = () => {
 
   return (
     <StyledSkillsSection id="skills" ref={revealContainer}>
-      <h3>Skills & Stack</h3>
+      <h3>{t("skills_text_title")}</h3>
       {Object.entries(skillCategories).map(([category, skills]) => (
         <div key={category}>
           <SectionTitle>{category}</SectionTitle>

@@ -1,0 +1,75 @@
+{
+  "menu_text_about": "Acerca de",
+  "menu_text_experience": "Experiencia",
+  "menu_text_work": "Proyectos",
+  "menu_text_gallery": "Galeria",
+  "menu_text_contact": "Contacto",
+
+  "hero_txt_keywords": "Ingeniero en Computadores, AI & Datos, Desarrollo Full Stack, Profesor Universitario.",
+  "hero_txt_about": "Desarrollador de software con más de cuatro años de experiencia en productos digitales escalables y eficientes para startups y organizaciones. Combinando una sólida experiencia técnica con habilidades para la resolución de problemas, visión de negocio y diseño centrado en el usuario. Experto en desarrollo con Python utilizando frameworks como Flask y FastAPI, integraciones en la nube con AWS y tecnologías modernas de desarrollo full stack como React, Angular y Node.js.",
+  "hero_btn_resume": "Ver CV",
+
+  "about_text_title": "Acerca de mí",
+  "about_text_tec": "Instituto Tecnologico de Costa Rica",
+  "about_text_desc_1": "¡Hola! Soy Angelo Ortiz Vega, desarrollador de software y practicante de inteligencia artificial con más de cuatro años de experiencia desarrollando productos digitales escalables y eficientes para startups y organizaciones. Combino experiencia técnica en ingeniería de software con sólidas habilidades para la resolución de problemas, visión de negocio y diseño centrado en el usuario. Tengo dominio en desarrollo con Python utilizando frameworks como Flask y FastAPI, integraciones en la nube con AWS, y tecnologías modernas de desarrollo full stack como React, Angular y Node.js.",
+  "about_text_desc_2": "Mi trabajo en inteligencia artificial abarca la construcción e integración de modelos de aprendizaje automático en sistemas de producción, el diseño de pipelines de datos y la aplicación de automatización para optimizar flujos de trabajo. He desarrollado sistemas predictivos, agentes inteligentes y soluciones RPA utilizando frameworks como scikit-learn, TensorFlow y PyTorch. Me apasiona reducir la brecha entre la investigación en IA y las aplicaciones del mundo real que mejoran la eficiencia, la sostenibilidad y la experiencia del usuario.",
+  "about_text_desc_3_1": "Actualmente estoy finalizando la carrera de Ingeniería en Computadores en el",
+  "about_text_desc_3_2": "fortaleciendo mi base teórica y analítica. El programa se centra en las ciencias y tecnologías que permiten el diseño, construcción, implementación y mantenimiento de sistemas informáticos — tanto de hardware como de software.",
+  "about_text_desc_4_1": "Paralelamente, he trabajado como docente universitario durante más de tres años, impartiendo cursos de Inteligencia Artificial, Análisis de Datos, Desarrollo Full Stack y Diseño de Experiencia de Usuario en la",
+  "about_text_desc_4_2": "con un enfoque en el aprendizaje práctico, basado en proyectos y aplicaciones del mundo real.",
+  "about_text_desc_5": "Cuando no estoy frente a la computadora, normalmente estoy haciendo senderismo, leyendo, pasando tiempo con amigos o creando ",
+
+  "skills_text_title": "Habilidades & Stack Tecnológico",
+
+  "experience_text_title": "Donde he trabajado",
+  "job_title_ucreativa": "Profesor Universitario",
+  "jobs_ucreativa": [
+    "Enriquecí la experiencia de aprendizaje incorporando estudios de caso del mundo real, proyectos colaborativos y metodologías de enseñanza innovadoras.",
+    "Mentoricé a los estudiantes en el desarrollo de proyectos finales y prototipos funcionales alineados con las prácticas actuales de la industria.",
+    "Impartí cursos de Python para IA, IA Aplicada y Machine Learning & Deep Learning, con énfasis en desarrollo backend, creación de APIs y despliegue en servicios en la nube de AWS.",
+    "Estructuré y redacté el programa completo de Certificación en Diseño UX, incluyendo cursos como Investigación para Experiencias Digitales, Ideación de Soluciones, Principios de Diseño e Interacción y Usabilidad."
+  ],
+
+  "job_title_freelancer1": "Ingeniero de Software",
+  "jobs_freelancer1": [
+    "Entregué soluciones de software de extremo a extremo para startups y diversos clientes, combinando desarrollo backend robusto, integración en la nube, automatización de procesos y desarrollo frontend.",
+    "Me enfoqué en construir sistemas escalables, mantenibles y eficientes utilizando tecnologías modernas y las mejores prácticas de ingeniería."
+  ],
+
+  "job_title_csi": "Técnico en Electrónica",
+  "jobs_csi": [
+    "Mantenimiento correctivo y preventivo de equipos eléctricos.",
+    "Apoyo a los ingenieros en el desarrollo y diseño de equipos electrónicos para mejorar el proceso de producción de tapas.",
+    "Acompañamiento en la elaboración del plan principal de mantenimiento eléctrico de la planta."
+  ],
+
+  "projects_text_title": "Algunas cosas que he construido",
+  "projects_text_featured": "Proyecto Destacado",
+  "projects_angelortizvcom": "angelortizv.com es un sitio web donde, siempre que tengo la oportunidad, dedico unos minutos de lo que estoy haciendo para compartir lo que estoy aprendiendo o lo que estoy pensando.",
+  "projects_easyhop": "Easy Hop es la única plataforma en Costa Rica que conecta transportes privados grupales con visitantes en destinos rurales y turísticos. Dentro del proyecto estuve a cargo de desarrollar la aplicación móvil para los conductores, cuya función principal era visualizar los puntos de parada en un mapa y validar los boletos de los pasajeros.",
+  "projects_topspinai": "El tenis de mesa es un deporte rápido y dinámico donde entrenadores, jugadores y analistas requieren herramientas precisas para evaluar el rendimiento en tiempo real. La falta de sistemas avanzados capaces de procesar y analizar video en alta resolución para detectar eventos críticos, como rebotes de pelota y golpes en la red, limita la capacidad de los usuarios para tomar decisiones informadas. TopspinAI aborda esta necesidad proporcionando un sistema automatizado que utiliza inteligencia artificial para la detección de pelotas y segmentación semántica, mejorando el análisis y la toma de decisiones durante los partidos.",
+  "projects_uxarc": "ux-arc es un blog personal y repositorio dedicado a compartir conocimientos, experiencias y recursos sobre el mundo del diseño de experiencia de usuario. A lo largo de los años, he recopilado información valiosa sobre diversos aspectos del diseño digital, y este espacio nació con la intención de organizar y difundir ese conocimiento de forma accesible para quienes buscan mejorar sus habilidades y comprensión en el campo de la UX.",
+  "projects_ceitcr": "ce-itcr es el repositorio donde se encuentran los proyectos de programación que he realizado a lo largo de mi carrera en los cursos de Ingeniería en Computadores. La documentación respectiva de cada curso y su código se encuentran en GitHub.",
+
+  "archive_text_title": "Otros proyectos interesantes",
+  "archive_text_subtitle": "ver el archivo",
+
+  "gallery_text_title": "Fotos de mi vida",
+  "gallery_text_less": "Ver Menos",
+  "gallery_text_more": "Ver Más",
+
+  "contact_text_over": "¿Qué sigue?",
+  "contact_text_title": "Ponte en contacto",
+  "contact_text_desc": "Aunque actualmente no estoy buscando oportunidades de freelance, mi bandeja de entrada siempre está abierta. Si tienes alguna pregunta o simplemente quieres saludar, ¡haré todo lo posible por responderte!",
+  "contact_btn_hello": "Decir Hola",
+
+  "footer_text_designed": "Diseñado por ",
+  "footer_text_build": "Construido por ",
+
+  "full_archive_text_title": "Archivo",
+  "full_archive_text_subtitle": "Una lista más grande de cosas  en las que he trabajado",
+  "full_archive_text_table_year": "Año",
+  "full_archive_text_table_title": "Titulo",
+  "full_archive_text_table_made": "Construido en",
+  "full_archive_text_table_tech": "Tecnologías"
+}

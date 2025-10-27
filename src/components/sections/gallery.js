@@ -4,6 +4,7 @@ import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
+import { useLanguage } from '../../hooks/LanguageContext';
 
 const StyledGallerySection = styled.section`
   display: flex;
@@ -137,6 +138,8 @@ const Gallery = () => {
   const revealPhotos = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
 
+  const { t } = useLanguage();
+
   useEffect(() => {
     if (prefersReducedMotion) return;
     sr.reveal(revealTitle.current, {});
@@ -189,7 +192,7 @@ const Gallery = () => {
   return (
     <StyledGallerySection>
       <h2 className="numbered-heading" ref={revealTitle}>
-        Some things from my life in pictures
+        {t("gallery_text_title")}
       </h2>
 
       <ul className="gallery-grid">
@@ -217,7 +220,7 @@ const Gallery = () => {
 
       {photos.length > GRID_LIMIT && (
         <button className="more-button" onClick={() => setShowMore(!showMore)}>
-          {showMore ? 'Show Less' : 'Show More'}
+          {showMore ? t("gallery_text_less") : t("gallery_text_more")}
         </button>
       )}
 

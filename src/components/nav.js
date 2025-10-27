@@ -11,6 +11,9 @@ import { IconLogo } from '@components/icons';
 import IconLight from './icons/light';
 import IconDark from './icons/dark';
 import Colors from '../styles/colors';
+import IconEnglish from './icons/english';
+import IconSpanish from './icons/spanish';
+import { useLanguage } from '../hooks/LanguageContext';
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -104,6 +107,13 @@ const StyledNav = styled.nav`
       }
     }
   }
+
+  .tools-switcher {
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    gap: 8px;
+  }
 `;
 
 const StyledLinks = styled.div`
@@ -155,6 +165,9 @@ const Nav = ({ isHome }) => {
     }
   }, []);
 
+  const { t, lang, toggleLang } = useLanguage();
+  const isEnglish = lang === "en";
+
   const handleScroll = () => {
     setScrolledToTop(window.pageYOffset < 50);
   };
@@ -167,6 +180,8 @@ const Nav = ({ isHome }) => {
     }
     setIsDarkMode(!IsDarkMode);
   };
+
+
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -221,6 +236,17 @@ const Nav = ({ isHome }) => {
     </div>
   );
 
+
+  const LangSwitch = (
+    <div className="theme-switch">
+      <button
+        onClick={toggleLang}
+      >
+        {isEnglish ? <IconEnglish /> : <IconSpanish />}
+      </button>
+    </div>
+  );
+
   return (
     <StyledHeader scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
       <StyledNav>
@@ -233,7 +259,7 @@ const Nav = ({ isHome }) => {
                 {navLinks &&
                   navLinks.map(({ url, name }, i) => (
                     <li key={i}>
-                      <Link to={url}>{name}</Link>
+                      <Link to={url}>{t("menu_text_" + name)}</Link>
                     </li>
                   ))}
               </ol>
@@ -263,7 +289,7 @@ const Nav = ({ isHome }) => {
                     navLinks.map(({ url, name }, i) => (
                       <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
                         <li key={i} style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
-                          <Link to={url}>{name}</Link>
+                          <Link to={url}>{t("menu_text_" + name)}</Link>
                         </li>
                       </CSSTransition>
                     ))}
@@ -281,13 +307,25 @@ const Nav = ({ isHome }) => {
               </TransitionGroup>*/}
             </StyledLinks>
 
-            <TransitionGroup component={null}>
-              {isMounted && (
-                <CSSTransition classNames={fadeClass} timeout={timeout}>
-                  <>{ThemeSwitch}</>
-                </CSSTransition>
-              )}
-            </TransitionGroup>
+
+            <div class="tools-switcher">
+              <TransitionGroup component={null}>
+                {isMounted && (
+                  <CSSTransition classNames={fadeClass} timeout={timeout}>
+                    <>{ThemeSwitch}</>
+                  </CSSTransition>
+                )}
+              </TransitionGroup>
+
+              <TransitionGroup component={null}>
+                {isMounted && (
+                  <CSSTransition classNames={fadeClass} timeout={timeout}>
+                    <>{LangSwitch}</>
+                  </CSSTransition>
+                )}
+              </TransitionGroup>
+            </div>
+
 
             <TransitionGroup component={null}>
               {isMounted && (
