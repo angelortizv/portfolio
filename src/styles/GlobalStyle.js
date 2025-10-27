@@ -11,7 +11,6 @@ const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     width: 100%;
-    scroll-behavior: smooth;
   }
 
   *,
@@ -21,49 +20,28 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background-color: var(--lightest-navy);
-    color: var(--lightest-slate);
+    background-color: var(--lightest-bg-color);
+    color: var(--lightest-text-color);
   }
 
-  /* Provide basic, default focus styles.*/
   :focus {
-    outline: 2px dashed var(--green);
-    outline-offset: 3px;
-  }
-
-  /*
-    Remove default focus styles for mouse users ONLY if
-    :focus-visible is supported on this platform.
-  */
-  :focus:not(:focus-visible) {
-    outline: none;
-    outline-offset: 0px;
-  }
-
-  /*
-    Optionally: If :focus-visible is supported on this
-    platform, provide enhanced focus styles for keyboard
-    focus.
-  */
-  :focus-visible {
-    outline: 2px dashed var(--green);
-    outline-offset: 3px;
+    outline: none
   }
 
   /* Scrollbar Styles */
   html {
     scrollbar-width: thin;
-    scrollbar-color: var(--dark-slate) var(--navy);
+    scrollbar-color: var(--dark-text-color) var(--bg-color);
   }
   body::-webkit-scrollbar {
     width: 12px;
   }
   body::-webkit-scrollbar-track {
-    background: var(--navy);
+    background: var(--bg-color);
   }
   body::-webkit-scrollbar-thumb {
-    background-color: var(--dark-slate);
-    border: 3px solid var(--navy);
+    background-color: var(--dark-text-color);
+    border: 3px solid var(--bg-color);
     border-radius: 10px;
   }
 
@@ -74,11 +52,12 @@ const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    background-color: var(--navy);
-    color: var(--slate);
+    background-color: var(--bg-color);
+    color: var(--text-color);
     font-family: var(--font-sans);
     font-size: var(--fz-xl);
     line-height: 1.3;
+    transition: var(--transition);
 
     @media (max-width: 480px) {
       font-size: var(--fz-lg);
@@ -165,13 +144,17 @@ const GlobalStyle = createGlobalStyle`
   h6 {
     margin: 0 0 10px 0;
     font-weight: 600;
-    color: var(--lightest-slate);
+    color: var(--lightest-text-color);
     line-height: 1.1;
   }
 
   .big-heading {
     margin: 0;
-    font-size: clamp(40px, 8vw, 80px);
+    font-size: clamp(60px, 10vw, 100px);
+  }
+
+  .name-heading {
+    font-weight: 100;
   }
 
   .medium-heading {
@@ -185,35 +168,18 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     margin: 10px 0 40px;
     width: 100%;
-    font-size: clamp(26px, 5vw, var(--fz-heading));
+    font-size: clamp(25px, 7vw, 40px);
     white-space: nowrap;
-
-    &:before {
-      position: relative;
-      bottom: 4px;
-      counter-increment: section;
-      content: '0' counter(section) '.';
-      margin-right: 10px;
-      color: var(--green);
-      font-family: var(--font-mono);
-      font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
-      font-weight: 400;
-
-      @media (max-width: 480px) {
-        margin-bottom: -3px;
-        margin-right: 5px;
-      }
-    }
 
     &:after {
       content: '';
       display: block;
       position: relative;
       top: -5px;
-      width: 300px;
+      width: 100%;
       height: 1px;
       margin-left: 20px;
-      background-color: var(--lightest-navy);
+      background-color: var(--lightest-bg-color);
 
       @media (max-width: 1080px) {
         width: 200px;
@@ -261,7 +227,7 @@ const GlobalStyle = createGlobalStyle`
 
     &:hover,
     &:focus {
-      color: var(--green);
+      color: var(--primary-color);
     }
 
     &.inline-link {
@@ -303,8 +269,8 @@ const GlobalStyle = createGlobalStyle`
     }
 
     & > code {
-      background-color: var(--light-navy);
-      color: var(--white);
+      background-color: var(--light-bg-color);
+      color: var(--contrast-color);
       font-size: var(--fz-sm);
       border-radius: var(--border-radius);
       padding: 0.3em 0.5em;
@@ -325,14 +291,14 @@ const GlobalStyle = createGlobalStyle`
           content: '▹';
           position: absolute;
           left: 0;
-          color: var(--green);
+          color: var(--primary-color);
         }
       }
     }
   }
 
   blockquote {
-    border-left-color: var(--green);
+    border-left-color: var(--primary-color);
     border-left-style: solid;
     border-left-width: 1px;
     margin-left: 0px;
@@ -346,7 +312,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   hr {
-    background-color: var(--lightest-navy);
+    background-color: var(--lightest-bg-color);
     height: 1px;
     border-width: 0px;
     border-style: initial;
@@ -372,8 +338,8 @@ const GlobalStyle = createGlobalStyle`
 
     &:focus,
     &:active {
-      background-color: var(--green);
-      color: var(--navy);
+      background-color: var(--primary-color);
+      color: var(--bg-color);
       top: 0;
       left: 0;
       width: auto;
@@ -384,18 +350,18 @@ const GlobalStyle = createGlobalStyle`
   }
 
   #logo {
-    color: var(--green);
+    color: var(--primary-color);
   }
 
   .overline {
-    color: var(--green);
+    color: var(--primary-color);
     font-family: var(--font-mono);
     font-size: var(--fz-md);
     font-weight: 400;
   }
 
   .subtitle {
-    color: var(--green);
+    color: var(--primary-color);
     margin: 0 0 20px 0;
     font-size: var(--fz-md);
     font-family: var(--font-mono);
@@ -418,7 +384,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     align-items: center;
     margin-bottom: 50px;
-    color: var(--green);
+    color: var(--primary-color);
 
     .arrow {
       display: block;

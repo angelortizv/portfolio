@@ -58,8 +58,8 @@ const StyledPhoto = styled.li`
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(0, 0, 0, 0.7);
-      color: var(--light-slate);
+      background: var(--light-bg-color);
+      color: var(--lightest-text-color);
       padding: 5px;
       font-size: var(--fz-sm);
       text-align: center;

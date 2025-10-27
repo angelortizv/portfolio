@@ -20,7 +20,7 @@ const StyledHeroSection = styled.section`
 
   h1 {
     margin: 0 0 30px 4px;
-    color: var(--green);
+    color: var(--primary-color);
     font-family: var(--font-mono);
     font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
     font-weight: 400;
@@ -86,16 +86,17 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        Software Engineer with over four years of experience developing scalable and efficient digital products for startups 
-        and organizations, combining technical expertise with strong problem-solving skills, business insight, and 
-        user-centered design. Skilled in Python development with frameworks such as Flask and FastAPI, cloud integrations 
-        with AWS, and modern full stack technologies including React, Angular, and Nodejs.
+        Software Engineer with over four years of experience developing scalable and efficient
+        digital products for startups and organizations, combining technical expertise with strong
+        problem-solving skills, business insight, and user-centered design. Skilled in Python
+        development with frameworks such as Flask and FastAPI, cloud integrations with AWS, and
+        modern full stack technologies including React, Angular, and Nodejs.
       </p>
     </>
   );
   const five = (
-    <a className="email-link" href="mailto:angelo@angelortizv.com" target="_blank" rel="noreferrer">
-      Get in touch!
+    <a className="email-link" href="/angelo-v2.pdf" target="_blank" rel="noreferrer">
+      View Resume
     </a>
   );
 

@@ -14,7 +14,7 @@ const StyledSkillsSection = styled.section`
 
 const SectionTitle = styled.h3`
   text-align: center;
-  color: var(--lightest-slate);
+  color: var(--slate);
   font-size: var(--fz-lg);
   margin: 2rem 0 1rem;
 `;
@@ -22,15 +22,15 @@ const SectionTitle = styled.h3`
 const Skill = styled.li`
   display: flex;
   align-items: center;
-  border: 1px solid var(--light-slate);
+  border: 1px solid var(--bg-color-shadow);
   border-radius: 0.75rem;
-  color: #fff;
+  color: var(--light-text-color);
   font-size: var(--fz-sm);
   margin: 0.5rem;
 
   &:hover {
     transform: translateY(-7px);
-    color: var(--green);
+    color: var(--primary-color);
   }
 `;
 
@@ -93,11 +93,7 @@ const Skills = () => {
           <SkillsContainer>
             <TransitionGroup component={null}>
               {skills.map((s, k) => (
-                <CSSTransition
-                  key={k}
-                  classNames="fadeup"
-                  timeout={300}
-                  exit={false}>
+                <CSSTransition key={k} classNames="fadeup" timeout={300} exit={false}>
                   <Skill>
                     <SkillIcon>
                       <Icon name={s} />

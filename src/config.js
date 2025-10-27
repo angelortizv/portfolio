@@ -41,8 +41,10 @@ module.exports = {
 
   colors: {
     green: '#64ffda',
-    navy: '#0a192f',
+    primary: '#3b83f6',
+    bg: '#ffffff',
     darkNavy: '#020c1b',
+    navy: '#0a192f',
   },
 
   srConfig: (delay = 200, viewFactor = 0.25) => ({
@@ -60,7 +62,6 @@ module.exports = {
     viewFactor,
     viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
   }),
-
 
   translations: [
     {
