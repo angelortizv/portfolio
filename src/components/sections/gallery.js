@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 import { useLanguage } from '../../hooks/LanguageContext';
+import { srConfig } from '../../config';
 
 const StyledGallerySection = styled.section`
   display: flex;
@@ -109,7 +110,8 @@ const Modal = styled.div`
   }
 `;
 
-const Gallery = () => {
+const Gallery = () => {  
+
   const data = useStaticQuery(graphql`
     query {
       photos: allFile(filter: { relativeDirectory: { eq: "gallery" } }) {
@@ -136,12 +138,15 @@ const Gallery = () => {
 
   const revealTitle = useRef(null);
   const revealPhotos = useRef([]);
+
+  const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const { t } = useLanguage();
 
   useEffect(() => {
     if (prefersReducedMotion) return;
+    sr.reveal(revealContainer.current, srConfig());
     sr.reveal(revealTitle.current, {});
     revealPhotos.current.forEach((ref, i) => sr.reveal(ref, {}, i * 100));
   }, []);
@@ -190,7 +195,7 @@ const Gallery = () => {
   };
 
   return (
-    <StyledGallerySection>
+    <StyledGallerySection id="gallery" ref={revealContainer}>
       <h2 className="numbered-heading" ref={revealTitle}>
         {t("gallery_text_title")}
       </h2>
