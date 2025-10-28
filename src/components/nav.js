@@ -14,6 +14,8 @@ import Colors from '../styles/colors';
 import IconEnglish from './icons/english';
 import IconSpanish from './icons/spanish';
 import { useLanguage } from '../hooks/LanguageContext';
+import IconAccessibility from './icons/accessibility';
+import AccessibilityModal from './accessibilityModal';
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -150,12 +152,10 @@ const Nav = ({ isHome }) => {
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const prefersReducedMotion = usePrefersReducedMotion();
 
-  // const IsDark =
-  //   getComputedStyle(document.documentElement).getPropertyValue('--bg-color') ===
-  //   Colors.dark['--bg-color'];
-  // const [IsDarkMode, setIsDarkMode] = useState(IsDark);
-
   const [IsDarkMode, setIsDarkMode] = useState(false);
+
+  const [modalOpened, setModalOpened] = useState(false);
+
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -180,8 +180,6 @@ const Nav = ({ isHome }) => {
     }
     setIsDarkMode(!IsDarkMode);
   };
-
-
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -247,8 +245,20 @@ const Nav = ({ isHome }) => {
     </div>
   );
 
+
+  const OpenAccessibility = (
+    <div className="theme-switch">
+      <button
+        onClick={() => { setModalOpened(true); }}
+      >
+        <IconAccessibility />
+      </button>
+    </div>
+  );
+
   return (
     <StyledHeader scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
+
       <StyledNav>
         {prefersReducedMotion ? (
           <>
@@ -307,6 +317,7 @@ const Nav = ({ isHome }) => {
               </TransitionGroup>*/}
             </StyledLinks>
 
+            <AccessibilityModal isOpen={modalOpened} onClose={() => setModalOpened(false)} />
 
             <div class="tools-switcher">
               <TransitionGroup component={null}>
@@ -320,12 +331,19 @@ const Nav = ({ isHome }) => {
               <TransitionGroup component={null}>
                 {isMounted && (
                   <CSSTransition classNames={fadeClass} timeout={timeout}>
+                    <>{OpenAccessibility}</>
+                  </CSSTransition>
+                )}
+              </TransitionGroup>
+
+              <TransitionGroup component={null}>
+                {isMounted && (
+                  <CSSTransition classNames={fadeClass} timeout={timeout}>
                     <>{LangSwitch}</>
                   </CSSTransition>
                 )}
               </TransitionGroup>
             </div>
-
 
             <TransitionGroup component={null}>
               {isMounted && (

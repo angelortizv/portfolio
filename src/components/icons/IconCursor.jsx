@@ -1,0 +1,15 @@
+import React from 'react';
+
+const IconCursor = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" >
+    <g id="Exploded_Icons" data-name="Exploded Icons">
+      <path
+        id="_Compound_Path_"
+        data-name="<Compound Path>"
+        fill="var(--primary-color)"
+        d="M83,47.53l-.07-.07V46H81.52L81.45,46V44.55H80L80,44.48V43.06H78.55L78.48,43V41.58H77.06L77,41.51V40.09H75.57L75.5,40V38.6H74.08L74,38.53V37.11H72.59L72.52,37V35.62H71.11L71,35.55V34.14H69.62l-.07-.07V32.65H68.13l-.07-.07V31.16H66.57V56.45h3V55l.07-.07H71V53.55l.07-.07h1.41V52.06l.07-.07h1.35l.07.07V55h1.42l.07.07v2.9h1.42L77,58v1.42h3V58l.07-.07h1.42V55H80L80,54.9V52H78.55l-.07-.07V50.5h6v-3ZM78.48,49H77v3H78.4l.08.07V55h1.41L80,55v2.83l-.07.07H77.06L77,57.87V55H75.57l-.07-.07V52H74.08L74,51.92V50.5H72.52v1.42l-.07.07H71v1.42l-.07.07H69.55V54.9l-.07.07H68.06V34.14h1.42l.07.07v1.41H71l.07.07v1.42h1.41l.07.07V38.6h1.42l.07.07v1.42h1.42l.07.07v1.42h1.42l.07.07v1.41H78.4l.08.07v1.42h1.41l.07.07V46h1.42l.07.07v1.42h1.42l.07.07V49Z"></path>
+    </g>
+  </svg>
+);
+
+export default IconCursor;

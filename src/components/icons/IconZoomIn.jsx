@@ -1,0 +1,15 @@
+import React from 'react';
+
+const IconZoomIn = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" >
+    <g id="Exploded_Icons" data-name="Exploded Icons">
+      <path
+        id="_Compound_Path_"
+        data-name="<Compound Path>"
+        fill="var(--primary-color)"
+        d="M84.53,50.55H82.77l-.62-.6a14.33,14.33,0,1,0-1.55,1.56l.6.62v1.75L92.31,65l3.31-3.31Zm-13.33,0a10,10,0,1,1,10-10A10,10,0,0,1,71.2,50.55Zm5.55-8.89H72.31v4.45H70.08V41.66H65.64V39.44h4.44V35h2.23v4.45h4.44Z"></path>
+    </g>
+  </svg>
+);
+
+export default IconZoomIn;

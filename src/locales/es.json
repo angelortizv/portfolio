@@ -71,5 +71,13 @@
   "full_archive_text_table_year": "Año",
   "full_archive_text_table_title": "Titulo",
   "full_archive_text_table_made": "Construido en",
-  "full_archive_text_table_tech": "Tecnologías"
+  "full_archive_text_table_tech": "Tecnologías",
+
+  "accessibility_text_title": "Opciones de Accesibilidad",
+  "accessibility_text_zoomIn": "Zoom In",
+  "accessibility_text_zoomOut": "Zoom Out",
+  "accessibility_text_biggerCursor": "Cursor Grande",
+  "accessibility_text_undoChanges": "Revertir Cambios",
+
+  "general_close": "Cerrar"
 }

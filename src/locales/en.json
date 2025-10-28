@@ -71,5 +71,13 @@
   "full_archive_text_table_year": "Year",
   "full_archive_text_table_title": "Title",
   "full_archive_text_table_made": "Made at",
-  "full_archive_text_table_tech": "Built with"
+  "full_archive_text_table_tech": "Built with",
+
+  "accessibility_text_title": "Accessiblity Options",
+  "accessibility_text_zoomIn": "Zoom In",
+  "accessibility_text_zoomOut": "Zoom Out",
+  "accessibility_text_biggerCursor": "Large Cursor",
+  "accessibility_text_undoChanges": "Undo Changes",
+
+  "general_close": "Close"
 }
