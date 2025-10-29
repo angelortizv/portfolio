@@ -5,29 +5,33 @@
   "menu_text_gallery": "Galeria",
   "menu_text_contact": "Contacto",
 
-  "hero_txt_keywords": "Ingeniero en Computadores, AI & Datos, Desarrollo Full Stack, Profesor Universitario.",
-  "hero_txt_about": "Desarrollador de software con más de cuatro años de experiencia en productos digitales escalables y eficientes para startups y organizaciones. Combinando una sólida experiencia técnica con habilidades para la resolución de problemas, visión de negocio y diseño centrado en el usuario. Experto en desarrollo con Python utilizando frameworks como Flask y FastAPI, integraciones en la nube con AWS y tecnologías modernas de desarrollo full stack como React, Angular y Node.js.",
+  "hero_txt_keywords": "Ingeniero en Computadores, Inteligencia Artificial, Ciencia de Datos, Desarrollo Full Stack, Profesor Universitario.",
+  "hero_txt_about": "Desarrollador de software con más de cuatro años de experiencia en productos digitales escalables y eficientes para startups y organizaciones. Combinando una sólida experiencia técnica con habilidades para la resolución de problemas, visión de negocio y diseño centrado en el usuario.",
   "hero_btn_resume": "Ver CV",
+  "hero_text_proud": "Orgullosamente de 🇨🇷",
 
   "about_text_title": "Acerca de mí",
-  "about_text_tec": "Instituto Tecnologico de Costa Rica",
-  "about_text_desc_1": "¡Hola! Soy Angelo Ortiz Vega, desarrollador de software y practicante de inteligencia artificial con más de cuatro años de experiencia desarrollando productos digitales escalables y eficientes para startups y organizaciones. Combino experiencia técnica en ingeniería de software con sólidas habilidades para la resolución de problemas, visión de negocio y diseño centrado en el usuario. Tengo dominio en desarrollo con Python utilizando frameworks como Flask y FastAPI, integraciones en la nube con AWS, y tecnologías modernas de desarrollo full stack como React, Angular y Node.js.",
+  "about_text_tec": "Instituto Tecnológico de Costa Rica",
+  "about_text_desc_1": "¡Hola! Soy Angelo Ortiz Vega, Ingeniero en Computadores, desarrollador de software y practicante de inteligencia artificial, con más de cuatro años de experiencia desarrollando productos digitales escalables y eficientes para startups y organizaciones. Combino experiencia técnica en ingeniería de software con sólidas habilidades para la resolución de problemas, visión de negocio y diseño centrado en el usuario. Tengo dominio en desarrollo con Python utilizando frameworks como Flask y FastAPI, integraciones en la nube con AWS, y tecnologías modernas de desarrollo full stack como React, Angular y Node.js.",
   "about_text_desc_2": "Mi trabajo en inteligencia artificial abarca la construcción e integración de modelos de aprendizaje automático en sistemas de producción, el diseño de pipelines de datos y la aplicación de automatización para optimizar flujos de trabajo. He desarrollado sistemas predictivos, agentes inteligentes y soluciones RPA utilizando frameworks como scikit-learn, TensorFlow y PyTorch. Me apasiona reducir la brecha entre la investigación en IA y las aplicaciones del mundo real que mejoran la eficiencia, la sostenibilidad y la experiencia del usuario.",
-  "about_text_desc_3_1": "Actualmente estoy finalizando la carrera de Ingeniería en Computadores en el",
+  "about_text_desc_3_1": "Actualmente estoy finalizando la carrera de Ingeniería en Computadores en el ",
   "about_text_desc_3_2": "fortaleciendo mi base teórica y analítica. El programa se centra en las ciencias y tecnologías que permiten el diseño, construcción, implementación y mantenimiento de sistemas informáticos — tanto de hardware como de software.",
-  "about_text_desc_4_1": "Paralelamente, he trabajado como docente universitario durante más de tres años, impartiendo cursos de Inteligencia Artificial, Análisis de Datos, Desarrollo Full Stack y Diseño de Experiencia de Usuario en la",
+  "about_text_desc_4_1": "Paralelamente, he trabajado como docente universitario/profesor durante más de tres años, impartiendo cursos de Inteligencia Artificial, Análisis de Datos, Desarrollo Full Stack y Diseño de Experiencia de Usuario en la ",
   "about_text_desc_4_2": "con un enfoque en el aprendizaje práctico, basado en proyectos y aplicaciones del mundo real.",
   "about_text_desc_5": "Cuando no estoy frente a la computadora, normalmente estoy haciendo senderismo, leyendo, pasando tiempo con amigos o creando ",
 
   "skills_text_title": "Habilidades & Stack Tecnológico",
+  "skills_text_dw": "Desarrollo Web",
+  "skills_text_ds": "Ciencia de datos y análisis",
+  "skills_text_di": "DevOps e infraestructura",
 
   "experience_text_title": "Donde he trabajado",
   "job_title_ucreativa": "Profesor Universitario",
   "jobs_ucreativa": [
-    "Enriquecí la experiencia de aprendizaje incorporando estudios de caso del mundo real, proyectos colaborativos y metodologías de enseñanza innovadoras.",
-    "Mentoricé a los estudiantes en el desarrollo de proyectos finales y prototipos funcionales alineados con las prácticas actuales de la industria.",
-    "Impartí cursos de Python para IA, IA Aplicada y Machine Learning & Deep Learning, con énfasis en desarrollo backend, creación de APIs y despliegue en servicios en la nube de AWS.",
-    "Estructuré y redacté el programa completo de Certificación en Diseño UX, incluyendo cursos como Investigación para Experiencias Digitales, Ideación de Soluciones, Principios de Diseño e Interacción y Usabilidad."
+    "Enriquecí la experiencia de aprendizaje con estudios de caso reales, proyectos colaborativos y metodologías innovadoras.",
+    "Guié a estudiantes en el desarrollo de proyectos finales y prototipos funcionales alineados con las prácticas actuales del sector.",
+    "Estructuré y redacté el programa completo de Certificación en Diseño UX, incluyendo cursos como Investigación para Experiencias Digitales, Ideación de Soluciones, Principios de Diseño e Interacción y Usabilidad.",
+    "Impartí cursos clave del programa de IA, como Python para IA, Inteligencia Artificial Aplicada y Fundamentos de Machine Learning y Deep Learning."
   ],
 
   "job_title_freelancer1": "Ingeniero de Software",
@@ -51,10 +55,18 @@
   "projects_uxarc": "ux-arc es un blog personal y repositorio dedicado a compartir conocimientos, experiencias y recursos sobre el mundo del diseño de experiencia de usuario. A lo largo de los años, he recopilado información valiosa sobre diversos aspectos del diseño digital, y este espacio nació con la intención de organizar y difundir ese conocimiento de forma accesible para quienes buscan mejorar sus habilidades y comprensión en el campo de la UX.",
   "projects_ceitcr": "ce-itcr es el repositorio donde se encuentran los proyectos de programación que he realizado a lo largo de mi carrera en los cursos de Ingeniería en Computadores. La documentación respectiva de cada curso y su código se encuentran en GitHub.",
 
+  "projects_ngClone": "Este es un clon de Google Keep desarrollado con Angular para practicar y mejorar mis habilidades en Angular. Sigue los principios de diseño de la aplicación original e incluye muchas funciones básicas.",
+  "projects_karaoke": "Karaoke es un proyecto para el curso SOA41D - Arquitectura de Software. Una sencilla aplicación de karaoke en streaming desarrollada con React para el front-end y Node.js para el servidor.",
+  "projects_es369ims": "El Sistema de Gestión de Inventario es un servicio que muestra los productos en stock por categorías. Su fuente de datos es Excel, para facilitar el acceso a los datos a los administradores.",
+  "projects_itcrCourses": "itcr-courses es el repositorio de mis apuntes de la carrera de Ingeniería en Computadores. El objetivo principal de este repositorio es registrar información de los cursos del programa de Ingeniería Informática del ITCR.",
+  "projects_spaceInvaders": "Space Invaders es un videojuego japonés de disparos lanzado en 1978 por Taito. En la planificación original del juego, se había previsto que los alienígenas fueran soldados humanos. Taito decidió que no querían transmitir el mensaje de que disparar a humanos estaba bien, así que lo cambiaron a alienígenas.",
+  "projects_pacman": "Pac-Man es un videojuego de acción y laberintos de 1980 desarrollado y lanzado por Namco para arcades. Creé un clon del famoso juego en C++ y Qt para aplicar conceptos aprendidos en cursos de Algoritmos y Estructuras de Datos.",
+
+
   "archive_text_title": "Otros proyectos interesantes",
   "archive_text_subtitle": "ver el archivo",
 
-  "gallery_text_title": "Fotos de mi vida",
+  "gallery_text_title": "Algunas cosas de mi vida en imágenes",
   "gallery_text_less": "Ver Menos",
   "gallery_text_more": "Ver Más",
 
@@ -64,7 +76,7 @@
   "contact_btn_hello": "Decir Hola",
 
   "footer_text_designed": "Diseñado por ",
-  "footer_text_build": "Construido por ",
+  "footer_text_build": "Construido con 🫀 por ",
 
   "full_archive_text_title": "Archivo",
   "full_archive_text_subtitle": "Una lista más grande de cosas  en las que he trabajado",
@@ -79,5 +91,6 @@
   "accessibility_text_biggerCursor": "Cursor Grande",
   "accessibility_text_undoChanges": "Revertir Cambios",
 
-  "general_close": "Cerrar"
+  "general_close": "Cerrar",
+  "general_scroll_to_top": "Ir hacia arriba"
 }

@@ -93,13 +93,19 @@ const Hero = () => {
       </p>
     </>
   );
+  const proudly = (
+    <p>
+      {t("hero_text_proud")}
+    </p>
+  );
   const five = (
     <a className="email-link" href="/angelo-v2.pdf" target="_blank" rel="noreferrer">
       {t("hero_btn_resume")}
     </a>
   );
 
-  const items = [one, two, three, four, five];
+
+  const items = [one, two, three, four, proudly, five];
 
   return (
     <StyledHeroSection>

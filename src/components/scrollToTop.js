@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import { MdArrowDropUp } from 'react-icons/md';
 import styled from 'styled-components';
 import { useScrollTo } from '../hooks/useScrollTo';
+import { useLanguage } from '../hooks/LanguageContext';
 
 const StyledScrollToTopContainer = styled.div`
   display: flex;
@@ -61,6 +62,8 @@ const StyledScrollToTopContainer = styled.div`
 function ScrollToTop() {
   const { scrollToEl } = useScrollTo();
 
+  const { t } = useLanguage();
+
   const onClick = e => {
     scrollToEl(e);
   };
@@ -69,7 +72,7 @@ function ScrollToTop() {
     <StyledScrollToTopContainer>
       <Link to="#intro" onClick={onClick} aria-label="Scroll to top">
         <MdArrowDropUp size={28} />
-        <span>Scroll to top</span>
+        <span>{t("general_scroll_to_top")}</span>
       </Link>
     </StyledScrollToTopContainer>
   );

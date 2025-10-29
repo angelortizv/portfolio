@@ -73,7 +73,7 @@ const Skills = () => {
   }, []);
 
   const skillCategories = {
-    'Web Development': [
+    [t("skills_text_dw")]: [
       'TypeScript',
       'React',
       'Gatsby',
@@ -83,8 +83,8 @@ const Skills = () => {
       'CSS',
       'REST API',
     ],
-    'Data Science & Analytics': ['Python', 'Tableau', 'PostgreSQL'],
-    'DevOps & Infrastructure': ['AWS', 'GCP', 'Docker', 'Git', 'Firebase'],
+    [t("skills_text_ds")]: ['Python', 'Tableau', 'PostgreSQL'],
+    [t("skills_text_di")]: ['AWS', 'GCP', 'Docker', 'Git', 'Firebase'],
   };
 
   return (

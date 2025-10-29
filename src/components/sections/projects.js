@@ -178,6 +178,7 @@ const Projects = () => {
           node {
             frontmatter {
               title
+              desc
               tech
               github
               external
@@ -214,7 +215,8 @@ const Projects = () => {
 
   const projectInner = node => {
     const { frontmatter, html } = node;
-    const { github, external, title, tech } = frontmatter;
+    const { github, external, title, tech, desc } = frontmatter;
+    console.log("🚀 ~ projectInner ~ desc:", desc)
 
     return (
       <div className="project-inner">
@@ -248,8 +250,11 @@ const Projects = () => {
               {title}
             </a>
           </h3>
-
-          <div className="project-description" dangerouslySetInnerHTML={{ __html: html }} />
+          <div className="project-description">
+            <p>
+              {t("projects_" + desc)}
+            </p>
+          </div>
         </header>
 
         <footer>

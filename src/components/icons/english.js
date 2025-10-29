@@ -1,12 +1,21 @@
 import React from 'react';
 
 const IconEnglish = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
-    <path fill="#012169" d="M0 0h640v480H0z" />
-    <path fill="#FFF" d="M75 0l245 175L565 0h70v62L390 240l245 178v62h-70L320 305L75 480H5v-62L250 240L5 62V0h70z" />
-    <path fill="#C8102E" d="M424 282l216 158v40L369 282h55zm-184 0l5 28L40 480H0l240-170zM640 0v3L391 179l3-32L612 0h28zM0 0l248 176h-61L0 38V0z" />
-    <path fill="#FFF" d="M240 0v480h160V0H240zM0 160v160h640V160H0z" />
-    <path fill="#C8102E" d="M0 192v96h640v-96H0zM272 0v480h96V0h-96z" />
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7410 3900">
+    <path fill="#b22234" d="M0 0h7410v3900H0z" />
+    <path fill="#fff" d="M0 450h7410v300H0zM0 1050h7410v300H0zM0 1650h7410v300H0zM0 2250h7410v300H0zM0 2850h7410v300H0zM0 3450h7410v300H0z" />
+    <path fill="#3c3b6e" d="M0 0h2964v2100H0z" />
+    <g fill="#fff">
+      {Array.from({ length: 9 }).map((_, row) =>
+        Array.from({ length: row % 2 === 0 ? 6 : 5 }).map((_, col) => (
+          <polygon
+            key={`${row}-${col}`}
+            points="247,90 323,303 547,303 367,439 433,653 247,528 61,653 127,439 -53,303 171,303"
+            transform={`translate(${250 + col * 475 + (row % 2 ? 237 : 0)}, ${200 + row * 210}) scale(0.2)`}
+          />
+        ))
+      )}
+    </g>
   </svg>
 );
 

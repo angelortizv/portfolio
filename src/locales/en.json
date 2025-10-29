@@ -5,29 +5,34 @@
   "menu_text_gallery": "Gallery",
   "menu_text_contact": "Contact",
 
-  "hero_txt_keywords": "Computer Engineer, AI & Data, Full Stack Development, University Lecturer.",
-  "hero_txt_about": "Software Engineer with over four years of experience developing scalable and efficient digital products for startups and organizations, combining technical expertise with strong problem-solving skills, business insight, and user-centered design. Skilled in Python development with frameworks such as Flask and FastAPI, cloud integrations with AWS, and modern full stack technologies including React, Angular, and Nodejs.",
+  "hero_txt_keywords": "Computer Engineer, Artificial Intelligence, Data Science, Full Stack Development, University Lecturer.",
+  "hero_txt_about": "Software Engineer with over four years of experience developing scalable and efficient digital products for startups and organizations, combining technical expertise with strong problem-solving skills, business insight, and user-centered design.",
   "hero_btn_resume": "View Resume",
+  "hero_text_proud": "Proudly from 🇨🇷",
 
   "about_text_title": "About Me",
   "about_text_tec": "Technological Institute of Costa Rica",
-  "about_text_desc_1": "Hello! I am Angelo Ortiz Vega, a Software Engineer and AI Practitioner with over four years of experience developing scalable and efficient digital products for startups and organizations. I combine technical expertise in software engineering with strong problem-solving skills, business insight, and user-centered design. Skilled in Python development with frameworks such as Flask and FastAPI, cloud integrations with AWS, and modern full stack technologies including React,Angular, and Node.js.",
+  "about_text_desc_1": "Hello! I am Angelo Ortiz Vega, a Computer Engineer and AI Practitioner with over four years of experience developing scalable and efficient digital products for startups and organizations. I combine technical expertise in software engineering with strong problem-solving skills, business insight, and user-centered design. Skilled in Python development with frameworks such as Flask and FastAPI, cloud integrations with AWS, and modern full stack technologies including React,Angular, and Node.js.",
   "about_text_desc_2": "My work in Artificial Intelligence spans building and integrating machine learning modelsinto production systems, designing data pipelines, and applying automation to optimize workflows. I've developed predictive systems, intelligent agents, and RPA solutions using frameworks likescikit-learn, TensorFlow, and PyTorch. I'm passionate about bridging the gap between AI research and real-world applications that improve efficiency, sustainability, and user experience.",
-  "about_text_desc_3_1": "I am currently completing a degree in Computer Engineering at the",
+  "about_text_desc_3_1": "I am currently completing a degree in Computer Engineering at the ",
   "about_text_desc_3_2": "strengthening my theoretical and analytical foundation. The program focuses on the sciences and technologies that enable the design, construction, implementation, and maintenance of computer systems — both hardware and software.",
-  "about_text_desc_4_1": "In parallel, I have worked as a university lecturer for over three years, teachingArtificial Intelligence, Data Analysis, Full Stack Development, andUX Design at",
+  "about_text_desc_4_1": "In parallel, I have worked as a university lecturer for over three years, teaching Artificial Intelligence, Data Analysis, Full Stack Development, and UX Design at ",
   "about_text_desc_4_2": "with a focus on practical, project-based learning and real-world applications.",
   "about_text_desc_5": "When I'm not at the computer, I'm usually hiking, reading, hanging out with friends, or curating ",
 
   "skills_text_title": "Skills & Stack",
+  "skills_text_dw": "Web Development",
+  "skills_text_ds": "Data Science & Analytics",
+  "skills_text_di": "DevOps & Infrastructure",
+
 
   "experience_text_title": "Where I've Worked",
   "job_title_ucreativa": "University Lecturer",
   "jobs_ucreativa": [
     "Enriched the learning experience by incorporating real-world case studies, collaborative projects, and innovative teaching methodologies.",
     "Mentored students in the development of capstone projects and functional prototypes aligned with current industry practices.",
-    "Delivered courses in Python for AI, Applied AI, and Machine Learning & Deep Learning, with emphasis on backend development, API creation, and deployment on AWS cloud services.",
-    "Structured and authored the complete UX Design Certification program, including courses such as Research for Digital Experiences, Solution Ideation, Design Principles, and Interaction & Usability."
+    "Structured and authored the complete UX Design Certification program, including courses such as Research for Digital Experiences, Solution Ideation, Design Principles, and Interaction & Usability.",
+    "Delivered courses in Python for AI, Applied AI, and Machine Learning & Deep Learning, with emphasis on backend development, API creation, and deployment on AWS cloud services."
   ],
 
   "job_title_freelancer1": "Software Engineer",
@@ -51,6 +56,13 @@
   "projects_uxarc": "ux-arc is a personal blog and repository dedicated to sharing knowledge, experiences, and resources about the world of user experience design. Over the years, I have collected valuable information on various aspects of digital design, and this space was born with the intention of organizing and disseminating that knowledge in an accessible way for those looking to improve their skills and understanding in the field of UX.",
   "projects_ceitcr": "ce-itcr is the repository where the programming projects that I have carried out throughout my career in Computer Engineering courses are housed. The respective documentation on each course and code is on github.",
 
+  "projects_ngClone": "This is a Google Keep clone built with Angular to practice and improve my Angular skills. It follows the original app's design principles and includes many core features.",
+  "projects_karaoke": "Karaoke is a project for the course SOA41D - Software Architecture. A simple Karaoke Streaming App build with React for the Front-end and Nodejs for Server-side.",
+  "projects_es369ims": "Inventory Management System is an inventory service where products in stock are displayed through categories. Its data source is Excel, so that administrators can access the data more easily.",
+  "projects_itcrCourses": "itcr-courses is the repository of my notes in the career of Computer Engineering. The principal purpose of this repository is record some of the data of the courses by the computer engineering degree program of the ITCR.",
+  "projects_spaceInvaders": "Space Invaders is a Japanese shooting video game released in 1978 by Taito. In the original planning for the game, they had planned to have the aliens be human soldiers. Taito figured that they did not want to send the message that shooting humans was ok, so they changed it to aliens.",
+  "projects_pacman": "Pac-Man is a 1980 maze action video game developed and released by Namco for arcades. I made a clone of the famous game in C ++ and Qt to apply concepts that I learned in courses on Algorithms and Data Structures.",
+
   "archive_text_title": "Other Noteworthy Projects",
   "archive_text_subtitle": "view the archive",
 
@@ -64,7 +76,7 @@
   "contact_btn_hello": "Say Hello",
 
   "footer_text_designed": "Designed by",
-  "footer_text_build": "Built by",
+  "footer_text_build": "Built with 🫀 by",
 
   "full_archive_text_title": "Archive",
   "full_archive_text_subtitle": "A big list of things I've worked on",
@@ -79,5 +91,6 @@
   "accessibility_text_biggerCursor": "Large Cursor",
   "accessibility_text_undoChanges": "Undo Changes",
 
-  "general_close": "Close"
+  "general_close": "Close",
+  "general_scroll_to_top": "Scroll to top"
 }

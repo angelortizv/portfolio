@@ -79,9 +79,17 @@ const AccessibilityModal = ({ isOpen, onClose }) => {
     // === Large Cursor ===
     useEffect(() => {
         const applyBigCursor = () => {
-            const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 48 48' fill='#3b83f6'>
-                <circle cx='24' cy='24' r='18' fill-opacity='0.85' />
-            </svg>`;
+        const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 32 32' aria-hidden='true' role='img'>
+                        <path
+                            d='M6 5 L6 25 L11 20 L15 30 L18 29 L14 19 L21 19 L6 5 Z'
+                            fill='#ffffff'
+                            stroke='#0b1220'
+                            stroke-width='0.9'
+                            stroke-linejoin='round'
+                            stroke-linecap='round'
+                        />
+                    </svg>`;
+
 
             const uri = `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
             const css = `
