@@ -9,7 +9,8 @@ const StyledScrollToTopContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
+  margin-top: 30px;
   height: 100%;
 
   a {
@@ -18,10 +19,10 @@ const StyledScrollToTopContainer = styled.div`
     align-items: center;
     width: 30px;
     height: 30px;
-    color: var(--dark-blue);
+    color: var(--primary-color);
     background-color: transparent;
     border-radius: 50%;
-    border: 1px solid var(--dark-blue);
+    border: 1px solid var(--primary-color);
     transition: var(--transition);
     margin: 0 auto;
     text-decoration: none;
@@ -32,12 +33,12 @@ const StyledScrollToTopContainer = styled.div`
     &:hover,
     &:focus-visible {
       outline: none;
-      box-shadow: 4px 4px 0 0 var(--dark-blue);
+      box-shadow: 4px 4px 0 0 var(--primary-color);
       transform: translate(-5px, -5px);
     }
 
     &:hover svg {
-      color: var(--bright-strawberry);
+      color: var(--contrast-color);
     }
 
     span {

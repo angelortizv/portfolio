@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { navDelay } from '@utils';
 import { Layout } from '@components';
 import { usePrefersReducedMotion } from '@hooks';
-import { LanguageProvider } from '../hooks/LanguageContext';
+import { LanguageProvider, useLanguage } from '../hooks/LanguageContext';
 
 const StyledMainContainer = styled.main`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -32,6 +32,8 @@ const NotFoundPage = ({ location }) => {
   const [isMounted, setIsMounted] = useState(false);
   const prefersReducedMotion = usePrefersReducedMotion();
 
+  const { t } = useLanguage();
+
   useEffect(() => {
     if (prefersReducedMotion) {
       return;
@@ -44,8 +46,8 @@ const NotFoundPage = ({ location }) => {
   const content = (
     <StyledMainContainer className="fillHeight">
       <StyledTitle>404</StyledTitle>
-      <StyledSubtitle>Page Not Found</StyledSubtitle>
-      <StyledHomeButton to="/">Go Home</StyledHomeButton>
+      <StyledSubtitle>{t("general_404_notfound")}</StyledSubtitle>
+      <StyledHomeButton to="/">{t("general_404_goHome")}</StyledHomeButton>
     </StyledMainContainer>
   );
 

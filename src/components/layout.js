@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
 import { Head, Loader, Nav, Social, Email, Footer } from '@components';
 import { GlobalStyle, theme } from '@styles';
+import ScrollProgressBar from './scrollProgressBar';
 
 const StyledContent = styled.div`
   display: flex;
@@ -65,6 +66,7 @@ const Layout = ({ children, location }) => {
               <Nav isHome={isHome} />
               <Social isHome={isHome} />
               <Email isHome={isHome} />
+              <ScrollProgressBar />
 
               <div id="content">
                 {children}

@@ -92,5 +92,8 @@
   "accessibility_text_undoChanges": "Revertir Cambios",
 
   "general_close": "Cerrar",
-  "general_scroll_to_top": "Ir hacia arriba"
+  "general_scroll_to_top": "Ir hacia arriba",
+
+  "general_404_notfound": "Página no encontrada",
+  "general_404_goHome": "Ir a Inicio"
 }
