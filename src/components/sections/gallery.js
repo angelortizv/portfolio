@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import styled from 'styled-components';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
@@ -11,48 +10,51 @@ const StyledGallerySection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 4rem;
 
   h2 {
     font-size: clamp(24px, 5vw, var(--fz-heading));
+    margin-bottom: 2rem;
   }
 
-  .gallery-grid {
-    ${({ theme }) => theme.mixins.resetList};
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 15px;
+  .gallery-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: flex;
+    gap: 30px;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+
+    -ms-overflow-style: none; /* IE y Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+  }
+
+  .photo-card {
+    flex: 0 0 350px;
     position: relative;
-    margin-top: 50px;
-  }
-
-  .more-button {
-    ${({ theme }) => theme.mixins.button};
-    margin: 80px auto 0;
-  }
-`;
-
-const StyledPhoto = styled.li`
-  position: relative;
-  cursor: pointer;
-  transition: var(--transition);
-
-  .photo-inner {
-    ${({ theme }) => theme.mixins.boxShadow};
-    position: relative;
-    height: 80%;
-    padding: 0;
     border-radius: var(--border-radius);
     overflow: hidden;
-    transition: var(--transition);
+    transition: transform 0.4s ease;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--navy);
+    cursor: pointer;
 
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.04);
     }
 
     img {
       width: 100%;
-      height: auto;
-      display: block;
+      height: 400px;
+      object-fit: cover;
     }
 
     .photo-description {
@@ -62,56 +64,38 @@ const StyledPhoto = styled.li`
       right: 0;
       background: var(--light-bg-color);
       color: var(--lightest-text-color);
-      padding: 5px;
+      padding: 10px;
       font-size: var(--fz-sm);
       text-align: center;
+      backdrop-filter: blur(4px);
     }
   }
-`;
 
-const Modal = styled.div`
-  display: ${({ isVisible }) => (isVisible ? 'flex' : 'none')};
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+  .scroll-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 1.5rem;
 
-  .modal-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 90%;
-
-    img {
-      max-width: 100%;
-      max-height: 100%;
-    }
-
-    .close-button {
-      position: absolute;
-      top: -30px;
-      right: -30px;
-      background: white;
-      color: black;
-      border: none;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      width: 40px;
-      height: 40px;
+    button {
+      background: none;
+      border: 5px solid var(--light-slate);
+      color: var(--primary-color);
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 2rem;
       cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      transition: 0.3s;
+
+      &:hover {
+        background: var(--light-slate);
+        color: var(--navy);
+      }
     }
   }
 `;
 
-const Gallery = () => {  
-
+const Gallery = () => {
   const data = useStaticQuery(graphql`
     query {
       photos: allFile(filter: { relativeDirectory: { eq: "gallery" } }) {
@@ -127,116 +111,50 @@ const Gallery = () => {
     }
   `);
 
-  if (!data.photos || !data.photos.edges) {
-    console.error('Error: No images found in the specified directory');
-    return <div>No images found</div>;
-  }
-
-  const [showMore, setShowMore] = useState(false);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
-
-  const revealTitle = useRef(null);
-  const revealPhotos = useRef([]);
-
+  const photos = data?.photos?.edges || [];
+  const { t } = useLanguage();
   const revealContainer = useRef(null);
+  const scrollRef = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
 
-  const { t } = useLanguage();
-
   useEffect(() => {
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion) {return;}
     sr.reveal(revealContainer.current, srConfig());
-    sr.reveal(revealTitle.current, {});
-    revealPhotos.current.forEach((ref, i) => sr.reveal(ref, {}, i * 100));
   }, []);
 
-  const GRID_LIMIT = 6;
+  if (photos.length === 0) {return <div>No images found</div>;}
 
-  const prioritizedNames = [
-    'Chirripo - 14 de Septiembre 2024',
-    'Turrialba - 2024',
-    'Aranjuez - 26 Octubre 2024',
-  ];
+  const orderedPhotos = photos.sort(() => Math.random() - 0.5);
 
-  const photos = data.photos.edges.filter(({ node }) => node);
-
-  const prioritizedPhotos = [];
-  const otherPhotos = [];
-
-  photos.forEach(photo => {
-    if (prioritizedNames.includes(photo.node.name)) {
-      prioritizedPhotos.push(photo);
-    } else {
-      otherPhotos.push(photo);
-    }
-  });
-
-  // Aleatoriza el resto
-  const shuffledOthers = otherPhotos.sort(() => Math.random() - 0.5);
-
-  // Une ambos arreglos
-  const orderedPhotos = [...prioritizedPhotos, ...shuffledOthers];
-
-  const firstSix = orderedPhotos.slice(0, GRID_LIMIT);
-  const photosToShow = showMore ? orderedPhotos : firstSix;
-
-  //const firstSix = photos.slice(0, GRID_LIMIT);
-  //const photosToShow = showMore ? photos : firstSix;
-
-  const openModal = image => {
-    setSelectedImage(image);
-    setIsModalVisible(true);
-  };
-
-  const closeModal = () => {
-    setSelectedImage(null);
-    setIsModalVisible(false);
+  const scroll = direction => {
+    const { current } = scrollRef;
+    if (!current) {return;}
+    const scrollAmount = direction === 'left' ? -400 : 400;
+    current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
   };
 
   return (
     <StyledGallerySection id="gallery" ref={revealContainer}>
-      <h2 className="numbered-heading" ref={revealTitle}>
-        {t("gallery_text_title")}
-      </h2>
+      <h2 className="numbered-heading">{t('gallery_text_title')}</h2>
 
-      <ul className="gallery-grid">
-        <TransitionGroup component={null}>
-          {photosToShow.map(({ node }, i) => {
-            const imageData = node.childImageSharp?.gatsbyImageData?.images?.fallback?.src;
-            if (!imageData) return null;
+      <div className="gallery-wrapper" ref={scrollRef}>
+        {orderedPhotos.map(({ node }, i) => {
+          const imageData = node.childImageSharp?.gatsbyImageData?.images?.fallback?.src;
+          if (!imageData) {return null;}
 
-            return (
-              <CSSTransition key={i} classNames="fadeup" timeout={300} exit={false}>
-                <StyledPhoto
-                  ref={el => (revealPhotos.current[i] = el)}
-                  onClick={() => openModal(imageData)}
-                >
-                  <div className="photo-inner">
-                    <img src={imageData} alt={node.name} />
-                    <div className="photo-description">{node.name}</div>
-                  </div>
-                </StyledPhoto>
-              </CSSTransition>
-            );
-          })}
-        </TransitionGroup>
-      </ul>
+          return (
+            <div className="photo-card" key={i}>
+              <img src={imageData} alt={node.name} />
+              <div className="photo-description">{node.name}</div>
+            </div>
+          );
+        })}
+      </div>
 
-      {photos.length > GRID_LIMIT && (
-        <button className="more-button" onClick={() => setShowMore(!showMore)}>
-          {showMore ? t("gallery_text_less") : t("gallery_text_more")}
-        </button>
-      )}
-
-      <Modal isVisible={isModalVisible}>
-        <div className="modal-content">
-          <button className="close-button" onClick={closeModal}>
-            &times;
-          </button>
-          {selectedImage && <img src={selectedImage} alt="Selected" />}
-        </div>
-      </Modal>
+      <div className="scroll-buttons">
+        <button onClick={() => scroll('left')}>⟵</button>
+        <button onClick={() => scroll('right')}>⟶</button>
+      </div>
     </StyledGallerySection>
   );
 };
