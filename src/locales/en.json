@@ -25,7 +25,6 @@
   "skills_text_ds": "Data Science & Analytics",
   "skills_text_di": "DevOps & Infrastructure",
 
-
   "experience_text_title": "Where I've Worked",
   "job_title_ucreativa": "University Lecturer",
   "jobs_ucreativa": [
@@ -90,6 +89,8 @@
   "accessibility_text_zoomOut": "Zoom Out",
   "accessibility_text_biggerCursor": "Large Cursor",
   "accessibility_text_undoChanges": "Undo Changes",
+  "accessibility_text_grayscale": "Grayscale",
+  "accessibility_text_invert": "Invert Colors",
 
   "general_close": "Close",
   "general_scroll_to_top": "Scroll to top",

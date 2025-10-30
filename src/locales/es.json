@@ -62,7 +62,6 @@
   "projects_spaceInvaders": "Space Invaders es un videojuego japonés de disparos lanzado en 1978 por Taito. En la planificación original del juego, se había previsto que los alienígenas fueran soldados humanos. Taito decidió que no querían transmitir el mensaje de que disparar a humanos estaba bien, así que lo cambiaron a alienígenas.",
   "projects_pacman": "Pac-Man es un videojuego de acción y laberintos de 1980 desarrollado y lanzado por Namco para arcades. Creé un clon del famoso juego en C++ y Qt para aplicar conceptos aprendidos en cursos de Algoritmos y Estructuras de Datos.",
 
-
   "archive_text_title": "Otros proyectos interesantes",
   "archive_text_subtitle": "ver el archivo",
 
@@ -90,6 +89,8 @@
   "accessibility_text_zoomOut": "Zoom Out",
   "accessibility_text_biggerCursor": "Cursor Grande",
   "accessibility_text_undoChanges": "Revertir Cambios",
+  "accessibility_text_grayscale": "Escala de Grises",
+  "accessibility_text_invert": "Invertir Colores",
 
   "general_close": "Cerrar",
   "general_scroll_to_top": "Ir hacia arriba",

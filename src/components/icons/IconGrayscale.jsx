@@ -1,0 +1,15 @@
+import React from 'react';
+
+const IconGrayscale = () => (
+  <svg xmlns="http://www.w3.org/2000/svg">
+    <g id="Exploded_Icons" data-name="Exploded Icons">
+      <path
+        id="_Compound_Path_"
+        data-name="<Compound Path>"
+        fill="var(--primary-color)"
+        d="M90.28,32.87H84.44l-3.28-3.65h-11l-3.29,3.65H61.08a3.66,3.66,0,0,0-3.65,3.65V58.43a3.66,3.66,0,0,0,3.65,3.65h29.2a3.66,3.66,0,0,0,3.65-3.65V36.52A3.66,3.66,0,0,0,90.28,32.87Zm0,25.56H75.68V56.6a9.13,9.13,0,0,1,0-18.25V36.52h14.6Zm-5.47-11a9,9,0,0,0-9.13-9.12v3.28a5.84,5.84,0,0,1,0,11.68V56.6A9,9,0,0,0,84.81,47.47Zm-15,0a5.77,5.77,0,0,0,5.84,5.84V41.63A5.77,5.77,0,0,0,69.84,47.47Z"></path>
+    </g>
+  </svg>
+);
+
+export default IconGrayscale;

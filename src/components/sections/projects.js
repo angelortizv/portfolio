@@ -216,7 +216,6 @@ const Projects = () => {
   const projectInner = node => {
     const { frontmatter, html } = node;
     const { github, external, title, tech, desc } = frontmatter;
-    console.log("🚀 ~ projectInner ~ desc:", desc)
 
     return (
       <div className="project-inner">

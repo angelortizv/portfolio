@@ -4,6 +4,8 @@ import IconZoomOut from './icons/IconZoomOut';
 import IconCursor from './icons/IconCursor';
 import { useLanguage } from '../hooks/LanguageContext';
 import IconRevert from './icons/IconRevert';
+import IconGrayscale from './icons/IconGrayscale';
+import IconInvert from './icons/IconInvert';
 
 const modalStyles = {
     backdrop: {
@@ -75,11 +77,29 @@ const AccessibilityModal = ({ isOpen, onClose }) => {
     const [zoomLevel, setZoomLevel] = useState(1);
     const { t } = useLanguage();
 
+    const [isGrayscale, setIsGrayscale] = useState(false);
+    const [isInverted, setIsInverted] = useState(false);
+
+    useEffect(() => {
+        document.documentElement.style.filter = isGrayscale ? 'grayscale(100%)' : 'none';
+    }, [isGrayscale]);
+
+    useEffect(() => {
+        const currentFilter = document.documentElement.style.filter || '';
+        const hasGrayscale = currentFilter.includes('grayscale');
+        const newFilter = isInverted
+            ? `${hasGrayscale ? 'grayscale(100%) ' : ''}invert(100%) hue-rotate(180deg)`
+            : hasGrayscale
+                ? 'grayscale(100%)'
+                : 'none';
+
+        document.documentElement.style.filter = newFilter;
+    }, [isInverted, isGrayscale]);
 
     // === Large Cursor ===
     useEffect(() => {
         const applyBigCursor = () => {
-        const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 32 32' aria-hidden='true' role='img'>
+            const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 32 32' aria-hidden='true' role='img'>
                         <path
                             d='M6 5 L6 25 L11 20 L15 30 L18 29 L14 19 L21 19 L6 5 Z'
                             fill='#ffffff'
@@ -137,7 +157,8 @@ const AccessibilityModal = ({ isOpen, onClose }) => {
 
     // === Zoom ===
     useEffect(() => {
-        document.documentElement.style.fontSize = `${zoomLevel * 100}%`;
+        //document.documentElement.style.fontSize = `${zoomLevel * 100}%`;
+        document.body.style.zoom = zoomLevel;
     }, [zoomLevel]);
 
     const handleZoomIn = () => {
@@ -186,6 +207,33 @@ const AccessibilityModal = ({ isOpen, onClose }) => {
                         <div style={modalStyles.label}>{t("accessibility_text_zoomOut")}</div>
                     </div>
 
+
+
+
+                    {/* Grayscale */}
+                    <div>
+                        <button
+                            style={modalStyles.button}
+                            onClick={() => setIsGrayscale(prev => !prev)}
+                            title={t("accessibility_text_grayscale")}
+                        >
+                            <IconGrayscale />
+                        </button>
+                        <div style={modalStyles.label}>{t("accessibility_text_grayscale")}</div>
+                    </div>
+
+                    {/* Invert */}
+                    <div>
+                        <button
+                            style={modalStyles.button}
+                            onClick={() => setIsInverted(!isInverted)}
+                            title={t("accessibility_text_invert")}
+                        >
+                            <IconInvert />
+                        </button>
+                        <div style={modalStyles.label}>{t("accessibility_text_invert")}</div>
+                    </div>
+
                     {/* Cursor */}
                     <div>
                         <button
@@ -203,7 +251,7 @@ const AccessibilityModal = ({ isOpen, onClose }) => {
                     <div>
                         <button
                             style={modalStyles.button}
-                            onClick={() => { setBigCursor(false); handleResetZoom(); }}
+                            onClick={() => { setBigCursor(false); handleResetZoom(); setIsGrayscale(false); setIsInverted(false);}}
                             title={t("accessibility_text_undoChanges")}
                         >
                             <IconRevert />
