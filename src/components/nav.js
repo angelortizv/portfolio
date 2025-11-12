@@ -42,8 +42,8 @@ const StyledHeader = styled.header`
   @media (prefers-reduced-motion: no-preference) {
     ${props =>
     props.scrollDirection === 'up' &&
-    !props.scrolledToTop &&
-    css`
+      !props.scrolledToTop &&
+      css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
         background-color: var(--bg-color);
@@ -52,8 +52,8 @@ const StyledHeader = styled.header`
 
     ${props =>
     props.scrollDirection === 'down' &&
-    !props.scrolledToTop &&
-    css`
+      !props.scrolledToTop &&
+      css`
         height: var(--nav-scroll-height);
         transform: translateY(calc(var(--nav-scroll-height) * -1));
         box-shadow: 0 10px 30px -10px var(--bg-color-shadow);
@@ -112,7 +112,7 @@ const StyledNav = styled.nav`
 
   .tools-switcher {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     align-items: center;
     gap: 8px;
   }
@@ -156,7 +156,6 @@ const Nav = ({ isHome }) => {
 
   const [modalOpened, setModalOpened] = useState(false);
 
-
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const currentBg = getComputedStyle(document.documentElement).getPropertyValue('--bg-color');
@@ -166,7 +165,7 @@ const Nav = ({ isHome }) => {
   }, []);
 
   const { t, lang, toggleLang } = useLanguage();
-  const isEnglish = lang === "en";
+  const isEnglish = lang === 'en';
 
   const handleScroll = () => {
     setScrolledToTop(window.pageYOffset < 50);
@@ -216,12 +215,6 @@ const Nav = ({ isHome }) => {
     </div>
   );
 
-  const ResumeLink = (
-    <a className="resume-button" href="/angelo-v2.pdf" target="_blank" rel="noopener noreferrer">
-      Resume
-    </a>
-  );
-
   const ThemeSwitch = (
     <div className="theme-switch">
       <button
@@ -234,22 +227,18 @@ const Nav = ({ isHome }) => {
     </div>
   );
 
-
   const LangSwitch = (
     <div className="theme-switch">
-      <button
-        onClick={toggleLang}
-      >
-        {isEnglish ? <IconEnglish /> : <IconSpanish />}
-      </button>
+      <button onClick={toggleLang}>{isEnglish ? <IconEnglish /> : <IconSpanish />}</button>
     </div>
   );
-
 
   const OpenAccessibility = (
     <div className="theme-switch">
       <button
-        onClick={() => { setModalOpened(true); }}
+        onClick={() => {
+          setModalOpened(true);
+        }}
       >
         <IconAccessibility />
       </button>
@@ -258,7 +247,6 @@ const Nav = ({ isHome }) => {
 
   return (
     <StyledHeader scrollDirection={scrollDirection} scrolledToTop={scrolledToTop}>
-
       <StyledNav>
         {prefersReducedMotion ? (
           <>
@@ -269,12 +257,10 @@ const Nav = ({ isHome }) => {
                 {navLinks &&
                   navLinks.map(({ url, name }, i) => (
                     <li key={i}>
-                      <Link to={url}>{t("menu_text_" + name)}</Link>
+                      <Link to={url}>{t(`menu_text_${  name}`)}</Link>
                     </li>
                   ))}
               </ol>
-
-              {/*<div>{ResumeLink}</div>*/}
             </StyledLinks>
 
             {ThemeSwitch}
@@ -299,27 +285,17 @@ const Nav = ({ isHome }) => {
                     navLinks.map(({ url, name }, i) => (
                       <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
                         <li key={i} style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
-                          <Link to={url}>{t("menu_text_" + name)}</Link>
+                          <Link to={url}>{t(`menu_text_${  name}`)}</Link>
                         </li>
                       </CSSTransition>
                     ))}
                 </TransitionGroup>
               </ol>
-
-              {/*<TransitionGroup component={null}>
-                {isMounted && (
-                  <CSSTransition classNames={fadeDownClass} timeout={timeout}>
-                    <div style={{ transitionDelay: `${isHome ? navLinks.length * 100 : 0}ms` }}>
-                      {ResumeLink}
-                    </div>
-                  </CSSTransition>
-                )}
-              </TransitionGroup>*/}
             </StyledLinks>
 
             <AccessibilityModal isOpen={modalOpened} onClose={() => setModalOpened(false)} />
 
-            <div class="tools-switcher">
+            <div className="tools-switcher">
               <TransitionGroup component={null}>
                 {isMounted && (
                   <CSSTransition classNames={fadeClass} timeout={timeout}>

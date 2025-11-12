@@ -83,27 +83,20 @@ const Hero = () => {
   const two = <h2 className="big-heading">Angelo Ortiz.</h2>;
   const three = (
     <h3 className="big-heading" style={{ fontSize: 30 }}>
-      {t("hero_txt_keywords")}
+      {t('hero_txt_keywords')}
     </h3>
   );
   const four = (
     <>
-      <p>
-        {t("hero_txt_about")}
-      </p>
+      <p>{t('hero_txt_about')}</p>
     </>
   );
-  const proudly = (
-    <p>
-      {t("hero_text_proud")}
-    </p>
-  );
+  const proudly = <p>{t('hero_text_proud')}</p>;
   const five = (
-    <a className="email-link" href="/angelo-v2.pdf" target="_blank" rel="noreferrer">
-      {t("hero_btn_resume")}
+    <a className="email-link" href="/angeloortiz.pdf" target="_blank" rel="noreferrer">
+      {t('hero_btn_resume')}
     </a>
   );
-
 
   const items = [one, two, three, four, proudly, five];
 
