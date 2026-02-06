@@ -9,6 +9,7 @@
   "hero_txt_about": "Desarrollador de software con más de cuatro años de experiencia en productos digitales escalables y eficientes para startups y organizaciones. Combinando una sólida experiencia técnica con habilidades para la resolución de problemas, visión de negocio y diseño centrado en el usuario.",
   "hero_btn_resume": "Ver CV",
   "hero_text_proud": "Orgullosamente de 🇨🇷",
+  "hero_txt_creai": "Actualmente desarrollando en",
 
   "about_text_title": "Acerca de mí",
   "about_text_tec": "Instituto Tecnológico de Costa Rica",
@@ -38,6 +39,20 @@
   "jobs_freelancer1": [
     "Entregué soluciones de software de extremo a extremo para startups y diversos clientes, combinando desarrollo backend robusto, integración en la nube, automatización de procesos y desarrollo frontend.",
     "Me enfoqué en construir sistemas escalables, mantenibles y eficientes utilizando tecnologías modernas y las mejores prácticas de ingeniería."
+  ],
+
+  "job_title_creai": "Ingeniero de Software Full Stack para IA",
+  "jobs_creai": [
+    "Desarrollo full stack de aplicaciones y APIs que forman parte de las soluciones de IA de Creai, utilizando Ember.js, React, PHP, Laravel y Python.",
+    "Colaboración con equipos de ciencia de datos y producto para integrar funcionalidades de ML/IA en sistemas en producción.",
+    "Construcción y mantenimiento de sistemas web escalables que soportan productos impulsados por inteligencia artificial."
+  ],
+
+  "job_title_qubosystems": "Ingeniero de Software",
+  "jobs_qubosystems": [
+    "Diseñé e implementé componentes de extremo a extremo para iniciativas internas y orientadas a clientes, incluyendo APIs REST y paneles de administración.",
+    "Actué como líder técnico en varios proyectos full stack con fuerte enfoque en desarrollo frontend con React.",
+    "Entregué soluciones escalables en todo el stack, desde servicios backend hasta interfaces de usuario."
   ],
 
   "job_title_csi": "Técnico en Electrónica",

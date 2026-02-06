@@ -9,6 +9,7 @@
   "hero_txt_about": "Software Engineer with over four years of experience developing scalable and efficient digital products for startups and organizations, combining technical expertise with strong problem-solving skills, business insight, and user-centered design.",
   "hero_btn_resume": "View Resume",
   "hero_text_proud": "Proudly from 🇨🇷",
+  "hero_txt_creai": "Currently shipping features at",
 
   "about_text_title": "About Me",
   "about_text_tec": "Technological Institute of Costa Rica",
@@ -38,6 +39,20 @@
   "jobs_freelancer1": [
     "Delivered end-to-end software solutions for startups and diverse clients, combining robust backend development,cloud integration, process automation, and frontend development.",
     "Focused on building scalable, maintainable, and efficient systems using modern technologies and best engineering practices. "
+  ],
+
+  "job_title_creai": "Full Stack Software Engineer for AI",
+  "jobs_creai": [
+    "Full-stack development of applications and APIs that power Creai's AI solutions, using Ember.js, React, PHP, Laravel, and Python.",
+    "Collaboration with data science and product teams to integrate ML/AI features into production systems.",
+    "Building and maintaining scalable web systems that support AI-powered products."
+  ],
+
+  "job_title_qubosystems": "Software Engineer",
+  "jobs_qubosystems": [
+    "Designed and implemented end-to-end components for internal and client-facing initiatives, including REST APIs and admin dashboards.",
+    "Served as technical lead on several full-stack projects with a strong focus on frontend development using React.",
+    "Delivered scalable solutions across the full stack, from backend services to user interfaces."
   ],
 
   "job_title_csi": "Electronic Technician",

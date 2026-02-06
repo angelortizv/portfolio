@@ -47,6 +47,18 @@ const StyledHeroSection = styled.section`
   }
 `;
 
+const CreaiQuote = styled.p`
+  margin: 20px 0 0;
+  padding-left: 16px;
+  border-left: 3px solid var(--primary-color);
+  font-style: italic;
+  color: var(--slate);
+
+  a {
+    ${({ theme }) => theme.mixins.inlineLink};
+  }
+`;
+
 const shuffleArray = array => {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -89,6 +101,13 @@ const Hero = () => {
   const four = (
     <>
       <p>{t('hero_txt_about')}</p>
+      <CreaiQuote>
+        {t('hero_txt_creai')}{' '}
+        <a href="https://www.creai.mx/" target="_blank" rel="noopener noreferrer">
+          @Creai
+        </a>
+        .
+      </CreaiQuote>
     </>
   );
   const proudly = <p>{t('hero_text_proud')}</p>;
