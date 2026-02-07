@@ -101,6 +101,7 @@
 
   "footer_text_designed": "Diseñado por ",
   "footer_text_build": "Construido con 🫀 por ",
+  "footer_last_updated": "Actualizado:",
 
   "full_archive_text_title": "Archivo",
   "full_archive_text_subtitle": "Una lista más grande de cosas  en las que he trabajado",
@@ -114,6 +115,7 @@
   "accessibility_text_zoomOut": "Zoom Out",
   "accessibility_text_biggerCursor": "Cursor Grande",
   "accessibility_text_undoChanges": "Revertir Cambios",
+  "accessibility_text_shortcuts": "Atajos de teclado (?)",
   "accessibility_text_grayscale": "Escala de Grises",
   "accessibility_text_invert": "Invertir Colores",
 
@@ -121,5 +123,10 @@
   "general_scroll_to_top": "Ir hacia arriba",
 
   "general_404_notfound": "Página no encontrada",
-  "general_404_goHome": "Ir a Inicio"
+  "general_404_goHome": "Ir a Inicio",
+
+  "shortcuts_title": "Atajos de teclado",
+  "shortcuts_help": "Mostrar esta ayuda",
+  "shortcuts_close": "Cerrar modal",
+  "shortcuts_hint": "Pulsa 1–6 para ir a una sección"
 }

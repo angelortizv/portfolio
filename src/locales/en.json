@@ -101,6 +101,7 @@
 
   "footer_text_designed": "Designed by",
   "footer_text_build": "Built with 🫀 by",
+  "footer_last_updated": "Last updated:",
 
   "full_archive_text_title": "Archive",
   "full_archive_text_subtitle": "A big list of things I've worked on",
@@ -114,6 +115,7 @@
   "accessibility_text_zoomOut": "Zoom Out",
   "accessibility_text_biggerCursor": "Large Cursor",
   "accessibility_text_undoChanges": "Undo Changes",
+  "accessibility_text_shortcuts": "Keyboard shortcuts (?)",
   "accessibility_text_grayscale": "Grayscale",
   "accessibility_text_invert": "Invert Colors",
 
@@ -121,5 +123,10 @@
   "general_scroll_to_top": "Scroll to top",
 
   "general_404_notfound": "Page Not Found",
-  "general_404_goHome": "Go Home"
+  "general_404_goHome": "Go Home",
+
+  "shortcuts_title": "Keyboard shortcuts",
+  "shortcuts_help": "Show this help",
+  "shortcuts_close": "Close modal",
+  "shortcuts_hint": "Press 1–6 to jump to a section"
 }

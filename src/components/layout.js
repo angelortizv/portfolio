@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styled, { ThemeProvider } from 'styled-components';
-import { Head, Loader, Nav, Social, Email, Footer } from '@components';
+import { Head, Loader, Nav, Social, Email, Footer, KeyboardShortcuts } from '@components';
+import { KeyboardShortcutsProvider } from '../hooks/KeyboardShortcutsContext';
 import { GlobalStyle, theme } from '@styles';
 import ScrollProgressBar from './scrollProgressBar';
 
@@ -62,17 +63,20 @@ const Layout = ({ children, location }) => {
           {isLoading && isHome ? (
             <Loader finishLoading={() => setIsLoading(false)} />
           ) : (
-            <StyledContent>
-              <Nav isHome={isHome} />
-              <Social isHome={isHome} />
-              <Email isHome={isHome} />
-              <ScrollProgressBar />
+            <KeyboardShortcutsProvider>
+              <StyledContent>
+                <Nav isHome={isHome} />
+                <Social isHome={isHome} />
+                <Email isHome={isHome} />
+                <ScrollProgressBar />
 
-              <div id="content">
-                {children}
-                <Footer />
-              </div>
-            </StyledContent>
+                <div id="content">
+                  {children}
+                  <Footer />
+                </div>
+                <KeyboardShortcuts />
+              </StyledContent>
+            </KeyboardShortcutsProvider>
           )}
         </ThemeProvider>
       </div>

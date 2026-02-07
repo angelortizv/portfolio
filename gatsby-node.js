@@ -4,6 +4,11 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+// Expose build date to client for footer "last updated"
+if (typeof process !== 'undefined') {
+  process.env.GATSBY_BUILD_DATE = new Date().toISOString();
+}
+
 const path = require('path');
 
 // https://www.gatsbyjs.org/docs/node-apis/#onCreateWebpackConfig

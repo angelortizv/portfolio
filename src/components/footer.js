@@ -4,6 +4,7 @@ import { Icon } from '@components/icons';
 import { socialMedia } from '@config';
 import ScrollToTop from './scrollToTop';
 import { useLanguage } from '../hooks/LanguageContext';
+import { useKeyboardShortcuts } from '../hooks/KeyboardShortcutsContext';
 
 const StyledFooter = styled.footer`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -51,6 +52,26 @@ const StyledCredit = styled.div`
     padding: 10px;
   }
 
+  .footer-shortcuts {
+    margin-top: 10px;
+
+    button {
+      font-family: inherit;
+      font-size: inherit;
+      color: inherit;
+      background: none;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+
   .github-stats {
     margin-top: 10px;
 
@@ -68,31 +89,17 @@ const StyledCredit = styled.div`
   }
 `;
 
-const Heart = styled.div`
-  width: 100px;
-  height: 100px;
-  margin-left: 5px;
-  position: relative;
-  background: url(https://cssanimation.rocks/images/posts/steps/heart.png) no-repeat;
-  background-position: 0 0;
-  cursor: pointer;
-  animation: fave-heart 1s steps(28);
-  &:hover {
-    background-position: -2800px 0;
-    transition: background 1s steps(28);
-  }
-  @keyframes fave-heart {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: -2800px 0;
-    }
-  }
-`;
+const formatBuildDate = isoString => {
+  if (!isoString) {return '';}
+  const date = new Date(isoString);
+  return new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(date);
+};
 
 const Footer = () => {
   const { t } = useLanguage();
+  const { openShortcuts } = useKeyboardShortcuts();
+  const buildDate = typeof process !== 'undefined' && process.env.GATSBY_BUILD_DATE;
+  const lastUpdated = formatBuildDate(buildDate);
 
   return (
     <StyledFooter>
@@ -109,20 +116,29 @@ const Footer = () => {
         </ul>
       </StyledSocialLinks>
 
-      <StyledCredit tabindex="-1">
+      <StyledCredit tabIndex={-1}>
         <a href="https://github.com/bchiang7/v4">
-          <div>{t("footer_text_designed")} Brittany Chiang</div>
+          <div>{t('footer_text_designed')} Brittany Chiang</div>
         </a>
         <br />
-        <a href='https://www.angelortizv.com/authors/angelo-ortiz-vega/'>
-          <div>
-            {t("footer_text_build")} Angelo Ortiz
-          </div>
+        <a href="https://www.angelortizv.com/authors/angelo-ortiz-vega/">
+          <div>{t('footer_text_build')} Angelo Ortiz</div>
         </a>
+        {lastUpdated && (
+          <div className="footer-updated" style={{ marginTop: '8px', opacity: 0.8 }}>
+            {t('footer_last_updated')} {lastUpdated}
+          </div>
+        )}
+        <div className="footer-shortcuts">
+          <button type="button" onClick={openShortcuts}>
+            {t('accessibility_text_shortcuts')}
+          </button>
+        </div>
       </StyledCredit>
 
       <ScrollToTop className="scrollToTop" />
-    </StyledFooter>)
-}
+    </StyledFooter>
+  );
+};
 
 export default Footer;
