@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import IconZoomIn from './icons/IconZoomIn';
 import IconZoomOut from './icons/IconZoomOut';
 import IconCursor from './icons/IconCursor';
@@ -9,72 +10,134 @@ import IconRevert from './icons/IconRevert';
 import IconGrayscale from './icons/IconGrayscale';
 import IconInvert from './icons/IconInvert';
 
-const modalStyles = {
-  backdrop: {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    width: '100vw',
-    height: '100vh',
-    backgroundColor: 'rgba(0,0,0,0.5)',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    zIndex: 1000,
-  },
-  modal: {
-    backgroundColor: 'var(--bg-color, #fff)',
-    color: 'var(--text-color, #000)',
-    padding: '2rem',
-    borderRadius: '12px',
-    maxWidth: '420px',
-    width: '90%',
-    textAlign: 'center',
-    boxShadow: '0 10px 25px rgba(0,0,0,0.15)',
-  },
-  grid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
-    gap: '1rem',
-    justifyItems: 'center',
-    marginTop: '1.5rem',
-    marginBottom: '1.5rem',
-  },
-  button: {
-    background: 'var(--highlight-tint, #f0f0f0)',
-    border: 'none',
-    borderRadius: '20px',
-    width: '160px',
-    height: '90px',
-    display: 'flex',
-    cursor: 'pointer',
-    transition: 'background 0.2s ease',
-  },
-  buttonHover: {
-    background: 'var(--primary-color, #64ffda)',
-  },
-  label: {
-    marginTop: '0.25rem',
-    fontSize: '0.85rem',
-    color: 'var(--text-color, #333)',
-  },
-  closeButton: {
-    marginTop: '1rem',
-    padding: '0.5rem 1.25rem',
-    cursor: 'pointer',
-    borderRadius: '6px',
-    border: '1px solid var(--primary-color, #64ffda)',
-    background: 'none',
-    color: 'var(--primary-color, #64ffda)',
-    transition: 'all 0.2s ease',
-  },
-};
+const Backdrop = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+`;
+
+const ModalBox = styled.div`
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 420px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+
+  @media (max-width: 480px) {
+    width: calc(100% - 24px);
+    max-width: none;
+    padding: 1.25rem 16px;
+    margin: 0 12px;
+  }
+`;
+
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  justify-items: stretch;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 480px) {
+    gap: 12px;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+`;
+
+const OptionCell = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+`;
+
+const OptionButton = styled.button`
+  background: var(--highlight-tint);
+  border: none;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 160px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  box-sizing: border-box;
+
+  &:hover {
+    background: var(--primary-color-tint);
+  }
+
+  @media (max-width: 480px) {
+    max-width: none;
+    height: 80px;
+  }
+`;
+
+const OptionLabel = styled.div`
+  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--text-color);
+`;
+
+const CloseButton = styled.button`
+  margin-top: 1rem;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid var(--primary-color);
+  background: none;
+  color: var(--primary-color);
+  transition: all 0.2s ease;
+`;
+
+const ButtonRow = styled.div`
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+`;
 
 const STYLE_ID = 'big-cursor-style';
+const ZOOM_STORAGE_KEY = 'portfolio-a11y-zoom';
+const ZOOM_MIN = 0.5;
+const ZOOM_MAX = 2;
+const ZOOM_STEP = 0.1;
+
+const getStoredZoom = () => {
+  if (typeof window === 'undefined') {return 1;}
+  try {
+    const saved = localStorage.getItem(ZOOM_STORAGE_KEY);
+    if (saved === null) {return 1;}
+    const n = parseFloat(saved, 10);
+    if (Number.isNaN(n) || n < ZOOM_MIN || n > ZOOM_MAX) {return 1;}
+    return Math.round(n * 10) / 10;
+  } catch {
+    return 1;
+  }
+};
 
 const AccessibilityModal = ({ isOpen, onClose }) => {
   const [bigCursor, setBigCursor] = useState(false);
-  const [zoomLevel, setZoomLevel] = useState(1);
+  const [zoomLevel, setZoomLevel] = useState(getStoredZoom);
   const { t } = useLanguage();
   const { openShortcuts } = useKeyboardShortcuts();
 
@@ -139,7 +202,9 @@ const AccessibilityModal = ({ isOpen, onClose }) => {
 
     const removeBigCursor = () => {
       const styleEl = document.getElementById(STYLE_ID);
-      if (styleEl && styleEl.parentNode) {styleEl.parentNode.removeChild(styleEl);}
+      if (styleEl && styleEl.parentNode) {
+        styleEl.parentNode.removeChild(styleEl);
+      }
       document.documentElement.classList.remove('big-cursor');
     };
 
@@ -156,105 +221,110 @@ const AccessibilityModal = ({ isOpen, onClose }) => {
 
   // === Zoom ===
   useEffect(() => {
-    //document.documentElement.style.fontSize = `${zoomLevel * 100}%`;
-    document.body.style.zoom = zoomLevel;
+    const value = Math.round(zoomLevel * 10) / 10;
+    document.body.style.zoom = String(value);
+    try {
+      localStorage.setItem(ZOOM_STORAGE_KEY, String(value));
+    } catch {
+      // ignore storage errors (private mode, quota, etc.)
+    }
   }, [zoomLevel]);
 
   const handleZoomIn = () => {
-    setZoomLevel(prev => Math.min(prev + 0.1, 2)); // máx 200%
+    setZoomLevel(prev => Math.min(prev + ZOOM_STEP, ZOOM_MAX));
   };
 
   const handleZoomOut = () => {
-    setZoomLevel(prev => Math.max(prev - 0.1, 0.5)); // mín 50%
+    setZoomLevel(prev => Math.max(prev - ZOOM_STEP, ZOOM_MIN));
   };
 
   const handleResetZoom = () => {
     setZoomLevel(1);
+    try {
+      localStorage.setItem(ZOOM_STORAGE_KEY, '1');
+    } catch {
+      // ignore
+    }
   };
 
-  if (!isOpen) {return null;}
+  if (!isOpen) {
+    return null;
+  }
 
   return (
     /* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */
-    <div
-      style={modalStyles.backdrop}
+    <Backdrop
       onClick={onClose}
       onKeyDown={e => {
         if (e.key === 'Escape') {onClose();}
       }}
       role="presentation">
       {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
-      <div
-        style={modalStyles.modal}
+      <ModalBox
         onClick={e => e.stopPropagation()}
         onKeyDown={e => {
           if (e.key === 'Escape') {onClose();}
           e.stopPropagation();
         }}
         role="dialog"
-        aria-modal="true">
-        <h2>{t('accessibility_text_title')}</h2>
+        aria-modal="true"
+        aria-labelledby="accessibility-modal-title">
+        <h2 id="accessibility-modal-title">{t('accessibility_text_title')}</h2>
 
-        <div style={modalStyles.grid}>
-          {/* Zoom In */}
-          <div>
-            <button
-              style={modalStyles.button}
+        <Grid>
+          <OptionCell>
+            <OptionButton
+              type="button"
               onClick={handleZoomIn}
               title={t('accessibility_text_zoomIn')}>
               <IconZoomIn />
-            </button>
-            <div style={modalStyles.label}>{t('accessibility_text_zoomIn')}</div>
-          </div>
+            </OptionButton>
+            <OptionLabel>{t('accessibility_text_zoomIn')}</OptionLabel>
+          </OptionCell>
 
-          {/* Zoom Out */}
-          <div>
-            <button
-              style={modalStyles.button}
+          <OptionCell>
+            <OptionButton
+              type="button"
               onClick={handleZoomOut}
               title={t('accessibility_text_zoomOut')}>
               <IconZoomOut />
-            </button>
-            <div style={modalStyles.label}>{t('accessibility_text_zoomOut')}</div>
-          </div>
+            </OptionButton>
+            <OptionLabel>{t('accessibility_text_zoomOut')}</OptionLabel>
+          </OptionCell>
 
-          {/* Grayscale */}
-          <div>
-            <button
-              style={modalStyles.button}
+          <OptionCell>
+            <OptionButton
+              type="button"
               onClick={() => setIsGrayscale(prev => !prev)}
               title={t('accessibility_text_grayscale')}>
               <IconGrayscale />
-            </button>
-            <div style={modalStyles.label}>{t('accessibility_text_grayscale')}</div>
-          </div>
+            </OptionButton>
+            <OptionLabel>{t('accessibility_text_grayscale')}</OptionLabel>
+          </OptionCell>
 
-          {/* Invert */}
-          <div>
-            <button
-              style={modalStyles.button}
+          <OptionCell>
+            <OptionButton
+              type="button"
               onClick={() => setIsInverted(!isInverted)}
               title={t('accessibility_text_invert')}>
               <IconInvert />
-            </button>
-            <div style={modalStyles.label}>{t('accessibility_text_invert')}</div>
-          </div>
+            </OptionButton>
+            <OptionLabel>{t('accessibility_text_invert')}</OptionLabel>
+          </OptionCell>
 
-          {/* Cursor */}
-          <div>
-            <button
-              style={modalStyles.button}
+          <OptionCell>
+            <OptionButton
+              type="button"
               onClick={() => setBigCursor(!bigCursor)}
               title={t('accessibility_text_biggerCursor')}>
               <IconCursor />
-            </button>
-            <div style={modalStyles.label}>{t('accessibility_text_biggerCursor')}</div>
-          </div>
+            </OptionButton>
+            <OptionLabel>{t('accessibility_text_biggerCursor')}</OptionLabel>
+          </OptionCell>
 
-          {/* Undo */}
-          <div>
-            <button
-              style={modalStyles.button}
+          <OptionCell>
+            <OptionButton
+              type="button"
               onClick={() => {
                 setBigCursor(false);
                 handleResetZoom();
@@ -263,29 +333,27 @@ const AccessibilityModal = ({ isOpen, onClose }) => {
               }}
               title={t('accessibility_text_undoChanges')}>
               <IconRevert />
-            </button>
-            <div style={modalStyles.label}>{t('accessibility_text_undoChanges')}</div>
-          </div>
-        </div>
+            </OptionButton>
+            <OptionLabel>{t('accessibility_text_undoChanges')}</OptionLabel>
+          </OptionCell>
+        </Grid>
 
-        <div style={{ marginTop: '1rem', marginBottom: '0.5rem' }}>
-          <button
+        <ButtonRow>
+          <CloseButton
             type="button"
-            style={{ ...modalStyles.closeButton, marginRight: '8px' }}
             onClick={() => {
               onClose();
               openShortcuts();
             }}
             title={t('shortcuts_title')}>
             {t('accessibility_text_shortcuts')}
-          </button>
-        </div>
-
-        <button style={modalStyles.closeButton} onClick={onClose}>
-          {t('general_close')}
-        </button>
-      </div>
-    </div>
+          </CloseButton>
+          <CloseButton type="button" onClick={onClose}>
+            {t('general_close')}
+          </CloseButton>
+        </ButtonRow>
+      </ModalBox>
+    </Backdrop>
   );
 };
 
