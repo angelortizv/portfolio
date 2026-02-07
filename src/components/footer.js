@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Icon } from '@components/icons';
 import { socialMedia } from '@config';
 import ScrollToTop from './scrollToTop';
+import TableTennis from './TableTennis';
 import { useLanguage } from '../hooks/LanguageContext';
 import { useKeyboardShortcuts } from '../hooks/KeyboardShortcutsContext';
 
@@ -200,6 +201,8 @@ const Footer = () => {
           </button>
         </div>
       </StyledCredit>
+
+      <TableTennis />
 
       <ScrollToTop className="scrollToTop" />
     </StyledFooter>

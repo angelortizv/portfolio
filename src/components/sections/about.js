@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
@@ -8,7 +8,6 @@ import AboutFooter from '../aboutFooter';
 import { useLanguage } from '../../hooks/LanguageContext';
 
 const StyledAboutSection = styled.section`
-
   .inner {
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -19,7 +18,27 @@ const StyledAboutSection = styled.section`
     }
   }
 `;
+const pingpongBounce = keyframes`
+  0%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+  50% { transform: translateY(0); }
+  65% { transform: translateY(-3px); }
+  80% { transform: translateY(0); }
+`;
+
 const StyledText = styled.div`
+  .pingpong-emoji {
+    display: inline-block;
+    animation: ${pingpongBounce} 0.6s ease-out;
+  }
+  .pingpong-emoji:hover {
+    animation: ${pingpongBounce} 0.5s ease-out;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pingpong-emoji {
+      animation: none;
+    }
+  }
   ul.skills-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(140px, 200px));
@@ -127,37 +146,47 @@ const About = () => {
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
-      <h2 className="numbered-heading">{t("about_text_title")}</h2>
+      <h2 className="numbered-heading">{t('about_text_title')}</h2>
 
       <div className="inner">
         <StyledText>
           <div>
-            <p>{t("about_text_desc_1")}</p>
+            <p>{t('about_text_desc_1')}</p>
 
-            <p>{t("about_text_desc_2")}</p>
+            <p>{t('about_text_desc_2')}</p>
 
             <p>
-              {t("about_text_desc_3_1")}
+              {t('about_text_desc_3_1')}
               <a href="https://www.tec.ac.cr/" target="_blank" rel="noreferrer">
-                {t("about_text_tec")}
-              </a>, {t("about_text_desc_3_2")}
+                {t('about_text_tec')}
+              </a>
+              , {t('about_text_desc_3_2')}
             </p>
 
             <p>
-              {t("about_text_desc_4_1")}
+              {t('about_text_desc_4_1')}
               <a href="https://ucreativa.ac.cr/" target="_blank" rel="noreferrer">
                 Universidad Creativa de Costa Rica
-              </a>,
-              {t("about_text_desc_4_2")}
+              </a>
+              ,{t('about_text_desc_4_2')}
             </p>
 
             <p>
-              {t("about_text_desc_5")}<a href="https://open.spotify.com/playlist/20xTpMDhxDFpACSRXHZzOC?si=2050bd00d9b048bb" target="_blank" rel="noreferrer">
+              {t('about_text_desc_5_a')}
+              {t('about_text_desc_5_b')}{' '}
+              <span className="pingpong-emoji" aria-hidden>
+                🏓
+              </span>
+              {t('about_text_desc_5_c')}
+              <a
+                href="https://open.spotify.com/playlist/20xTpMDhxDFpACSRXHZzOC?si=2050bd00d9b048bb"
+                target="_blank"
+                rel="noreferrer">
                 Spotify
-              </a> playlists.
+              </a>
+              playlists.
             </p>
           </div>
-
         </StyledText>
 
         <StyledPic>
@@ -173,7 +202,6 @@ const About = () => {
           </div>
           <AboutFooter />
         </StyledPic>
-
       </div>
     </StyledAboutSection>
   );
