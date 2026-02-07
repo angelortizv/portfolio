@@ -58,6 +58,8 @@
     "Entregué soluciones escalables en todo el stack, desde servicios backend hasta interfaces de usuario."
   ],
 
+  "jobs_scroll_left": "Desplazar pestañas a la izquierda",
+  "jobs_scroll_right": "Desplazar pestañas a la derecha",
   "job_title_csi": "Técnico en Electrónica",
   "jobs_csi": [
     "Mantenimiento correctivo y preventivo de equipos eléctricos.",
@@ -93,6 +95,13 @@
   "gallery_text_title": "Algunas cosas de mi vida en imágenes",
   "gallery_text_less": "Ver Menos",
   "gallery_text_more": "Ver Más",
+  "gallery_empty": "Aún no hay fotos.",
+  "gallery_open_lightbox": "Ver tamaño completo",
+  "gallery_scroll_left": "Desplazar galería a la izquierda",
+  "gallery_scroll_right": "Desplazar galería a la derecha",
+  "gallery_lightbox_label": "Visor de foto",
+  "gallery_prev": "Foto anterior",
+  "gallery_next": "Foto siguiente",
 
   "contact_text_over": "¿Qué sigue?",
   "contact_text_title": "Ponte en contacto",

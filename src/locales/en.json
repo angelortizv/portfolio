@@ -58,6 +58,8 @@
     "Delivered scalable solutions across the full stack, from backend services to user interfaces."
   ],
 
+  "jobs_scroll_left": "Scroll tabs left",
+  "jobs_scroll_right": "Scroll tabs right",
   "job_title_csi": "Electronic Technician",
   "jobs_csi": [
     "Corrective and preventive maintenance of electrical equipment.",
@@ -93,6 +95,13 @@
   "gallery_text_title": "Some things from my life in pictures",
   "gallery_text_less": "Show Less",
   "gallery_text_more": "Show More",
+  "gallery_empty": "No photos yet.",
+  "gallery_open_lightbox": "View full size",
+  "gallery_scroll_left": "Scroll gallery left",
+  "gallery_scroll_right": "Scroll gallery right",
+  "gallery_lightbox_label": "Photo viewer",
+  "gallery_prev": "Previous photo",
+  "gallery_next": "Next photo",
 
   "contact_text_over": "What's Next?",
   "contact_text_title": "Get In Touch",
