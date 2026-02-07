@@ -51,6 +51,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-rss-feed`,
+      options: {
+        url: process.env.GATSBY_BLOG_RSS_URL || `https://angelortizv.com/index.xml`,
+        name: `Blog`,
+      },
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [

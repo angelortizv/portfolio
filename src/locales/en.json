@@ -2,6 +2,7 @@
   "menu_text_about": "About",
   "menu_text_experience": "Experience",
   "menu_text_work": "Projects",
+  "menu_text_blog": "Blog",
   "menu_text_gallery": "Gallery",
   "menu_text_contact": "Contact",
 
@@ -84,6 +85,10 @@
   "projects_filter_label": "Filter projects by technology",
   "projects_filter_all": "All",
   "projects_show_more": "Show more",
+
+  "blog_section_title": "Latest on the Blog",
+  "blog_section_intro": "Recent writing on software, AI, and what I'm learning.",
+  "blog_section_link": "View all posts at angelortizv.com",
 
   "gallery_text_title": "Some things from my life in pictures",
   "gallery_text_less": "Show Less",

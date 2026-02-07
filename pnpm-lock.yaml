@@ -62,6 +62,9 @@ importers:
       gatsby-source-filesystem:
         specifier: ^3.4.0
         version: 3.15.0(gatsby@3.15.0(@types/node@25.2.1)(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(type-fest@0.13.1)(typescript@5.9.3))
+      gatsby-source-rss-feed:
+        specifier: ^1.2.2
+        version: 1.2.2
       gatsby-transformer-remark:
         specifier: ^4.1.0
         version: 4.12.0(gatsby@3.15.0(@types/node@25.2.1)(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(type-fest@0.13.1)(typescript@5.9.3))
@@ -3315,6 +3318,9 @@ packages:
     peerDependencies:
       gatsby: ^3.0.0-next.0
 
+  gatsby-source-rss-feed@1.2.2:
+    resolution: {integrity: sha512-Ris5Dtdj856aups8xzPtNOG6prKjaGzcXxRdFrgExQBVv2o1fUPHwj7OGrdV32tNUg2mHOZurr5qFWAdaRIMUg==}
+
   gatsby-telemetry@2.15.0:
     resolution: {integrity: sha512-WyiV3LIn/LBuNuDxhInQo/QQlFHSz0Km/T+BGvnQ+3iZrBWTq/e87KN0NKtlQ6PxN7LmGumid4OTr5eLil1A0A==}
     engines: {node: '>=12.13.0'}
@@ -5892,6 +5898,9 @@ packages:
   rollup-pluginutils@2.8.2:
     resolution: {integrity: sha512-EEp9NhnUkwY8aif6bxgovPHMoMoNr2FulJziTndpt5H9RdwC47GSGuII9XxpSdzVGM0GWrNPHV6ie1LTNJPaLQ==}
 
+  rss-parser@3.13.0:
+    resolution: {integrity: sha512-7jWUBV5yGN3rqMMj7CZufl/291QAhvrrGpDNE4k/02ZchL0npisiYYqULF71jCEKoIiHvK/Q2e6IkDwPziT7+w==}
+
   run-async@2.4.1:
     resolution: {integrity: sha512-tvVnVv01b8c1RrA6Ep7JkStj85Guv/YrMcwqYQnwjsAS2cTmmPGBBjAjpCW7RrSodNSoE2/qg9O4bceNvUuDgQ==}
     engines: {node: '>=0.12.0'}
@@ -7097,6 +7106,14 @@ packages:
   xdg-basedir@4.0.0:
     resolution: {integrity: sha512-PSNhEJDejZYV7h50BohL09Er9VaIefr2LMAf3OEmpCkjOi34eYyQYAXUTjEQtZJTKcF0E2UKTh+osDLsgNim9Q==}
     engines: {node: '>=8'}
+
+  xml2js@0.5.0:
+    resolution: {integrity: sha512-drPFnkQJik/O+uPKpqSgr22mpuFHqKdbS835iAQrUC73L2F5WkboIRd63ai/2Yg6I1jzifPFKH2NTK+cfglkIA==}
+    engines: {node: '>=4.0.0'}
+
+  xmlbuilder@11.0.1:
+    resolution: {integrity: sha512-fDlsI/kFEx7gLvbecc0/ohLG50fugQp8ryHzMTuW9vSa1GJ0XYWKnhsUx7oie3G98+r56aTQIUB4kht42R3JvA==}
+    engines: {node: '>=4.0'}
 
   xmlhttprequest-ssl@1.6.3:
     resolution: {integrity: sha512-3XfeQE/wNkvrIktn2Kf0869fC0BN6UpydVasGIeSm2B1Llihf7/0UfZM+eCkOw3P7bP4+qPgqhm7ZoxuJtFU0Q==}
@@ -11329,6 +11346,11 @@ snapshots:
       valid-url: 1.0.9
       xstate: 4.38.3
 
+  gatsby-source-rss-feed@1.2.2:
+    dependencies:
+      lodash: 4.17.23
+      rss-parser: 3.13.0
+
   gatsby-telemetry@2.15.0:
     dependencies:
       '@babel/code-frame': 7.29.0
@@ -14539,6 +14561,11 @@ snapshots:
     dependencies:
       estree-walker: 0.6.1
 
+  rss-parser@3.13.0:
+    dependencies:
+      entities: 2.2.0
+      xml2js: 0.5.0
+
   run-async@2.4.1: {}
 
   run-parallel@1.2.0:
@@ -15965,6 +15992,13 @@ snapshots:
   ws@7.5.10: {}
 
   xdg-basedir@4.0.0: {}
+
+  xml2js@0.5.0:
+    dependencies:
+      sax: 1.4.4
+      xmlbuilder: 11.0.1
+
+  xmlbuilder@11.0.1: {}
 
   xmlhttprequest-ssl@1.6.3: {}
 
