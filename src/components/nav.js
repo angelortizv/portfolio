@@ -152,16 +152,23 @@ const Nav = ({ isHome }) => {
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const prefersReducedMotion = usePrefersReducedMotion();
 
+  const THEME_KEY = 'portfolio-theme';
   const [IsDarkMode, setIsDarkMode] = useState(false);
 
   const [modalOpened, setModalOpened] = useState(false);
 
+  // Restore theme from localStorage (or system preference) on mount
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const currentBg = getComputedStyle(document.documentElement).getPropertyValue('--bg-color');
-      const isDark = currentBg.trim() === Colors.dark['--bg-color'];
-      setIsDarkMode(isDark);
+    if (typeof window === 'undefined') {return;}
+
+    const saved = window.localStorage.getItem(THEME_KEY);
+    const mode = saved === 'dark' || saved === 'light' ? saved : 'dark';
+
+    const root = window.document.documentElement;
+    for (const prop in Colors[mode]) {
+      root.style.setProperty(prop, Colors[mode][prop]);
     }
+    setIsDarkMode(mode === 'dark');
   }, []);
 
   const { t, lang, toggleLang } = useLanguage();
@@ -177,6 +184,7 @@ const Nav = ({ isHome }) => {
     for (const prop in Colors[mode]) {
       root.style.setProperty(prop, Colors[mode][prop]);
     }
+    window.localStorage.setItem(THEME_KEY, mode);
     setIsDarkMode(!IsDarkMode);
   };
 
@@ -220,8 +228,7 @@ const Nav = ({ isHome }) => {
       <button
         onClick={() => {
           toggleTheme();
-        }}
-      >
+        }}>
         {IsDarkMode ? <IconLight /> : <IconDark />}
       </button>
     </div>
@@ -238,8 +245,7 @@ const Nav = ({ isHome }) => {
       <button
         onClick={() => {
           setModalOpened(true);
-        }}
-      >
+        }}>
         <IconAccessibility />
       </button>
     </div>
@@ -257,7 +263,7 @@ const Nav = ({ isHome }) => {
                 {navLinks &&
                   navLinks.map(({ url, name }, i) => (
                     <li key={i}>
-                      <Link to={url}>{t(`menu_text_${  name}`)}</Link>
+                      <Link to={url}>{t(`menu_text_${name}`)}</Link>
                     </li>
                   ))}
               </ol>
@@ -285,7 +291,7 @@ const Nav = ({ isHome }) => {
                     navLinks.map(({ url, name }, i) => (
                       <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
                         <li key={i} style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
-                          <Link to={url}>{t(`menu_text_${  name}`)}</Link>
+                          <Link to={url}>{t(`menu_text_${name}`)}</Link>
                         </li>
                       </CSSTransition>
                     ))}
