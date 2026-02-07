@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Icon } from '@components/icons';
 import { socialMedia } from '@config';
@@ -87,10 +87,55 @@ const StyledCredit = styled.div`
       height: 14px;
     }
   }
+
+  .footer-how-wrap {
+    margin-top: 6px;
+  }
+
+  .footer-how-trigger {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 4px 6px;
+    margin-left: 2px;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    opacity: 0.8;
+
+    &:hover {
+      color: var(--primary-color);
+      opacity: 1;
+    }
+  }
+
+  .footer-how-stack {
+    margin-top: 6px;
+    padding: 8px 12px;
+    font-size: 11px;
+    color: var(--text-color);
+    background: var(--light-bg-color);
+    border-radius: 6px;
+    max-height: 80px;
+    overflow: hidden;
+    transition: max-height 0.25s ease, opacity 0.2s ease;
+  }
+
+  .footer-how-stack.collapsed {
+    max-height: 0;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+  }
 `;
 
 const formatBuildDate = isoString => {
-  if (!isoString) {return '';}
+  if (!isoString) {
+    return '';
+  }
   const date = new Date(isoString);
   return new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(date);
 };
@@ -98,6 +143,7 @@ const formatBuildDate = isoString => {
 const Footer = () => {
   const { t } = useLanguage();
   const { openShortcuts } = useKeyboardShortcuts();
+  const [showHow, setShowHow] = useState(false);
   const buildDate = typeof process !== 'undefined' && process.env.GATSBY_BUILD_DATE;
   const lastUpdated = formatBuildDate(buildDate);
 
@@ -121,9 +167,28 @@ const Footer = () => {
           <div>{t('footer_text_designed')} Brittany Chiang</div>
         </a>
         <br />
-        <a href="https://www.angelortizv.com/authors/angelo-ortiz-vega/">
-          <div>{t('footer_text_build')} Angelo Ortiz</div>
-        </a>
+        <div>
+          <a href="https://www.angelortizv.com/authors/angelo-ortiz-vega/">
+            {t('footer_text_build')} Angelo Ortiz
+          </a>
+          <button
+            type="button"
+            className="footer-how-trigger"
+            onClick={() => setShowHow(prev => !prev)}
+            aria-expanded={showHow}
+            aria-label={showHow ? t('footer_how_trigger') : t('footer_how_trigger')}>
+            · {t('footer_how_trigger')}
+          </button>
+        </div>
+        <div className="footer-how-wrap">
+          <div
+            className={`footer-how-stack ${showHow ? '' : 'collapsed'}`}
+            role="region"
+            aria-label={t('footer_how_stack')}
+            aria-hidden={!showHow}>
+            {t('footer_how_stack')}
+          </div>
+        </div>
         {lastUpdated && (
           <div className="footer-updated" style={{ marginTop: '8px', opacity: 0.8 }}>
             {t('footer_last_updated')} {lastUpdated}

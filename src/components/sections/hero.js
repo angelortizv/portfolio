@@ -112,7 +112,7 @@ const Hero = () => {
   );
   const proudly = <p>{t('hero_text_proud')}</p>;
   const five = (
-    <a className="email-link" href="/angeloortiz.pdf" target="_blank" rel="noreferrer">
+    <a className="email-link" href="#contact">
       {t('hero_btn_resume')}
     </a>
   );

@@ -1,9 +1,36 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { srConfig, email } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 import { useLanguage } from '../../hooks/LanguageContext';
+
+const CopyIcon = props => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}>
+    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+  </svg>
+);
+
+const CheckIcon = props => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    {...props}>
+    <polyline points="20 6 9 17 4 12" />
+  </svg>
+);
 
 const StyledContactSection = styled.section`
   max-width: 600px;
@@ -36,15 +63,56 @@ const StyledContactSection = styled.section`
     font-size: clamp(40px, 5vw, 60px);
   }
 
+  .location {
+    margin-top: 16px;
+    font-family: var(--font-mono);
+    font-size: var(--fz-sm);
+    color: var(--light-slate);
+  }
+
+  .contact-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    gap: 12px;
+  }
+
   .email-link {
     ${({ theme }) => theme.mixins.bigButton};
-    margin-top: 50px;
+  }
+
+  .copy-email-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-mono);
+    font-size: var(--fz-xxs);
+    color: var(--text-color);
+    background: none;
+    border: none;
+    padding: 6px 0;
+    cursor: pointer;
+    transition: var(--transition);
+    opacity: 0.85;
+
+    &:hover {
+      color: var(--primary-color);
+      opacity: 1;
+    }
+
+    .copy-icon {
+      width: 12px;
+      height: 12px;
+      opacity: 0.9;
+    }
   }
 `;
 
 const Contact = () => {
   const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const [copied, setCopied] = useState(false);
 
   const { t } = useLanguage();
 
@@ -56,19 +124,51 @@ const Contact = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // fallback: open mailto
+      window.location.href = `mailto:${email}`;
+    }
+  };
+
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
-      <h2 className="numbered-heading overline">{t("contact_text_over")}</h2>
+      <h2 className="numbered-heading overline">{t('contact_text_over')}</h2>
 
-      <h2 className="title">{t("contact_text_title")}</h2>
+      <h2 className="title">{t('contact_text_title')}</h2>
 
-      <p>
-        {t("contact_text_desc")}
+      <p>{t('contact_text_desc')}</p>
+
+      <p className="location" aria-label={t('contact_location_aria')}>
+        {t('contact_location')}
       </p>
 
-      <a className="email-link" href={`mailto:${email}`}>
-        {t("contact_btn_hello")}
-      </a>
+      <div className="contact-actions">
+        <a className="email-link" href={`mailto:${email}`}>
+          {t('contact_btn_hello')}
+        </a>
+        <button
+          type="button"
+          className="copy-email-btn"
+          onClick={handleCopyEmail}
+          aria-label={t('contact_btn_copy_aria')}>
+          {copied ? (
+            <>
+              <CheckIcon className="copy-icon" aria-hidden />
+              {t('contact_btn_copied')}
+            </>
+          ) : (
+            <>
+              <CopyIcon className="copy-icon" aria-hidden />
+              {t('contact_btn_copy')}
+            </>
+          )}
+        </button>
+      </div>
     </StyledContactSection>
   );
 };

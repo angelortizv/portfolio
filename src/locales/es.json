@@ -8,7 +8,7 @@
 
   "hero_txt_keywords": "Ingeniero en Computadores, Inteligencia Artificial, Ciencia de Datos, Desarrollo Full Stack, Profesor Universitario.",
   "hero_txt_about": "Desarrollador de software con más de cuatro años de experiencia en productos digitales escalables y eficientes para startups y organizaciones. Combinando una sólida experiencia técnica con habilidades para la resolución de problemas, visión de negocio y diseño centrado en el usuario.",
-  "hero_btn_resume": "Ver CV",
+  "hero_btn_resume": "Ponte en contacto",
   "hero_text_proud": "Orgullosamente de 🇨🇷",
   "hero_txt_creai": "Actualmente desarrollando en",
 
@@ -97,6 +97,8 @@
   "contact_text_over": "¿Qué sigue?",
   "contact_text_title": "Ponte en contacto",
   "contact_text_desc": "Aunque actualmente no estoy buscando oportunidades de freelance, mi bandeja de entrada siempre está abierta. Si tienes alguna pregunta o simplemente quieres saludar, ¡haré todo lo posible por responderte!",
+  "contact_location": "San José, Costa Rica · UTC−6",
+  "contact_location_aria": "Ubicación y zona horaria",
   "contact_btn_hello": "Decir Hola",
 
   "footer_text_designed": "Diseñado por ",
@@ -128,5 +130,7 @@
   "shortcuts_title": "Atajos de teclado",
   "shortcuts_help": "Mostrar esta ayuda",
   "shortcuts_close": "Cerrar modal",
-  "shortcuts_hint": "Pulsa 1–6 para ir a una sección"
+  "shortcuts_hint": "Pulsa 1–6 para ir a una sección",
+  "footer_how_trigger": "¿cómo?",
+  "footer_how_stack": "Gatsby · React · Styled Components · Netlify"
 }
