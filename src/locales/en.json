@@ -22,8 +22,10 @@
   "about_text_desc_5": "When I'm not at the computer, I'm usually hiking, reading, hanging out with friends, or curating ",
 
   "skills_text_title": "Skills & Stack",
+  "skills_text_subtitle": "Technologies and tools I work with",
   "skills_text_dw": "Web Development",
   "skills_text_ds": "Data Science & Analytics",
+  "skills_text_ml": "ML & AI",
   "skills_text_di": "DevOps & Infrastructure",
 
   "experience_text_title": "Where I've Worked",
@@ -79,6 +81,9 @@
 
   "archive_text_title": "Other Noteworthy Projects",
   "archive_text_subtitle": "view the archive",
+  "projects_filter_label": "Filter projects by technology",
+  "projects_filter_all": "All",
+  "projects_show_more": "Show more",
 
   "gallery_text_title": "Some things from my life in pictures",
   "gallery_text_less": "Show Less",

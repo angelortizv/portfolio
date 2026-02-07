@@ -22,8 +22,10 @@
   "about_text_desc_5": "Cuando no estoy frente a la computadora, normalmente estoy haciendo senderismo, leyendo, pasando tiempo con amigos o creando ",
 
   "skills_text_title": "Habilidades & Stack Tecnológico",
+  "skills_text_subtitle": "Tecnologías y herramientas con las que trabajo",
   "skills_text_dw": "Desarrollo Web",
   "skills_text_ds": "Ciencia de datos y análisis",
+  "skills_text_ml": "ML e IA",
   "skills_text_di": "DevOps e infraestructura",
 
   "experience_text_title": "Donde he trabajado",
@@ -79,6 +81,9 @@
 
   "archive_text_title": "Otros proyectos interesantes",
   "archive_text_subtitle": "ver el archivo",
+  "projects_filter_label": "Filtrar proyectos por tecnología",
+  "projects_filter_all": "Todos",
+  "projects_show_more": "Ver más",
 
   "gallery_text_title": "Algunas cosas de mi vida en imágenes",
   "gallery_text_less": "Ver Menos",

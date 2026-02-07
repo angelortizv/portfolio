@@ -25,6 +25,39 @@ const StyledProjectsSection = styled.section`
     }
   }
 
+  .projects-filter {
+    ${({ theme }) => theme.mixins.resetList};
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+
+    button {
+      font-family: var(--font-mono);
+      font-size: var(--fz-xs);
+      padding: 8px 14px;
+      border-radius: var(--border-radius);
+      border: 1px solid var(--lightest-bg-color);
+      background: transparent;
+      color: var(--light-text-color);
+      cursor: pointer;
+      transition: var(--transition);
+
+      &:hover {
+        color: var(--primary-color);
+        border-color: var(--primary-color);
+      }
+
+      &.active {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+        color: var(--light-bg-color);
+      }
+    }
+  }
+
   .projects-grid {
     ${({ theme }) => theme.mixins.resetList};
     display: grid;
@@ -191,12 +224,37 @@ const Projects = () => {
   `);
 
   const [showMore, setShowMore] = useState(false);
+  const [activeFilter, setActiveFilter] = useState(null);
   const revealTitle = useRef(null);
   const revealArchiveLink = useRef(null);
   const revealProjects = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const { t } = useLanguage();
+
+  const GRID_LIMIT = 6;
+  const projects = data.projects.edges.filter(({ node }) => node);
+
+  const techList = React.useMemo(() => {
+    const allTech = projects.flatMap(({ node }) => node.frontmatter.tech || []);
+    return [...new Set(allTech)].filter(Boolean).sort((a, b) => a.localeCompare(b));
+  }, [projects]);
+
+  const filteredProjects = React.useMemo(() => {
+    if (!activeFilter) {return projects;}
+    return projects.filter(
+      ({ node }) => node.frontmatter.tech && node.frontmatter.tech.includes(activeFilter),
+    );
+  }, [projects, activeFilter]);
+
+  const handleFilterChange = tech => {
+    setActiveFilter(prev => (prev === tech ? null : tech));
+    setShowMore(false);
+  };
+
+  const firstBatch = filteredProjects.slice(0, GRID_LIMIT);
+  const projectsToShow = showMore ? filteredProjects : firstBatch;
+  const hasMore = filteredProjects.length > GRID_LIMIT;
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -206,15 +264,10 @@ const Projects = () => {
     sr.reveal(revealTitle.current, srConfig());
     sr.reveal(revealArchiveLink.current, srConfig());
     revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 100)));
-  }, []);
-
-  const GRID_LIMIT = 6;
-  const projects = data.projects.edges.filter(({ node }) => node);
-  const firstSix = projects.slice(0, GRID_LIMIT);
-  const projectsToShow = showMore ? projects : firstSix;
+  }, [prefersReducedMotion, activeFilter, projectsToShow.length]);
 
   const projectInner = node => {
-    const { frontmatter, html } = node;
+    const { frontmatter } = node;
     const { github, external, title, tech, desc } = frontmatter;
 
     return (
@@ -236,8 +289,7 @@ const Projects = () => {
                   aria-label="External Link"
                   className="external"
                   target="_blank"
-                  rel="noreferrer"
-                >
+                  rel="noreferrer">
                   <Icon name="External" />
                 </a>
               )}
@@ -250,9 +302,7 @@ const Projects = () => {
             </a>
           </h3>
           <div className="project-description">
-            <p>
-              {t("projects_" + desc)}
-            </p>
+            <p>{t(`projects_${  desc}`)}</p>
           </div>
         </header>
 
@@ -271,11 +321,38 @@ const Projects = () => {
 
   return (
     <StyledProjectsSection>
-      <h2 ref={revealTitle}>{t("archive_text_title")}</h2>
+      <h2 ref={revealTitle}>{t('archive_text_title')}</h2>
 
       <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
-        {t("archive_text_subtitle")}
+        {t('archive_text_subtitle')}
       </Link>
+
+      {techList.length > 0 && (
+        <ul className="projects-filter" role="tablist" aria-label={t('projects_filter_label')}>
+          <li>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={!activeFilter}
+              className={!activeFilter ? 'active' : ''}
+              onClick={() => handleFilterChange(null)}>
+              {t('projects_filter_all')}
+            </button>
+          </li>
+          {techList.map(tech => (
+            <li key={tech}>
+              <button
+                type="button"
+                role="tab"
+                aria-selected={activeFilter === tech}
+                className={activeFilter === tech ? 'active' : ''}
+                onClick={() => handleFilterChange(tech)}>
+                {tech}
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
 
       <ul className="projects-grid">
         {prefersReducedMotion ? (
@@ -293,15 +370,13 @@ const Projects = () => {
                   key={i}
                   classNames="fadeup"
                   timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
-                  exit={false}
-                >
+                  exit={false}>
                   <StyledProject
                     key={i}
                     ref={el => (revealProjects.current[i] = el)}
                     style={{
                       transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,
-                    }}
-                  >
+                    }}>
                     {projectInner(node)}
                   </StyledProject>
                 </CSSTransition>
@@ -309,6 +384,12 @@ const Projects = () => {
           </TransitionGroup>
         )}
       </ul>
+
+      {hasMore && !showMore && (
+        <button type="button" className="more-button" onClick={() => setShowMore(true)}>
+          {t('projects_show_more')}
+        </button>
+      )}
     </StyledProjectsSection>
   );
 };
