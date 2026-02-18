@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 import { translations } from '../../config';
@@ -53,15 +53,35 @@ const StyledHeroSection = styled.section`
   }
 `;
 
-const CreaiQuote = styled.p`
+const CreaiLine = styled.p`
   margin: 20px 0 0;
-  padding-left: 16px;
-  border-left: 3px solid var(--primary-color);
-  font-style: italic;
   color: var(--slate);
+  display: flex;
+  align-items: center;
+  gap: 8px;
 
   a {
     ${({ theme }) => theme.mixins.inlineLink};
+  }
+`;
+
+const livePulse = keyframes`
+  0%, 100% { opacity: 1; transform: translateY(-2px) scale(1); box-shadow: 0 0 0 0 var(--primary-color); }
+  50% { opacity: 0.85; transform: translateY(-2px) scale(1.15); box-shadow: 0 0 0 4px transparent; }
+`;
+
+const LiveDot = styled.span`
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  flex-shrink: 0;
+  transform: translateY(-2px);
+  animation: ${livePulse} 1.5s ease-in-out infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
   }
 `;
 
@@ -107,13 +127,16 @@ const Hero = () => {
   const four = (
     <>
       <p>{t('hero_txt_about')}</p>
-      <CreaiQuote>
-        {t('hero_txt_creai')}{' '}
-        <a href="https://www.creai.mx/" target="_blank" rel="noopener noreferrer">
-          @Creai
-        </a>
-        .
-      </CreaiQuote>
+      <CreaiLine>
+        <LiveDot aria-hidden />
+        <span>
+          {t('hero_txt_creai')}{' '}
+          <a href="https://www.creai.mx/" target="_blank" rel="noopener noreferrer">
+            @Creai
+          </a>
+          .
+        </span>
+      </CreaiLine>
     </>
   );
   const proudly = <p>{t('hero_text_proud')}</p>;

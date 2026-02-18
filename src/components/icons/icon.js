@@ -37,6 +37,10 @@ import {
   IconKafka,
   IconJenkins,
   IconRestAPI,
+  IconTensorflow,
+  IconPytorch,
+  IconScikitlearn,
+  IconJupyter,
 } from '@components/icons';
 
 const Icon = ({ name }) => {
@@ -113,6 +117,14 @@ const Icon = ({ name }) => {
       return <IconRestAPI />;
     case 'Jenkins':
       return <IconJenkins />;
+    case 'TensorFlow':
+      return <IconTensorflow />;
+    case 'PyTorch':
+      return <IconPytorch />;
+    case 'scikit-learn':
+      return <IconScikitlearn />;
+    case 'Jupyter':
+      return <IconJupyter />;
     default:
       return <IconExternal />;
   }

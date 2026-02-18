@@ -35,3 +35,7 @@ export { default as IconGcp } from './gcp';
 export { default as IconKafka } from './kafka';
 export { default as IconRestAPI } from './restapi';
 export { default as IconJenkins } from './jenkins';
+export { default as IconTensorflow } from './tensorflow';
+export { default as IconPytorch } from './pytorch';
+export { default as IconScikitlearn } from './scikitlearn';
+export { default as IconJupyter } from './jupyter';

@@ -241,7 +241,9 @@ const Projects = () => {
   }, [projects]);
 
   const filteredProjects = React.useMemo(() => {
-    if (!activeFilter) {return projects;}
+    if (!activeFilter) {
+      return projects;
+    }
     return projects.filter(
       ({ node }) => node.frontmatter.tech && node.frontmatter.tech.includes(activeFilter),
     );
@@ -249,7 +251,7 @@ const Projects = () => {
 
   const handleFilterChange = tech => {
     setActiveFilter(prev => (prev === tech ? null : tech));
-    setShowMore(false);
+    setShowMore(() => tech === null);
   };
 
   const firstBatch = filteredProjects.slice(0, GRID_LIMIT);
@@ -302,7 +304,7 @@ const Projects = () => {
             </a>
           </h3>
           <div className="project-description">
-            <p>{t(`projects_${  desc}`)}</p>
+            <p>{t(`projects_${desc}`)}</p>
           </div>
         </header>
 
@@ -358,21 +360,20 @@ const Projects = () => {
         {prefersReducedMotion ? (
           <>
             {projectsToShow &&
-              projectsToShow.map(({ node }, i) => (
-                <StyledProject key={i}>{projectInner(node)}</StyledProject>
+              projectsToShow.map(({ node }) => (
+                <StyledProject key={node.frontmatter.title}>{projectInner(node)}</StyledProject>
               ))}
           </>
         ) : (
-          <TransitionGroup component={null}>
+          <TransitionGroup component={null} key={`filter-${activeFilter ?? 'all'}`}>
             {projectsToShow &&
               projectsToShow.map(({ node }, i) => (
                 <CSSTransition
-                  key={i}
+                  key={node.frontmatter.title}
                   classNames="fadeup"
                   timeout={i >= GRID_LIMIT ? (i - GRID_LIMIT) * 300 : 300}
                   exit={false}>
                   <StyledProject
-                    key={i}
                     ref={el => (revealProjects.current[i] = el)}
                     style={{
                       transitionDelay: `${i >= GRID_LIMIT ? (i - GRID_LIMIT) * 100 : 0}ms`,

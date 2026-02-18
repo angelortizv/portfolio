@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Icon } from '@components/icons';
 import { socialMedia } from '@config';
 import ScrollToTop from './scrollToTop';
-import TableTennis from './TableTennis';
 import { useLanguage } from '../hooks/LanguageContext';
 import { useKeyboardShortcuts } from '../hooks/KeyboardShortcutsContext';
 
@@ -131,6 +130,13 @@ const StyledCredit = styled.div`
     padding-bottom: 0;
     opacity: 0;
   }
+
+  .footer-time-msg {
+    margin-top: 10px;
+    font-size: var(--fz-xxs);
+    color: var(--text-color);
+    opacity: 0.75;
+  }
 `;
 
 const formatBuildDate = isoString => {
@@ -141,12 +147,20 @@ const formatBuildDate = isoString => {
   return new Intl.DateTimeFormat('en', { month: 'long', year: 'numeric' }).format(date);
 };
 
+const getTimeGreetingKey = () => {
+  const hour = new Date().getHours();
+  if (hour >= 5 && hour < 12) {return 'footer_time_morning';}
+  if (hour >= 21 || hour < 5) {return 'footer_time_night';}
+  return null;
+};
+
 const Footer = () => {
   const { t } = useLanguage();
   const { openShortcuts } = useKeyboardShortcuts();
   const [showHow, setShowHow] = useState(false);
   const buildDate = typeof process !== 'undefined' && process.env.GATSBY_BUILD_DATE;
   const lastUpdated = formatBuildDate(buildDate);
+  const timeGreetingKey = getTimeGreetingKey();
 
   return (
     <StyledFooter>
@@ -195,14 +209,17 @@ const Footer = () => {
             {t('footer_last_updated')} {lastUpdated}
           </div>
         )}
+        {timeGreetingKey && (
+          <div className="footer-time-msg" aria-hidden="true">
+            {t(timeGreetingKey)}
+          </div>
+        )}
         <div className="footer-shortcuts">
           <button type="button" onClick={openShortcuts}>
             {t('accessibility_text_shortcuts')}
           </button>
         </div>
       </StyledCredit>
-
-      <TableTennis />
 
       <ScrollToTop className="scrollToTop" />
     </StyledFooter>

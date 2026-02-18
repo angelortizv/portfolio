@@ -147,5 +147,7 @@
   "shortcuts_close": "Close modal",
   "shortcuts_hint": "Press 1–6 to jump to a section",
   "footer_how_trigger": "how?",
-  "footer_how_stack": "Gatsby · React · Styled Components · Netlify"
+  "footer_how_stack": "Gatsby · React · Styled Components · Netlify",
+  "footer_time_morning": "Good morning ☀️",
+  "footer_time_night": "Thanks for visiting so late 🌙"
 }

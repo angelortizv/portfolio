@@ -144,5 +144,7 @@
   "shortcuts_close": "Cerrar modal",
   "shortcuts_hint": "Pulsa 1–6 para ir a una sección",
   "footer_how_trigger": "¿cómo?",
-  "footer_how_stack": "Gatsby · React · Styled Components · Netlify"
+  "footer_how_stack": "Gatsby · React · Styled Components · Netlify",
+  "footer_time_morning": "Buen día ☀️",
+  "footer_time_night": "Gracias por visitar tan tarde 🌙"
 }
