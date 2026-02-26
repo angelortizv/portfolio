@@ -4,7 +4,7 @@ title: 'job_title_creai'
 desc: 'creai'
 company: 'CREAI'
 location: 'Cartago, Costa Rica'
-range: 'Apr 2022 - Present'
+range: 'Nov 2025 - Present'
 type: 'Remote'
 url: ''
 ---
