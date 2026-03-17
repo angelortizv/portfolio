@@ -46,10 +46,11 @@
   "job_title_freelancer1": "Ingeniero de Software",
   "jobs_freelancer1": [
     "Entregué soluciones de software de extremo a extremo para startups y diversos clientes, combinando desarrollo backend robusto, integración en la nube, automatización de procesos y desarrollo frontend.",
-    "Me enfoqué en construir sistemas escalables, mantenibles y eficientes utilizando tecnologías modernas y las mejores prácticas de ingeniería."
+    "Me enfoqué en construir sistemas escalables, mantenibles y eficientes utilizando tecnologías modernas y las mejores prácticas de ingeniería.",
+    "Los proyectos fueron desde sitios web de marketing y producto hasta herramientas de automatización y APIs para startups, entregados de extremo a extremo utilizando React, Node, Python y AWS."
   ],
 
-  "job_title_creai": "Ingeniero de Software Full Stack para IA",
+  "job_title_creai": "Fullstack AI Engineer",
   "jobs_creai": [
     "Desarrollo full stack de aplicaciones y APIs que forman parte de las soluciones de IA de Creai, utilizando Ember.js, React, PHP, Laravel y Python.",
     "Colaboración con equipos de ciencia de datos y producto para integrar funcionalidades de ML/IA en sistemas en producción.",
@@ -59,14 +60,17 @@
   "job_title_easyhop": "Ingeniero de Software",
   "jobs_easyhop": [
     "Construí y mejoré aplicaciones web y móviles para conductores y pasajeros, desarrollando funcionalidades críticas y a medida alineadas con las necesidades del cliente y los stakeholders.",
-    "Lideré una iniciativa de investigación en UX que impulsó la inversión estratégica en una plataforma web para conductores, mejorando ingresos y eficiencia operativa."
+    "Lideré una iniciativa de investigación en UX que impulsó la inversión estratégica en una plataforma web para conductores, mejorando ingresos y eficiencia operativa.",
+    "Construí la aplicación móvil para conductores, manejando rutas, mapas, flujos de usuario y listados de clientes por recoger, con énfasis en el manejo de rutas y puntos de recogida en el mapa."
   ],
 
   "job_title_qubosystems": "Ingeniero de Software",
   "jobs_qubosystems": [
     "Diseñé e implementé componentes de extremo a extremo para iniciativas internas y orientadas a clientes, incluyendo APIs REST y paneles de administración.",
     "Actué como líder técnico en varios proyectos full stack con fuerte enfoque en desarrollo frontend con React.",
-    "Entregué soluciones escalables en todo el stack, desde servicios backend hasta interfaces de usuario."
+    "Entregué soluciones escalables en todo el stack, desde servicios backend hasta interfaces de usuario.",
+    "Construí un sistema de planillas para una universidad privada con un módulo de ML para clasificar categorías salariales de docentes.",
+    "Desarrollé el módulo de encriptación de datos para una app móvil de datáfono (desarrollada como tercero) para un banco de Costa Rica."
   ],
 
   "jobs_scroll_left": "Desplazar pestañas a la izquierda",

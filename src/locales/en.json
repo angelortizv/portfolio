@@ -45,11 +45,12 @@
 
   "job_title_freelancer1": "Software Engineer",
   "jobs_freelancer1": [
-    "Delivered end-to-end software solutions for startups and diverse clients, combining robust backend development,cloud integration, process automation, and frontend development.",
-    "Focused on building scalable, maintainable, and efficient systems using modern technologies and best engineering practices. "
+    "Delivered end-to-end software solutions for startups and diverse clients, combining robust backend development, cloud integration, process automation, and frontend development.",
+    "Focused on building scalable, maintainable, and efficient systems using modern technologies and best engineering practices. ",
+    "Projects ranged from marketing and product web sites to automation tools and APIs for startups, shipped end-to-end using React, Node, Python, and AWS."
   ],
 
-  "job_title_creai": "Full Stack Software Engineer for AI",
+  "job_title_creai": "Fullstack AI Engineer",
   "jobs_creai": [
     "Full-stack development of applications and APIs that power Creai's AI solutions, using Ember.js, React, PHP, Laravel, and Python.",
     "Collaboration with data science and product teams to integrate ML/AI features into production systems.",
@@ -59,14 +60,17 @@
   "job_title_easyhop": "Software Engineer",
   "jobs_easyhop": [
     "Built and enhanced driver and passenger web/mobile applications, developing critical and custom features aligned with client and stakeholder needs.",
-    "Led a UX research initiative that drove strategic investment in a web-based driver platform, improving revenue and operational efficiency."
+    "Led a UX research initiative that drove strategic investment in a web-based driver platform, improving revenue and operational efficiency.",
+    "Built the driver mobile application, handling routes, maps, user flows, and pickup lists — with a strong focus on route handling and map-based pickup points."
   ],
 
   "job_title_qubosystems": "Software Engineer",
   "jobs_qubosystems": [
     "Designed and implemented end-to-end components for internal and client-facing initiatives, including REST APIs and admin dashboards.",
     "Served as technical lead on several full-stack projects with a strong focus on frontend development using React.",
-    "Delivered scalable solutions across the full stack, from backend services to user interfaces."
+    "Delivered scalable solutions across the full stack, from backend services to user interfaces.",
+    "Built a payroll system for a private university with an ML module for classifying faculty salary categories.",
+    "Developed the data encryption module for a third-party mobile point-of-sale (card reader) app for a Costa Rican bank."
   ],
 
   "jobs_scroll_left": "Scroll tabs left",
