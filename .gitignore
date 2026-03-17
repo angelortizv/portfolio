@@ -8,4 +8,7 @@ package-lock.json
 /public
 .DS_Store
 
+# Docs (positioning, notes)
+docs/
+
 .vscode/

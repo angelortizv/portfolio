@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'Angelo Ortiz Vega',
     description:
-      'Angelo Ortiz Vega is a Computer Engineering Student based in Costa Rica. Professional in technical support to end-users and computer equipment. With strong programming skills and passion for quality and writing clean, readable code that is scalable and works well.',
+      'Angelo Ortiz Vega — Fullstack AI Engineer based in Costa Rica. I build and ship AI-powered products, lead technical initiatives, and bring ML from research to production. 4+ years in startups and product teams.',
     siteUrl: 'https://www.angelortizv.me/', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
   },

@@ -6,16 +6,18 @@
   "menu_text_gallery": "Galeria",
   "menu_text_contact": "Contacto",
 
-  "hero_txt_keywords": "Ingeniero en Computadores, Inteligencia Artificial, Ciencia de Datos, Desarrollo Full Stack, Profesor Universitario.",
-  "hero_txt_about": "Desarrollador de software con más de cuatro años de experiencia en productos digitales escalables y eficientes para startups y organizaciones. Combinando una sólida experiencia técnica con habilidades para la resolución de problemas, visión de negocio y diseño centrado en el usuario.",
+  "meta_description": "Angelo Ortiz Vega — Fullstack AI Engineer en Costa Rica. Construyo productos con IA, lidero iniciativas técnicas y llevo ML de la investigación a producción. Más de 4 años en startups y equipos de producto.",
+
+  "hero_txt_keywords": "Fullstack AI Engineer · ML en producción · Ciencia de datos · Builder",
+  "hero_txt_about": "Fullstack AI Engineer. Construyo y llevo a producción productos con IA de punta a punta: desde modelos y APIs hasta las interfaces. Cuatro años como fullstack e ingeniero de software; en el último año he transitado hacia ML y ahora me enfoco en llevarlo a producción.",
   "hero_btn_resume": "Ponte en contacto",
   "hero_text_proud": "Orgullosamente de 🇨🇷",
   "hero_txt_creai": "Actualmente desarrollando en",
 
   "about_text_title": "Acerca de mí",
   "about_text_tec": "Instituto Tecnológico de Costa Rica",
-  "about_text_desc_1": "¡Hola! Soy Angelo Ortiz Vega, Ingeniero en Computadores, desarrollador de software y practicante de inteligencia artificial, con más de cuatro años de experiencia desarrollando productos digitales escalables y eficientes para startups y organizaciones. Combino experiencia técnica en ingeniería de software con sólidas habilidades para la resolución de problemas, visión de negocio y diseño centrado en el usuario. Tengo dominio en desarrollo con Python utilizando frameworks como Flask y FastAPI, integraciones en la nube con AWS, y tecnologías modernas de desarrollo full stack como React, Angular y Node.js.",
-  "about_text_desc_2": "Mi trabajo en inteligencia artificial abarca la construcción e integración de modelos de aprendizaje automático en sistemas de producción, el diseño de pipelines de datos y la aplicación de automatización para optimizar flujos de trabajo. He desarrollado sistemas predictivos, agentes inteligentes y soluciones RPA utilizando frameworks como scikit-learn, TensorFlow y PyTorch. Me apasiona reducir la brecha entre la investigación en IA y las aplicaciones del mundo real que mejoran la eficiencia, la sostenibilidad y la experiencia del usuario.",
+  "about_text_desc_1": "¡Hola! Soy Angelo Ortiz Vega, Fullstack AI Engineer con más de cuatro años construyendo y llevando a producción productos con IA para startups y organizaciones. Me hago cargo del stack completo: desde entrenar e integrar modelos de ML en sistemas en producción hasta las APIs y las interfaces que los exponen. Trabajo con Python (Flask, FastAPI), AWS y frontends modernos (React, Angular, Node.js), y me importa tanto el rendimiento de los modelos como que usuarios y negocios usen lo que construimos.",
+  "about_text_desc_2": "Mi día a día incluye construir e integrar modelos de ML en producción, diseñar pipelines de datos y automatizar flujos. He llevado a producción sistemas predictivos, agentes inteligentes y soluciones RPA con scikit-learn, TensorFlow y PyTorch. Me enfoco en cerrar la brecha entre investigación en IA y productos reales que mejoran la eficiencia y la experiencia de usuario, y en liderar el trabajo técnico que los hace posibles. Por ejemplo: en QuboSystems construí un sistema de planillas para una universidad privada que incluía un módulo de ML para clasificar categorías salariales de docentes según múltiples características; en Easyhop lideré investigación en UX e iniciativas técnicas que impulsaron la inversión estratégica en la plataforma para conductores.",
   "about_text_desc_3_1": "Actualmente estoy finalizando la carrera de Ingeniería en Computadores en el ",
   "about_text_desc_3_2": "fortaleciendo mi base teórica y analítica. El programa se centra en las ciencias y tecnologías que permiten el diseño, construcción, implementación y mantenimiento de sistemas informáticos — tanto de hardware como de software.",
   "about_text_desc_4_1": "Paralelamente, he trabajado como docente universitario/profesor durante más de tres años, impartiendo cursos de Inteligencia Artificial, Análisis de Datos, Desarrollo Full Stack y Diseño de Experiencia de Usuario en la ",

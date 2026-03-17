@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
+import { useLanguage } from '../hooks/LanguageContext';
 
 // https://www.gatsbyjs.com/docs/add-seo-component/
 
 const Head = ({ title, description, image }) => {
   const { pathname } = useLocation();
+  const { t, lang } = useLanguage();
 
   const { site } = useStaticQuery(
     graphql`
@@ -25,17 +27,18 @@ const Head = ({ title, description, image }) => {
   );
 
   const { defaultTitle, defaultDescription, siteUrl, defaultImage } = site.siteMetadata;
+  const metaDesc = t('meta_description') || defaultDescription;
 
   const seo = {
     title: title || defaultTitle,
-    description: description || defaultDescription,
+    description: description || metaDesc,
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname}`,
   };
 
   return (
     <Helmet title={title} defaultTitle={seo.title} titleTemplate={`%s | ${defaultTitle}`}>
-      <html lang="en" />
+      <html lang={lang === 'es' ? 'es' : 'en'} />
 
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />

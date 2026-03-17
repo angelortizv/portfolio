@@ -39,3 +39,7 @@ export { default as IconTensorflow } from './tensorflow';
 export { default as IconPytorch } from './pytorch';
 export { default as IconScikitlearn } from './scikitlearn';
 export { default as IconJupyter } from './jupyter';
+export { default as IconEmber } from './ember';
+export { default as IconPhp } from './php';
+export { default as IconLaravel } from './laravel';
+export { default as IconFigma } from './figma';

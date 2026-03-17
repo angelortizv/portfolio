@@ -41,6 +41,10 @@ import {
   IconPytorch,
   IconScikitlearn,
   IconJupyter,
+  IconEmber,
+  IconPhp,
+  IconLaravel,
+  IconFigma,
 } from '@components/icons';
 
 const Icon = ({ name }) => {
@@ -125,6 +129,14 @@ const Icon = ({ name }) => {
       return <IconScikitlearn />;
     case 'Jupyter':
       return <IconJupyter />;
+    case 'Ember.js':
+      return <IconEmber />;
+    case 'PHP':
+      return <IconPhp />;
+    case 'Laravel':
+      return <IconLaravel />;
+    case 'Figma':
+      return <IconFigma />;
     default:
       return <IconExternal />;
   }

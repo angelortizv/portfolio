@@ -6,16 +6,18 @@
   "menu_text_gallery": "Gallery",
   "menu_text_contact": "Contact",
 
-  "hero_txt_keywords": "Computer Engineer, Artificial Intelligence, Data Science, Full Stack Development, University Lecturer.",
-  "hero_txt_about": "Software Engineer with over four years of experience developing scalable and efficient digital products for startups and organizations, combining technical expertise with strong problem-solving skills, business insight, and user-centered design.",
+  "meta_description": "Angelo Ortiz Vega — Fullstack AI Engineer based in Costa Rica. I build and ship AI-powered products, lead technical initiatives, and bring ML from research to production. 4+ years in startups and product teams.",
+
+  "hero_txt_keywords": "Fullstack AI Engineer · ML in Production · Data Science · Builder",
+  "hero_txt_about": "Fullstack AI Engineer. I build and ship AI-powered products end-to-end — from models and APIs to the interfaces people use. Four years as a fullstack and software engineer; in the last year I've transitioned into ML and now focus on putting it into production.",
   "hero_btn_resume": "Get in touch",
   "hero_text_proud": "Proudly from 🇨🇷",
   "hero_txt_creai": "Currently shipping features at",
 
   "about_text_title": "About Me",
   "about_text_tec": "Technological Institute of Costa Rica",
-  "about_text_desc_1": "Hello! I am Angelo Ortiz Vega, a Computer Engineer and AI Practitioner with over four years of experience developing scalable and efficient digital products for startups and organizations. I combine technical expertise in software engineering with strong problem-solving skills, business insight, and user-centered design. Skilled in Python development with frameworks such as Flask and FastAPI, cloud integrations with AWS, and modern full stack technologies including React,Angular, and Node.js.",
-  "about_text_desc_2": "My work in Artificial Intelligence spans building and integrating machine learning modelsinto production systems, designing data pipelines, and applying automation to optimize workflows. I've developed predictive systems, intelligent agents, and RPA solutions using frameworks likescikit-learn, TensorFlow, and PyTorch. I'm passionate about bridging the gap between AI research and real-world applications that improve efficiency, sustainability, and user experience.",
+  "about_text_desc_1": "Hello! I'm Angelo Ortiz Vega, a Fullstack AI Engineer with over four years building and shipping AI-powered products for startups and organizations. I own the full stack: from training and integrating ML models into production systems to the APIs and UIs that expose them. I work with Python (Flask, FastAPI), AWS, and modern frontends (React, Angular, Node.js), and I care as much about model performance as about how real users and businesses use what we build.",
+  "about_text_desc_2": "My day-to-day spans building and integrating ML models into production, designing data pipelines, and automating workflows. I've shipped predictive systems, intelligent agents, and RPA solutions with scikit-learn, TensorFlow, and PyTorch. I'm focused on closing the gap between AI research and real products that improve efficiency and user experience — and on leading the technical work that gets them there. For example: at QuboSystems I built a payroll system for a private university that included an ML module to classify faculty salary categories based on multiple characteristics; at Easyhop I led UX research and technical initiatives that drove strategic investment in the driver platform.",
   "about_text_desc_3_1": "I am currently completing a degree in Computer Engineering at the ",
   "about_text_desc_3_2": "strengthening my theoretical and analytical foundation. The program focuses on the sciences and technologies that enable the design, construction, implementation, and maintenance of computer systems — both hardware and software.",
   "about_text_desc_4_1": "In parallel, I have worked as a university lecturer for over three years, teaching Artificial Intelligence, Data Analysis, Full Stack Development, and UX Design at ",

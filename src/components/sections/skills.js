@@ -99,9 +99,22 @@ const SkillPill = styled.li`
 
 // Icon component expects exact names (e.g. 'HTML', 'CSS', 'REST API', 'GCP', 'AWS')
 const SKILL_CATEGORIES = {
-  dw: ['TypeScript', 'React', 'Gatsby', 'Angular', 'GraphQL', 'HTML', 'CSS', 'REST API'],
+  dw: [
+    'TypeScript',
+    'React',
+    'Gatsby',
+    'Angular',
+    'Ember.js',
+    'GraphQL',
+    'HTML',
+    'CSS',
+    'REST API',
+    'PHP',
+    'Laravel',
+    'Figma',
+  ],
   ds: ['Python', 'Tableau', 'PostgreSQL', 'R'],
-  di: ['AWS', 'GCP', 'Docker', 'Git', 'Firebase', 'Jenkins'],
+  di: ['AWS', 'GCP', 'Docker', 'Git', 'GitHub', 'Firebase', 'Jenkins'],
   ml: ['Python', 'TensorFlow', 'PyTorch', 'scikit-learn', 'Jupyter'],
 };
 
