@@ -4,7 +4,10 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// Define FeedBlog so the type exists even when gatsby-source-rss-feed returns no items
+const crypto = require('crypto');
+const Parser = require('rss-parser');
+
+// Define FeedBlog so the type exists even when RSS returns no items
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
   createTypes(`
@@ -17,6 +20,39 @@ exports.createSchemaCustomization = ({ actions }) => {
       guid: String
     }
   `);
+};
+
+// Source blog from RSS; on 404 or error we create no nodes (build does not fail)
+exports.sourceNodes = async ({ actions, createNodeId }) => {
+  const url = process.env.GATSBY_BLOG_RSS_URL || 'https://angelortizv.com/index.xml';
+  const { createNode } = actions;
+  const parser = new Parser();
+
+  try {
+    const feed = await parser.parseURL(url);
+    const items = feed.items || [];
+    items.forEach(item => {
+      const nodeId = createNodeId(item.guid || item.link || item.title || Math.random().toString());
+      const digest = crypto.createHash('md5').update(JSON.stringify(item)).digest('hex');
+      createNode({
+        id: nodeId,
+        parent: null,
+        children: [],
+        title: item.title || '',
+        link: item.link || '',
+        pubDate: item.pubDate || item.isoDate || '',
+        content: item.content || item['content:encoded'] || '',
+        guid: item.guid || '',
+        internal: {
+          type: 'FeedBlog',
+          contentDigest: digest,
+        },
+      });
+    });
+  } catch (err) {
+    // 404, network error, or invalid feed: do not throw so build succeeds
+    console.warn('[gatsby-node] Blog RSS unavailable:', err.message || err);
+  }
 };
 
 // Expose build date to client for footer "last updated"

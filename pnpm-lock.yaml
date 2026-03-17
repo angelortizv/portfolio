@@ -62,9 +62,6 @@ importers:
       gatsby-source-filesystem:
         specifier: ^3.4.0
         version: 3.15.0(gatsby@3.15.0(@types/node@25.2.1)(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(type-fest@0.13.1)(typescript@5.9.3))
-      gatsby-source-rss-feed:
-        specifier: ^1.2.2
-        version: 1.2.2
       gatsby-transformer-remark:
         specifier: ^4.1.0
         version: 4.12.0(gatsby@3.15.0(@types/node@25.2.1)(babel-eslint@10.1.0(eslint@7.32.0))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(type-fest@0.13.1)(typescript@5.9.3))
@@ -101,6 +98,9 @@ importers:
       react-type-animation:
         specifier: ^1.1.3
         version: 1.1.3(prop-types@15.8.1)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      rss-parser:
+        specifier: ^3.13.0
+        version: 3.13.0
       scrollreveal:
         specifier: ^4.0.5
         version: 4.0.9
@@ -3317,9 +3317,6 @@ packages:
     engines: {node: '>=12.13.0'}
     peerDependencies:
       gatsby: ^3.0.0-next.0
-
-  gatsby-source-rss-feed@1.2.2:
-    resolution: {integrity: sha512-Ris5Dtdj856aups8xzPtNOG6prKjaGzcXxRdFrgExQBVv2o1fUPHwj7OGrdV32tNUg2mHOZurr5qFWAdaRIMUg==}
 
   gatsby-telemetry@2.15.0:
     resolution: {integrity: sha512-WyiV3LIn/LBuNuDxhInQo/QQlFHSz0Km/T+BGvnQ+3iZrBWTq/e87KN0NKtlQ6PxN7LmGumid4OTr5eLil1A0A==}
@@ -11345,11 +11342,6 @@ snapshots:
       progress: 2.0.3
       valid-url: 1.0.9
       xstate: 4.38.3
-
-  gatsby-source-rss-feed@1.2.2:
-    dependencies:
-      lodash: 4.17.23
-      rss-parser: 3.13.0
 
   gatsby-telemetry@2.15.0:
     dependencies:

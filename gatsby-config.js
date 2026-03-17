@@ -50,13 +50,7 @@ module.exports = {
         path: `${__dirname}/content/projects`,
       },
     },
-    {
-      resolve: `gatsby-source-rss-feed`,
-      options: {
-        url: process.env.GATSBY_BLOG_RSS_URL || `https://angelortizv.com/index.xml`,
-        name: `Blog`,
-      },
-    },
+    /* RSS blog feed is sourced in gatsby-node.js (graceful 404 / no throw) */
     {
       resolve: `gatsby-transformer-remark`,
       options: {
