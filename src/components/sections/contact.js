@@ -63,6 +63,14 @@ const StyledContactSection = styled.section`
     font-size: clamp(40px, 5vw, 60px);
   }
 
+  .contact-cta {
+    margin-top: 24px;
+    margin-bottom: 8px;
+    font-size: var(--fz-lg);
+    font-weight: 500;
+    color: var(--primary-color);
+  }
+
   .location {
     margin-top: 16px;
     font-family: var(--font-mono);
@@ -142,6 +150,8 @@ const Contact = () => {
       <h2 className="title">{t('contact_text_title')}</h2>
 
       <p>{t('contact_text_desc')}</p>
+
+      <p className="contact-cta">{t('contact_text_cta')}</p>
 
       <p className="location" aria-label={t('contact_location_aria')}>
         {t('contact_location')}

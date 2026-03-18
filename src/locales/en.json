@@ -35,6 +35,7 @@
   "skills_text_di": "DevOps & Infrastructure",
 
   "experience_text_title": "Where I've Worked",
+  "experience_text_subtitle": "Roles where I've led and shipped products.",
   "job_title_ucreativa": "University Lecturer",
   "jobs_ucreativa": [
     "Enriched the learning experience by incorporating real-world case studies, collaborative projects, and innovative teaching methodologies.",
@@ -85,8 +86,8 @@
   "projects_text_title": "Some Things I've Built",
   "projects_text_featured": "Featured Project",
   "projects_angelortizvcom": "angelortizv.com is a website where whenever I have the opportunity, I leave a few minutes of what I am doing to share what I am learning or what I am thinking.",
-  "projects_easyhop": "Easy Hop is the only platform in Costa Rica that connects private group shuttles with visitors in both rural, and touristic destinations. Within the project I was in charge of developing the mobile application for drivers, whose main function was to see the stopping points on a map and validate passenger tickets.",
-  "projects_topspinai": "Table tennis is a fast-paced and dynamic sport where coaches, players and analysts require accurate tools to assess performance in real-time. The absence of advanced systems that can process and analyse high-resolution video to detect critical events such as ball bounces and net hits limits users' ability to make informed decisions. TopspinAI addresses this need by providing an automated system that uses artificial intelligence for ball detection and semantic segmentation, improving analysis and decision making during matches.",
+  "projects_easyhop": "Problem: drivers had no single app to see routes, stops, and validate passenger tickets. I built the driver mobile app end-to-end — map with stop points, routes, and ticket validation — a core product the platform still uses today.",
+  "projects_topspinai": "Problem: coaches and analysts had no automated way to analyze table tennis video for ball bounces and net hits. I built an AI system using computer vision (ball detection and semantic segmentation) so they can get real-time insights from match footage.",
   "projects_uxarc": "ux-arc is a personal blog and repository dedicated to sharing knowledge, experiences, and resources about the world of user experience design. Over the years, I have collected valuable information on various aspects of digital design, and this space was born with the intention of organizing and disseminating that knowledge in an accessible way for those looking to improve their skills and understanding in the field of UX.",
   "projects_ceitcr": "ce-itcr is the repository where the programming projects that I have carried out throughout my career in Computer Engineering courses are housed. The respective documentation on each course and code is on github.",
 
@@ -121,6 +122,7 @@
   "contact_text_over": "What's Next?",
   "contact_text_title": "Get In Touch",
   "contact_text_desc": "Although I'm not currently looking for freelance opportunities, my inbox is always open. If you have any questions or just want to say hello, I'll do my best to get back to you!",
+  "contact_text_cta": "Let's build your next AI-powered product.",
   "contact_location": "San José, Costa Rica · UTC−6",
   "contact_location_aria": "Location and timezone",
   "contact_btn_hello": "Say Hello",

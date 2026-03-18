@@ -35,6 +35,7 @@
   "skills_text_di": "DevOps e infraestructura",
 
   "experience_text_title": "Donde he trabajado",
+  "experience_text_subtitle": "Roles donde he liderado y llevado productos a producción.",
   "job_title_ucreativa": "Profesor Universitario",
   "jobs_ucreativa": [
     "Enriquecí la experiencia de aprendizaje con estudios de caso reales, proyectos colaborativos y metodologías innovadoras.",
@@ -85,8 +86,8 @@
   "projects_text_title": "Algunas cosas que he construido",
   "projects_text_featured": "Proyecto Destacado",
   "projects_angelortizvcom": "angelortizv.com es un sitio web donde, siempre que tengo la oportunidad, dedico unos minutos de lo que estoy haciendo para compartir lo que estoy aprendiendo o lo que estoy pensando.",
-  "projects_easyhop": "Easy Hop es la única plataforma en Costa Rica que conecta transportes privados grupales con visitantes en destinos rurales y turísticos. Dentro del proyecto estuve a cargo de desarrollar la aplicación móvil para los conductores, cuya función principal era visualizar los puntos de parada en un mapa y validar los boletos de los pasajeros.",
-  "projects_topspinai": "El tenis de mesa es un deporte rápido y dinámico donde entrenadores, jugadores y analistas requieren herramientas precisas para evaluar el rendimiento en tiempo real. La falta de sistemas avanzados capaces de procesar y analizar video en alta resolución para detectar eventos críticos, como rebotes de pelota y golpes en la red, limita la capacidad de los usuarios para tomar decisiones informadas. TopspinAI aborda esta necesidad proporcionando un sistema automatizado que utiliza inteligencia artificial para la detección de pelotas y segmentación semántica, mejorando el análisis y la toma de decisiones durante los partidos.",
+  "projects_easyhop": "Problema: los conductores no tenían una sola app para ver rutas, paradas y validar boletos. Construí la app móvil para conductores de punta a punta — mapa con puntos de parada, rutas y validación de boletos — un producto central que la plataforma sigue usando hoy.",
+  "projects_topspinai": "Problema: entrenadores y analistas no tenían forma automatizada de analizar video de tenis de mesa (rebotes, toques de red). Construí un sistema con IA y visión por computadora (detección de pelota y segmentación semántica) para dar insights en tiempo real a partir del video.",
   "projects_uxarc": "ux-arc es un blog personal y repositorio dedicado a compartir conocimientos, experiencias y recursos sobre el mundo del diseño de experiencia de usuario. A lo largo de los años, he recopilado información valiosa sobre diversos aspectos del diseño digital, y este espacio nació con la intención de organizar y difundir ese conocimiento de forma accesible para quienes buscan mejorar sus habilidades y comprensión en el campo de la UX.",
   "projects_ceitcr": "ce-itcr es el repositorio donde se encuentran los proyectos de programación que he realizado a lo largo de mi carrera en los cursos de Ingeniería en Computadores. La documentación respectiva de cada curso y su código se encuentran en GitHub.",
 
@@ -121,9 +122,13 @@
   "contact_text_over": "¿Qué sigue?",
   "contact_text_title": "Ponte en contacto",
   "contact_text_desc": "Aunque actualmente no estoy buscando oportunidades de freelance, mi bandeja de entrada siempre está abierta. Si tienes alguna pregunta o simplemente quieres saludar, ¡haré todo lo posible por responderte!",
+  "contact_text_cta": "Construyamos tu próximo producto con IA.",
   "contact_location": "San José, Costa Rica · UTC−6",
   "contact_location_aria": "Ubicación y zona horaria",
   "contact_btn_hello": "Decir Hola",
+  "contact_btn_copy": "Copiar correo",
+  "contact_btn_copied": "¡Copiado!",
+  "contact_btn_copy_aria": "Copiar dirección de correo",
 
   "footer_text_designed": "Diseñado por ",
   "footer_text_build": "Construido con 🫀 por ",

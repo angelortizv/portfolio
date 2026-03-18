@@ -9,6 +9,13 @@ import { usePrefersReducedMotion } from '@hooks';
 import { useLanguage } from '../../hooks/LanguageContext';
 
 const StyledJobsSection = styled.section`
+  .experience-intro {
+    margin: -10px 0 40px;
+    color: var(--light-text-color);
+    font-size: var(--fz-lg);
+    max-width: 540px;
+  }
+
   .inner {
     display: flex;
 
@@ -230,7 +237,9 @@ const Jobs = () => {
 
   const updateScrollHints = useCallback(() => {
     const el = tabListRef.current;
-    if (!el || window.innerWidth > 600) {return;}
+    if (!el || window.innerWidth > 600) {
+      return;
+    }
     const { scrollLeft, scrollWidth, clientWidth } = el;
     const left = scrollLeft > 2;
     const right = scrollLeft < scrollWidth - clientWidth - 2;
@@ -244,7 +253,9 @@ const Jobs = () => {
     };
     run();
     const t = setTimeout(run, 100);
-    if (!el) {return () => clearTimeout(t);}
+    if (!el) {
+      return () => clearTimeout(t);
+    }
     el.addEventListener('scroll', updateScrollHints);
     window.addEventListener('resize', updateScrollHints);
     return () => {
@@ -256,7 +267,9 @@ const Jobs = () => {
 
   const scrollTabs = direction => {
     const el = tabListRef.current;
-    if (!el) {return;}
+    if (!el) {
+      return;
+    }
     const amount = direction === 'left' ? -el.clientWidth * 0.6 : el.clientWidth * 0.6;
     el.scrollBy({ left: amount, behavior: 'smooth' });
   };
@@ -313,6 +326,7 @@ const Jobs = () => {
   return (
     <StyledJobsSection id="jobs" ref={revealContainer}>
       <h2 className="numbered-heading">{t('experience_text_title')}</h2>
+      <p className="experience-intro">{t('experience_text_subtitle')}</p>
 
       <div className="inner">
         <TabListWrapper>
@@ -364,9 +378,9 @@ const Jobs = () => {
             jobsData.map(({ node }, i) => {
               const { frontmatter } = node;
               const { title, url, company, range, type, location, desc } = frontmatter;
-              const jobKeys = Array.isArray(t(`jobs_${  desc}`))
-                ? t(`jobs_${  desc}`)
-                : [t(`jobs_${  desc}`)];
+              const jobKeys = Array.isArray(t(`jobs_${desc}`))
+                ? t(`jobs_${desc}`)
+                : [t(`jobs_${desc}`)];
 
               return (
                 <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
