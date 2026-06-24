@@ -8,20 +8,20 @@
 
   "meta_description": "Angelo Ortiz Vega — Fullstack AI Engineer en Costa Rica. Construyo productos con IA, lidero iniciativas técnicas y llevo ML de la investigación a producción. Más de 4 años en startups y equipos de producto.",
 
-  "hero_txt_keywords": "Fullstack AI Engineer · ML en producción · Ciencia de datos · Builder",
-  "hero_txt_about": "Fullstack AI Engineer. Construyo y llevo a producción productos con IA de punta a punta: desde modelos y APIs hasta las interfaces. Cuatro años como fullstack e ingeniero de software; en el último año he transitado hacia ML y ahora me enfoco en llevarlo a producción.",
+  "hero_txt_keywords": "Fullstack AI Engineer · Tech Lead · Builder",
+  "hero_txt_about": "Construyo software que genera valor real de negocio. Como Fullstack AI Engineer y Tech Lead, me especializo en llevar a producción productos con IA, sistemas escalables y soluciones de automatización — con ownership del stack completo, desde la arquitectura e integración de ML hasta las interfaces.",
   "hero_btn_resume": "Ponte en contacto",
   "hero_text_proud": "Orgullosamente de 🇨🇷",
   "hero_txt_creai": "Actualmente desarrollando en",
 
   "about_text_title": "Acerca de mí",
   "about_text_tec": "Instituto Tecnológico de Costa Rica",
-  "about_text_desc_1": "¡Hola! Soy Angelo Ortiz Vega, Fullstack AI Engineer con más de cuatro años construyendo y llevando a producción productos con IA para startups y organizaciones. Me hago cargo del stack completo: desde entrenar e integrar modelos de ML en sistemas en producción hasta las APIs y las interfaces que los exponen. Trabajo con Python (Flask, FastAPI), AWS y frontends modernos (React, Angular, Node.js), y me importa tanto el rendimiento de los modelos como que usuarios y negocios usen lo que construimos.",
-  "about_text_desc_2": "Mi día a día incluye construir e integrar modelos de ML en producción, diseñar pipelines de datos y automatizar flujos. He llevado a producción sistemas predictivos, agentes inteligentes y soluciones RPA con scikit-learn, TensorFlow y PyTorch. Me enfoco en cerrar la brecha entre investigación en IA y productos reales que mejoran la eficiencia y la experiencia de usuario, y en liderar el trabajo técnico que los hace posibles. Por ejemplo: en QuboSystems construí un sistema de planillas para una universidad privada que incluía un módulo de ML para clasificar categorías salariales de docentes según múltiples características; en Easyhop lideré investigación en UX e iniciativas técnicas que impulsaron la inversión estratégica en la plataforma para conductores.",
+  "about_text_desc_1": "¡Hola! Soy Angelo Ortiz Vega — Fullstack AI Engineer, Tech Lead y Profesor Universitario. Construyo software que genera valor real de negocio, especializándome en transformar desafíos complejos en productos con IA, sistemas escalables y soluciones de automatización. Mi trabajo está en la intersección del desarrollo de software, la inteligencia artificial y el desarrollo de producto — donde la tecnología genera resultados significativos para usuarios y organizaciones.",
+  "about_text_desc_2": "Mi trabajo abarca el ciclo completo del producto: diseñar y llevar a producción aplicaciones full-stack, APIs, soluciones cloud-native y sistemas de ML en startups y empresas de producto. Ayudo a los equipos a moverse más rápido, automatizar procesos repetitivos e integrar IA de forma efectiva — con ownership de dominios de negocio críticos, tomando decisiones arquitectónicas en equipos de más de 20 personas y colaborando con Data Science para llevar capacidades de ML a producción.",
   "about_text_desc_3_1": "Actualmente estoy finalizando la carrera de Ingeniería en Computadores en el ",
-  "about_text_desc_3_2": "fortaleciendo mi base teórica y analítica. El programa se centra en las ciencias y tecnologías que permiten el diseño, construcción, implementación y mantenimiento de sistemas informáticos — tanto de hardware como de software.",
+  "about_text_desc_3_2": ", construyendo una base teórica sólida en sistemas y arquitectura. Paralelamente, llevo más de tres años como Profesor Universitario — impartiendo cursos de Inteligencia Artificial, Análisis de Datos, Machine Learning y Desarrollo Full Stack en la ",
   "about_text_desc_4_1": "Paralelamente, he trabajado como docente universitario/profesor durante más de tres años, impartiendo cursos de Inteligencia Artificial, Análisis de Datos, Desarrollo Full Stack y Diseño de Experiencia de Usuario en la ",
-  "about_text_desc_4_2": "con un enfoque en el aprendizaje práctico, basado en proyectos y aplicaciones del mundo real.",
+  "about_text_desc_4_2": " — conectando academia e industria a través de aprendizaje práctico y basado en proyectos.",
   "about_text_desc_5": "Cuando no estoy frente a la computadora, normalmente estoy haciendo senderismo, leyendo, pasando tiempo con amigos o creando ",
   "about_text_desc_5_a": "Cuando no estoy frente a la computadora, normalmente estoy haciendo senderismo, leyendo, pasando tiempo con amigos, ",
   "about_text_desc_5_b": "jugando ping pong",
@@ -38,40 +38,49 @@
   "experience_text_subtitle": "Roles donde he liderado y llevado productos a producción.",
   "job_title_ucreativa": "Profesor Universitario",
   "jobs_ucreativa": [
-    "Enriquecí la experiencia de aprendizaje con estudios de caso reales, proyectos colaborativos y metodologías innovadoras.",
-    "Guié a estudiantes en el desarrollo de proyectos finales y prototipos funcionales alineados con las prácticas actuales del sector.",
-    "Estructuré y redacté el programa completo de Certificación en Diseño UX, incluyendo cursos como Investigación para Experiencias Digitales, Ideación de Soluciones, Principios de Diseño e Interacción y Usabilidad.",
-    "Impartí cursos clave del programa de IA, como Python para IA, Inteligencia Artificial Aplicada y Fundamentos de Machine Learning y Deep Learning."
+    "Diseño e imparto cursos enfocados en la industria: Inteligencia Artificial, Machine Learning, Deep Learning, Análisis de Datos, Desarrollo en Python, AWS y Desarrollo Full Stack.",
+    "Mentorizo a estudiantes en la creación de aplicaciones listas para producción, soluciones de IA y proyectos de graduación alineados con las prácticas actuales de la industria.",
+    "Estructuré y redacté el Programa Completo de Certificación en Diseño UX, desarrollando plan de estudios, resultados de aprendizaje, talleres prácticos y marcos de evaluación.",
+    "Conecto la academia con la industria integrando casos reales, metodologías ágiles, tecnologías cloud y prácticas modernas de ingeniería de software al aula.",
+    "Contribuyo a preparar a la próxima generación de desarrolladores, profesionales de IA y producto a través de experiencias de aprendizaje práctico y basado en proyectos."
   ],
 
-  "job_title_freelancer1": "Ingeniero de Software",
+  "job_title_freelancer1": "Consultor Freelance",
   "jobs_freelancer1": [
-    "Entregué soluciones de software de extremo a extremo para startups y diversos clientes, combinando desarrollo backend robusto, integración en la nube, automatización de procesos y desarrollo frontend.",
-    "Me enfoqué en construir sistemas escalables, mantenibles y eficientes utilizando tecnologías modernas y las mejores prácticas de ingeniería.",
-    "Los proyectos fueron desde sitios web de marketing y producto hasta herramientas de automatización y APIs para startups, entregados de extremo a extremo utilizando React, Node, Python y AWS."
+    "Entregué más de 15 soluciones de software personalizadas para startups, emprendedores y organizaciones — desde plataformas de marketing y aplicaciones web hasta sistemas de automatización y APIs cloud-native.",
+    "Lideré proyectos de punta a punta: levantamiento de requerimientos, arquitectura de solución, desarrollo, despliegue y soporte continuo.",
+    "Diseñé e implementé sistemas escalables con React, Node.js, Python y AWS, ayudando a los clientes a mejorar la eficiencia operacional y acelerar su transformación digital.",
+    "Colaboré directamente con founders y stakeholders de negocio para traducir desafíos empresariales en productos de software prácticos, mantenibles y escalables.",
+    "Construí soluciones de automatización e integraciones personalizadas que redujeron procesos manuales y permitieron a los clientes enfocarse en su crecimiento."
   ],
 
   "job_title_creai": "Fullstack AI Engineer",
   "jobs_creai": [
-    "Desarrollo full stack de aplicaciones y APIs que forman parte de las soluciones de IA de Creai, utilizando Ember.js, React, PHP, Laravel y Python.",
-    "Colaboración con equipos de ciencia de datos y producto para integrar funcionalidades de ML/IA en sistemas en producción.",
-    "Construcción y mantenimiento de sistemas web escalables que soportan productos impulsados por inteligencia artificial."
+    "Lidero el desarrollo de productos con IA y soluciones logísticas críticas para el negocio, con ownership de las capacidades centrales de la plataforma que soportan las operaciones diarias.",
+    "Soy responsable de dominios de negocio clave como rutas, servicios y gestión de viajes — construyendo la columna vertebral operacional de una plataforma logística a gran escala que sirve a clientes en México.",
+    "Arquitecto, desarrollo y mantengo aplicaciones full-stack y APIs escalables usando React, Ember.js, Laravel, PHP y Python.",
+    "Colaboro de forma transversal con un equipo de más de 20 personas — ingenieros, diseñadores, product owners, delivery managers y especialistas en IA — para entregar iniciativas de alto impacto.",
+    "Tomo decisiones técnicas, lidero discusiones de diseño de sistemas y defino estrategias de implementación para garantizar escalabilidad y alineación con los objetivos del negocio.",
+    "Colaboro con los equipos de Data Science y Producto para integrar capacidades de IA y ML en producción, acelerando la automatización y la eficiencia operacional."
   ],
 
-  "job_title_easyhop": "Ingeniero de Software",
+  "job_title_easyhop": "Desarrollador Fullstack",
   "jobs_easyhop": [
-    "Construí y mejoré aplicaciones web y móviles para conductores y pasajeros, desarrollando funcionalidades críticas y a medida alineadas con las necesidades del cliente y los stakeholders.",
-    "Lideré una iniciativa de investigación en UX que impulsó la inversión estratégica en una plataforma web para conductores, mejorando ingresos y eficiencia operativa.",
-    "Construí la aplicación móvil para conductores, manejando rutas, mapas, flujos de usuario y listados de clientes por recoger, con énfasis en el manejo de rutas y puntos de recogida en el mapa."
+    "Contribuí al desarrollo de las plataformas de conductores y pasajeros, entregando funcionalidades críticas para el negocio en aplicaciones móviles y web.",
+    "Desarrollé la aplicación móvil para conductores, implementando gestión de rutas, integraciones de mapas, flujos de recogida y experiencias basadas en geolocalización con tecnologías OpenStreetMap.",
+    "Lideré una iniciativa de investigación en UX que identificó oportunidades de producto e influyó en la inversión estratégica en una plataforma web para conductores.",
+    "Colaboré con stakeholders de producto para diseñar e implementar funcionalidades que mejoraron la experiencia de usuario, la visibilidad de rutas y los flujos operacionales.",
+    "Expandí mis responsabilidades del desarrollo móvil al desarrollo full-stack, contribuyendo a iniciativas de frontend, backend y producto en todo el ecosistema de la plataforma."
   ],
 
   "job_title_qubosystems": "Ingeniero de Software",
   "jobs_qubosystems": [
-    "Diseñé e implementé componentes de extremo a extremo para iniciativas internas y orientadas a clientes, incluyendo APIs REST y paneles de administración.",
-    "Actué como líder técnico en varios proyectos full stack con fuerte enfoque en desarrollo frontend con React.",
-    "Entregué soluciones escalables en todo el stack, desde servicios backend hasta interfaces de usuario.",
-    "Construí un sistema de planillas para una universidad privada con un módulo de ML para clasificar categorías salariales de docentes.",
-    "Desarrollé el módulo de encriptación de datos para una app móvil de datáfono (desarrollada como tercero) para un banco de Costa Rica."
+    "Actué como líder técnico en el desarrollo de un sistema de planillas para una universidad privada, coordinando un equipo de 5 desarrolladores y tomando decisiones de arquitectura e implementación.",
+    "Diseñé y desarrollé un módulo de machine learning que automatizó la clasificación de categorías salariales de docentes, mejorando la eficiencia y reduciendo el esfuerzo administrativo manual.",
+    "Construí una plataforma de gestión de información docente que permite al personal académico administrar sus datos de perfil y publicar contenido al portal público 'Claustro Docente' de la universidad.",
+    "Desarrollé APIs REST seguras, plataformas administrativas y aplicaciones frontend usando React y tecnologías backend modernas.",
+    "Diseñé e implementé un módulo de encriptación de datos para una solución móvil de punto de venta de terceros utilizada por una institución bancaria costarricense.",
+    "Entregué soluciones en todo el ciclo de vida del software: arquitectura, desarrollo, pruebas, despliegue y colaboración con stakeholders."
   ],
 
   "jobs_scroll_left": "Desplazar pestañas a la izquierda",

@@ -160,15 +160,11 @@ const About = () => {
               <a href="https://www.tec.ac.cr/" target="_blank" rel="noreferrer">
                 {t('about_text_tec')}
               </a>
-              , {t('about_text_desc_3_2')}
-            </p>
-
-            <p>
-              {t('about_text_desc_4_1')}
+              {t('about_text_desc_3_2')}
               <a href="https://ucreativa.ac.cr/" target="_blank" rel="noreferrer">
                 Universidad Creativa de Costa Rica
               </a>
-              ,{t('about_text_desc_4_2')}
+              {t('about_text_desc_4_2')}
             </p>
 
             <p>
