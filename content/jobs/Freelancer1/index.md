@@ -4,7 +4,7 @@ title: 'job_title_freelancer1'
 desc: 'freelancer1'
 company: 'Self Employed'
 location: 'Cartago, Costa Rica'
-range: 'Jun 2020 - May 2024'
+range: 'Jun 2020 - Nov 2024'
 type: 'Remote'
 url: 'https://www.angelortizv.me/'
 ---
