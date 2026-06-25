@@ -46,18 +46,17 @@ const StyledGallerySection = styled.section`
     align-items: center;
     background: var(--light-bg-color);
     cursor: pointer;
+    border: none;
+    font: inherit;
+    text-align: left;
 
     @media (max-width: 768px) {
       flex: 0 0 280px;
     }
   }
 
-  .photo-card:hover {
+  .photo-card:hover:not(.no-motion) {
     transform: scale(1.04);
-  }
-
-  .photo-card.no-motion:hover {
-    transform: none;
   }
 
   .photo-card img,
@@ -65,19 +64,10 @@ const StyledGallerySection = styled.section`
     width: 100%;
     height: 400px;
     object-fit: cover;
-  }
 
-  @media (max-width: 768px) {
-    .photo-card img,
-    .photo-card .gatsby-image-wrapper {
+    @media (max-width: 768px) {
       height: 320px;
     }
-  }
-
-  .photo-card {
-    border: none;
-    font: inherit;
-    text-align: left;
   }
 
   .photo-description {
@@ -91,6 +81,7 @@ const StyledGallerySection = styled.section`
     font-size: var(--fz-sm);
     text-align: center;
     backdrop-filter: blur(4px);
+    text-transform: capitalize;
   }
 
   .scroll-buttons {
@@ -116,32 +107,13 @@ const StyledGallerySection = styled.section`
     }
   }
 
-  .gallery-more {
-    margin-top: 1.5rem;
-
-    button {
-      font-family: var(--font-mono);
-      font-size: var(--fz-sm);
-      color: var(--primary-color);
-      background: none;
-      border: none;
-      padding: 8px 0;
-      cursor: pointer;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-
-      &:hover {
-        opacity: 0.85;
-      }
-    }
-  }
 `;
 
 const LightboxOverlay = styled.div`
   position: fixed;
   inset: 0;
   z-index: 10000;
-  background: rgba(2, 12, 27, 0.9);
+  background: rgba(0, 0, 0, 0.88);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,6 +122,7 @@ const LightboxOverlay = styled.div`
 `;
 
 const LightboxContent = styled.div`
+  position: relative;
   max-width: 90vw;
   max-height: 90vh;
   cursor: default;
@@ -172,10 +145,11 @@ const LightboxCaption = styled.p`
   font-size: var(--fz-sm);
   color: var(--text-color);
   text-align: center;
+  text-transform: capitalize;
 `;
 
 const LightboxNav = styled.button`
-  position: absolute;
+  position: fixed;
   top: 50%;
   transform: translateY(-50%);
   background: var(--light-bg-color);
@@ -190,6 +164,7 @@ const LightboxNav = styled.button`
   align-items: center;
   justify-content: center;
   transition: var(--transition);
+  z-index: 10001;
 
   &:hover {
     background: var(--primary-color-tint);
@@ -201,7 +176,43 @@ const LightboxNav = styled.button`
   &.next {
     right: 20px;
   }
+
+  @media (max-width: 600px) {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+
+    &.prev { left: 8px; }
+    &.next { right: 8px; }
+  }
 `;
+
+const LightboxClose = styled.button`
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--light-bg-color);
+  border: 1px solid var(--lightest-bg-color);
+  color: var(--lightest-text-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  z-index: 10001;
+
+  &:hover {
+    background: var(--primary-color-tint);
+    color: var(--primary-color);
+  }
+`;
+
+const formatName = name =>
+  name.replace(/^\d+[-_]/, '').replace(/[-_]/g, ' ');
 
 const Gallery = () => {
   const data = useStaticQuery(graphql`
@@ -251,8 +262,12 @@ const Gallery = () => {
     e => {
       if (lightboxIndex === null) {return;}
       if (e.key === 'Escape') {setLightboxIndex(null);}
-      if (e.key === 'ArrowLeft') {setLightboxIndex(i => (i <= 0 ? orderedPhotos.length - 1 : i - 1));}
-      if (e.key === 'ArrowRight') {setLightboxIndex(i => (i >= orderedPhotos.length - 1 ? 0 : i + 1));}
+      if (e.key === 'ArrowLeft') {
+        setLightboxIndex(i => (i <= 0 ? orderedPhotos.length - 1 : i - 1));
+      }
+      if (e.key === 'ArrowRight') {
+        setLightboxIndex(i => (i >= orderedPhotos.length - 1 ? 0 : i + 1));
+      }
     },
     [lightboxIndex, orderedPhotos.length],
   );
@@ -298,7 +313,7 @@ const Gallery = () => {
               onClick={() => openLightbox(fullIndex)}
               aria-label={t('gallery_open_lightbox')}>
               <GatsbyImage image={imageData} alt={node.name || ''} />
-              <span className="photo-description">{node.name || ''}</span>
+              <span className="photo-description">{formatName(node.name || '')}</span>
             </button>
           );
         })}
@@ -308,10 +323,7 @@ const Gallery = () => {
         <button type="button" onClick={() => scroll('left')} aria-label={t('gallery_scroll_left')}>
           ←
         </button>
-        <button
-          type="button"
-          onClick={() => scroll('right')}
-          aria-label={t('gallery_scroll_right')}>
+        <button type="button" onClick={() => scroll('right')} aria-label={t('gallery_scroll_right')}>
           →
         </button>
       </div>
@@ -322,38 +334,46 @@ const Gallery = () => {
           role="dialog"
           aria-modal="true"
           aria-label={t('gallery_lightbox_label')}>
+          <LightboxClose
+            type="button"
+            onClick={() => setLightboxIndex(null)}
+            aria-label={t('general_close')}>
+            ✕
+          </LightboxClose>
+
+          {orderedPhotos.length > 1 && (
+            <>
+              <LightboxNav
+                type="button"
+                className="prev"
+                onClick={e => {
+                  e.stopPropagation();
+                  setLightboxIndex(i => (i <= 0 ? orderedPhotos.length - 1 : i - 1));
+                }}
+                aria-label={t('gallery_prev')}>
+                ←
+              </LightboxNav>
+              <LightboxNav
+                type="button"
+                className="next"
+                onClick={e => {
+                  e.stopPropagation();
+                  setLightboxIndex(i => (i >= orderedPhotos.length - 1 ? 0 : i + 1));
+                }}
+                aria-label={t('gallery_next')}>
+                →
+              </LightboxNav>
+            </>
+          )}
+
           <LightboxContent onClick={e => e.stopPropagation()}>
-            {orderedPhotos.length > 1 && (
-              <>
-                <LightboxNav
-                  type="button"
-                  className="prev"
-                  onClick={e => {
-                    e.stopPropagation();
-                    setLightboxIndex(i => (i <= 0 ? orderedPhotos.length - 1 : i - 1));
-                  }}
-                  aria-label={t('gallery_prev')}>
-                  ←
-                </LightboxNav>
-                <LightboxNav
-                  type="button"
-                  className="next"
-                  onClick={e => {
-                    e.stopPropagation();
-                    setLightboxIndex(i => (i >= orderedPhotos.length - 1 ? 0 : i + 1));
-                  }}
-                  aria-label={t('gallery_next')}>
-                  →
-                </LightboxNav>
-              </>
-            )}
             {currentLightboxNode.childImageSharp?.gatsbyImageData ? (
               <GatsbyImage
                 image={currentLightboxNode.childImageSharp.gatsbyImageData}
                 alt={currentLightboxNode.name || ''}
               />
             ) : null}
-            <LightboxCaption>{currentLightboxNode.name || ''}</LightboxCaption>
+            <LightboxCaption>{formatName(currentLightboxNode.name || '')}</LightboxCaption>
           </LightboxContent>
         </LightboxOverlay>
       )}
