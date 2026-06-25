@@ -2,20 +2,20 @@ import { css } from 'styled-components';
 
 const variables = css`
   :root {
-    --dark-bg-color: #f2f2f2;
-    --bg-color: #ffffff;
-    --light-bg-color: #f1f5f9;
-    --lightest-bg-color: #c7c7c7;
-    --bg-color-shadow: rgba(148, 148, 148, 0.7);
-    --dark-text-color: #07090d;
-    --text-color: #676f85;
-    --light-text-color: #39393b;
-    --lightest-text-color: #1c2333;
-    --contrast-color: #1c1d1f;
-    --primary-color: #3b83f6;
-    --primary-color-tint: rgba(59, 131, 246, 0.1);
-    --highlight-tint: rgba(59, 131, 246, 0.1);
-    --outline-light: #e2e8f0;
+    --dark-bg-color: #060d1a;
+    --bg-color: #0a1628;
+    --light-bg-color: #112240;
+    --lightest-bg-color: #1e3355;
+    --bg-color-shadow: rgba(2, 12, 27, 0.75);
+    --dark-text-color: #3a4a6a;
+    --text-color: #8892b0;
+    --light-text-color: #a8b2d1;
+    --lightest-text-color: #ccd6f6;
+    --contrast-color: #e6f1ff;
+    --primary-color: #5b8def;
+    --primary-color-tint: rgba(91, 141, 239, 0.1);
+    --highlight-tint: rgba(91, 141, 239, 0.08);
+    --outline-light: rgba(91, 141, 239, 0.3);
 
     --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
       sans-serif;
