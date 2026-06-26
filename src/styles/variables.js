@@ -2,43 +2,45 @@ import { css } from 'styled-components';
 
 const variables = css`
   :root {
-    --dark-bg-color: #060d1a;
-    --bg-color: #0a1628;
-    --light-bg-color: #112240;
-    --lightest-bg-color: #1e3355;
-    --bg-color-shadow: rgba(2, 12, 27, 0.75);
-    --dark-text-color: #3a4a6a;
-    --text-color: #8892b0;
-    --light-text-color: #a8b2d1;
-    --lightest-text-color: #ccd6f6;
-    --contrast-color: #e6f1ff;
-    --primary-color: #5b8def;
-    --primary-color-tint: rgba(91, 141, 239, 0.1);
-    --highlight-tint: rgba(91, 141, 239, 0.08);
-    --outline-light: rgba(91, 141, 239, 0.3);
+    --dark-bg-color: #000000;
+    --bg-color: #0a0a0a;
+    --light-bg-color: #111111;
+    --lightest-bg-color: #1a1a1a;
+    --bg-color-shadow: rgba(0, 0, 0, 0.8);
+    --dark-text-color: #444444;
+    --text-color: #888888;
+    --light-text-color: #aaaaaa;
+    --lightest-text-color: #e0e0e0;
+    --contrast-color: #ffffff;
+    --primary-color: #ffffff;
+    --primary-color-tint: rgba(255, 255, 255, 0.08);
+    --highlight-tint: rgba(255, 255, 255, 0.04);
+    --outline-light: rgba(255, 255, 255, 0.12);
+    --signal-color: #e8813a;
+    --signal-color-tint: rgba(232, 129, 58, 0.12);
 
-    --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
+    --font-sans: 'Inter', 'Calibre', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
       sans-serif;
     --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
 
-    --fz-xxs: 12px;
-    --fz-xs: 13px;
-    --fz-sm: 14px;
-    --fz-md: 16px;
-    --fz-lg: 18px;
-    --fz-xl: 20px;
-    --fz-xxl: 22px;
-    --fz-heading: 32px;
+    --fz-xxs: 11px;
+    --fz-xs: 12px;
+    --fz-sm: 13px;
+    --fz-md: 15px;
+    --fz-lg: 17px;
+    --fz-xl: 19px;
+    --fz-xxl: 21px;
+    --fz-heading: 30px;
 
-    --border-radius: 4px;
+    --border-radius: 2px;
     --nav-height: 100px;
     --nav-scroll-height: 70px;
 
     --tab-height: 42px;
     --tab-width: 120px;
 
-    --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
-    --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    --easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
     --hamburger-width: 30px;
 

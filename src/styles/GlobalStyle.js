@@ -58,6 +58,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: var(--fz-xl);
     line-height: 1.3;
     transition: var(--transition);
+    counter-reset: sections;
 
     @media (max-width: 480px) {
       font-size: var(--fz-lg);
@@ -143,18 +144,21 @@ const GlobalStyle = createGlobalStyle`
   h5,
   h6 {
     margin: 0 0 10px 0;
-    font-weight: 600;
+    font-weight: 300;
     color: var(--lightest-text-color);
     line-height: 1.1;
   }
 
   .big-heading {
     margin: 0;
-    font-size: clamp(60px, 10vw, 100px);
+    font-size: clamp(56px, 9vw, 96px);
+    font-weight: 200;
+    letter-spacing: -0.03em;
   }
 
   .name-heading {
     font-weight: 100;
+    letter-spacing: -0.02em;
   }
 
   .medium-heading {
@@ -168,8 +172,24 @@ const GlobalStyle = createGlobalStyle`
     position: relative;
     margin: 10px 0 40px;
     width: 100%;
-    font-size: clamp(25px, 7vw, 40px);
+    font-size: clamp(22px, 5vw, 34px);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     white-space: nowrap;
+    counter-increment: sections;
+
+    &::before {
+      content: counter(sections, decimal-leading-zero) '.';
+      margin-right: 14px;
+      color: var(--signal-color);
+      font-family: var(--font-mono);
+      font-size: clamp(var(--fz-sm), 2vw, var(--fz-md));
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      flex-shrink: 0;
+    }
 
     &:after {
       content: '';
@@ -179,7 +199,7 @@ const GlobalStyle = createGlobalStyle`
       width: 100%;
       height: 1px;
       margin-left: 20px;
-      background-color: var(--lightest-bg-color);
+      background-color: var(--outline-light);
 
       @media (max-width: 1080px) {
         width: 200px;
@@ -291,7 +311,7 @@ const GlobalStyle = createGlobalStyle`
           content: '▹';
           position: absolute;
           left: 0;
-          color: var(--primary-color);
+          color: var(--signal-color);
         }
       }
     }

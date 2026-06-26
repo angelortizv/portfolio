@@ -114,7 +114,7 @@ const StyledTabButton = styled.button`
   padding: 0 20px 2px;
   border-left: 2px solid var(--lightest-bg-color);
   background-color: transparent;
-  color: ${({ isActive }) => (isActive ? 'var(--primary-color)' : 'var(--text-color)')};
+  color: ${({ isActive }) => (isActive ? 'var(--signal-color)' : 'var(--text-color)')};
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
   text-align: left;
@@ -131,7 +131,7 @@ const StyledTabButton = styled.button`
     padding: 0 14px;
     border-left: 0;
     border-bottom: 2px solid
-      ${({ isActive }) => (isActive ? 'var(--primary-color)' : 'var(--lightest-bg-color)')};
+      ${({ isActive }) => (isActive ? 'var(--signal-color)' : 'var(--lightest-bg-color)')};
     text-align: center;
   }
   @media (max-width: 480px) {
@@ -152,7 +152,7 @@ const StyledHighlight = styled.div`
   width: 2px;
   height: var(--tab-height);
   border-radius: var(--border-radius);
-  background: var(--primary-color);
+  background: var(--signal-color);
   transform: translateY(calc(${({ activeTabId }) => activeTabId} * var(--tab-height)));
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;

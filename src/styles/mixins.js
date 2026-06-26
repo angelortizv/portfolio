@@ -7,6 +7,9 @@ const button = css`
   border-radius: var(--border-radius);
   font-size: var(--fz-xs);
   font-family: var(--font-mono);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   line-height: 1;
   text-decoration: none;
   cursor: pointer;
@@ -16,7 +19,8 @@ const button = css`
   &:hover,
   &:focus,
   &:active {
-    background-color: var(--primary-color-tint);
+    background-color: var(--primary-color);
+    color: var(--bg-color);
     outline: none;
   }
   &:after {
@@ -95,6 +99,9 @@ const mixins = {
     padding: 0.75rem 1rem;
     font-size: var(--fz-xs);
     font-family: var(--font-mono);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     line-height: 1;
     text-decoration: none;
     cursor: pointer;
@@ -102,7 +109,8 @@ const mixins = {
     &:hover,
     &:focus,
     &:active {
-      background-color: var(--primary-color-tint);
+      background-color: var(--primary-color);
+      color: var(--bg-color);
       outline: none;
     }
     &:after {
@@ -115,9 +123,12 @@ const mixins = {
     background-color: transparent;
     border: 1px solid var(--primary-color);
     border-radius: var(--border-radius);
-    padding: 1.25rem 1.75rem;
-    font-size: var(--fz-sm);
+    padding: 1.25rem 2rem;
+    font-size: var(--fz-xs);
     font-family: var(--font-mono);
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     line-height: 1;
     text-decoration: none;
     cursor: pointer;
@@ -125,7 +136,8 @@ const mixins = {
     &:hover,
     &:focus,
     &:active {
-      background-color: var(--primary-color-tint);
+      background-color: var(--primary-color);
+      color: var(--bg-color);
       outline: none;
     }
     &:after {

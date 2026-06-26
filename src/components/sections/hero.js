@@ -27,7 +27,7 @@ const StyledHeroSection = styled.section`
 
   h1 {
     margin: 0 0 30px 4px;
-    color: var(--primary-color);
+    color: var(--signal-color);
     font-family: var(--font-mono);
     font-size: clamp(var(--fz-sm), 5vw, var(--fz-md));
     font-weight: 400;
@@ -62,11 +62,25 @@ const CreaiLine = styled.p`
 
   a {
     ${({ theme }) => theme.mixins.inlineLink};
+    color: var(--signal-color);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--signal-color);
+      &:after {
+        background-color: var(--signal-color);
+      }
+    }
+
+    &:after {
+      background-color: var(--signal-color);
+    }
   }
 `;
 
 const livePulse = keyframes`
-  0%, 100% { opacity: 1; transform: translateY(-2px) scale(1); box-shadow: 0 0 0 0 var(--primary-color); }
+  0%, 100% { opacity: 1; transform: translateY(-2px) scale(1); box-shadow: 0 0 0 0 var(--signal-color); }
   50% { opacity: 0.85; transform: translateY(-2px) scale(1.15); box-shadow: 0 0 0 4px transparent; }
 `;
 
@@ -75,7 +89,7 @@ const LiveDot = styled.span`
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--primary-color);
+  background: var(--signal-color);
   flex-shrink: 0;
   transform: translateY(-2px);
   animation: ${livePulse} 1.5s ease-in-out infinite;
@@ -99,10 +113,10 @@ const Hero = () => {
 
   const seq = [];
   for (const greeting of shuffleArray(translations)) {
-    seq.push(`✨❯ ${greeting.flag} 👋 ${greeting.text}`);
-    seq.push(1000);
-    seq.push(`✨❯`);
-    seq.push(1000);
+    seq.push(`${greeting.flag}  ${greeting.text}`);
+    seq.push(1200);
+    seq.push(``);
+    seq.push(400);
   }
 
   useEffect(() => {

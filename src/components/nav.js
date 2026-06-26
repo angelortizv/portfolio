@@ -74,11 +74,13 @@ const StyledNav = styled.nav`
 
     a {
       color: var(--primary-color);
-      width: 30px;
-      height: 30px;
+      width: auto;
+      height: 24px;
 
       svg {
         fill: none;
+        height: 24px;
+        width: auto;
         transition: var(--transition);
         user-select: none;
       }
@@ -136,10 +138,19 @@ const StyledLinks = styled.div`
       margin: 0 5px;
       position: relative;
       counter-increment: item 1;
-      font-size: var(--fz-lg);
+      font-size: var(--fz-xxs);
 
       a {
         padding: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 400;
+        color: var(--light-text-color);
+
+        &:hover,
+        &:focus {
+          color: var(--contrast-color);
+        }
       }
     }
   }
