@@ -40,11 +40,10 @@ module.exports = {
   ],
 
   colors: {
-    green: '#64ffda',
-    primary: '#3b83f6',
-    bg: '#ffffff',
-    darkNavy: '#020c1b',
-    navy: '#0a192f',
+    primary: '#ffffff',
+    signal: '#e8813a',
+    bg: '#0a0a0a',
+    darkBg: '#000000',
   },
 
   srConfig: (delay = 200, viewFactor = 0.25) => ({

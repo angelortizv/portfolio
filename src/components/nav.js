@@ -74,13 +74,12 @@ const StyledNav = styled.nav`
 
     a {
       color: var(--primary-color);
-      width: auto;
-      height: 24px;
+      width: 42px;
+      height: 42px;
 
       svg {
         fill: none;
-        height: 24px;
-        width: auto;
+        transition: var(--transition);
         transition: var(--transition);
         user-select: none;
       }

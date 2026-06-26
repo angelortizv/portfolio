@@ -44,14 +44,14 @@ const CategoryHeader = styled.header`
     width: 4px;
     height: 24px;
     border-radius: 2px;
-    background: var(--primary-color);
+    background: var(--signal-color);
   }
 
   h3 {
     margin: 0;
     font-size: var(--fz-md);
     font-family: var(--font-mono);
-    color: var(--primary-color);
+    color: var(--signal-color);
     font-weight: 500;
   }
 `;

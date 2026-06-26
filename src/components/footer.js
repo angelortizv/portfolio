@@ -178,10 +178,6 @@ const Footer = () => {
       </StyledSocialLinks>
 
       <StyledCredit tabIndex={-1}>
-        <a href="https://github.com/bchiang7/v4">
-          <div>{t('footer_text_designed')} Brittany Chiang</div>
-        </a>
-        <br />
         <div>
           <a href="https://www.angelortizv.com/authors/angelo-ortiz-vega/">
             {t('footer_text_build')} Angelo Ortiz
