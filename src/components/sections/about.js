@@ -26,6 +26,11 @@ const pingpongBounce = keyframes`
   80% { transform: translateY(0); }
 `;
 
+const ResumeLink = styled.a`
+  ${({ theme }) => theme.mixins.smallButton};
+  margin-top: 30px;
+`;
+
 const StyledText = styled.div`
   .pingpong-emoji {
     display: inline-block;
@@ -182,6 +187,10 @@ const About = () => {
               </a>
               playlists.
             </p>
+
+            <ResumeLink href="/angelortizv_cv.pdf" target="_blank" rel="noopener noreferrer">
+              {t('about_text_resume')}
+            </ResumeLink>
           </div>
         </StyledText>
 
