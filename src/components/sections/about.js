@@ -178,6 +178,10 @@ const About = () => {
               <span className="pingpong-emoji" aria-hidden>
                 🏓
               </span>
+              {t('about_text_desc_5_blog')}
+              <a href="https://www.angelortizv.com" target="_blank" rel="noreferrer">
+                {t('about_text_desc_5_blog_name')}
+              </a>
               {t('about_text_desc_5_c')}
               <a
                 href="https://open.spotify.com/playlist/20xTpMDhxDFpACSRXHZzOC?si=2050bd00d9b048bb"
