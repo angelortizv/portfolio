@@ -70,19 +70,6 @@ const StyledGallerySection = styled.section`
     }
   }
 
-  .photo-description {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--light-bg-color);
-    color: var(--lightest-text-color);
-    padding: 10px;
-    font-size: var(--fz-sm);
-    text-align: center;
-    backdrop-filter: blur(4px);
-  }
-
   .scroll-buttons {
     display: flex;
     justify-content: center;
@@ -135,14 +122,6 @@ const LightboxContent = styled.div`
       height: 70vh;
     }
   }
-`;
-
-const LightboxCaption = styled.p`
-  margin-top: 12px;
-  font-family: var(--font-mono);
-  font-size: var(--fz-sm);
-  color: var(--text-color);
-  text-align: center;
 `;
 
 const LightboxNav = styled.button`
@@ -211,20 +190,6 @@ const LightboxClose = styled.button`
     color: var(--primary-color);
   }
 `;
-
-const LOWERCASE_WORDS = ['de', 'del', 'la', 'el', 'y'];
-const formatName = name =>
-  name
-    .replace(/^\d+[-_]/, '')
-    .replace(/[-_]/g, ' ')
-    .split(' ')
-    .map((word, i) => {
-      const lower = word.toLowerCase();
-      return i > 0 && LOWERCASE_WORDS.includes(lower)
-        ? lower
-        : lower.charAt(0).toUpperCase() + lower.slice(1);
-    })
-    .join(' ');
 
 const Gallery = () => {
   const data = useStaticQuery(graphql`
@@ -401,8 +366,7 @@ const Gallery = () => {
               key={node.name || i}
               onClick={e => openLightbox(fullIndex, e)}
               aria-label={t('gallery_open_lightbox')}>
-              <GatsbyImage image={imageData} alt={node.name || ''} />
-              <span className="photo-description">{formatName(node.name || '')}</span>
+              <GatsbyImage image={imageData} alt={`${t('gallery_photo')} ${i + 1}`} />
             </button>
           );
         })}
@@ -468,12 +432,11 @@ const Gallery = () => {
               {currentLightboxNode.childImageSharp?.gatsbyImageData ? (
                 <GatsbyImage
                   image={currentLightboxNode.childImageSharp.gatsbyImageData}
-                  alt={currentLightboxNode.name || ''}
+                  alt={`${t('gallery_photo')} ${lightboxIndex + 1}`}
                   objectFit="contain"
                   loading="eager"
                 />
               ) : null}
-              <LightboxCaption>{formatName(currentLightboxNode.name || '')}</LightboxCaption>
             </LightboxContent>
           </LightboxOverlay>,
           document.body,
