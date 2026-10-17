@@ -30,12 +30,10 @@
   "about_text_resume": "Ver mi currículum",
 
   "skills_text_title": "Habilidades & Stack Tecnológico",
-  "skills_text_subtitle": "Tecnologías y herramientas con las que trabajo",
-  "skills_text_ai": "IA & Machine Learning",
-  "skills_text_backend": "Backend & APIs",
-  "skills_text_frontend": "Frontend",
-  "skills_text_infra": "Infraestructura",
-  "skills_text_systems": "Sistemas & Hardware",
+  "skills_text_subtitle": "Con lo que construyo, día a día.",
+  "skills_text_ai": "IA en producción",
+  "skills_text_backend": "Backend y sistemas",
+  "skills_text_frontend": "Frontend y nube",
 
   "experience_text_title": "Donde he trabajado",
   "experience_text_archive": "¿Buscas proyectos personales y trabajos anteriores? Explora el archivo →",

@@ -135,7 +135,7 @@ A lavender-white variant (`#faf8ff` canvas, `#140d30` text, signal `#6d28d9`) is
 
 ### Named Rules
 
-**The One Accent Rule.** Violet is the only hue — no cyan, pink or other colors anywhere. The violet→soft-violet gradient is reserved for the hero surname, section counters, category accents, the experience tab indicator and the loader logo. Never on body text or large fills.
+**The One Accent Rule.** Violet is the only hue — no cyan, pink or other colors anywhere. The violet→soft-violet gradient is reserved for the hero surname, section counters, the experience tab indicator and the loader logo. Never on body text or large fills.
 
 **The White Is Active Rule.** `#ffffff` means "interactive or highest contrast". It is not decorative trim.
 
@@ -181,7 +181,7 @@ Depth now comes from light, not only shadow: the aurora, translucent surfaces (`
 
 ## Shapes
 
-- **Cards** (skill categories, project cards): `14px` radius, 1px `outline-light` border.
+- **Cards** (project cards): `14px` radius, 1px `outline-light` border.
 - **Buttons, filters, skill pills, nav links, hero greeting:** fully rounded (`999px`).
 - Section divider rules fade out left-to-right (`outline-light` → transparent).
 
@@ -200,7 +200,7 @@ A fixed, non-interactive layer mounted once at the root (`gatsby-browser.js` / `
 
 ### Spotlight Cards (`fx/spotlight`)
 
-`onSpotlightMove` writes `--mx/--my` from the cursor; the `spotlight` mixin paints a radial `glow` gradient behind content on hover. Used on skill categories and project cards.
+`onSpotlightMove` writes `--mx/--my` from the cursor; the `spotlight` mixin paints a radial `glow` gradient behind content on hover. Used on project cards and blog entries.
 
 ### Gradient Text (`fx/GradientText`)
 
@@ -230,7 +230,7 @@ Inherit color; hover → white with a 1px underline growing from 0 to 100%.
 
 ### Chips / Skill Pills
 
-Pill-shaped, mono 12px, `highlight-tint` background with an `outline-light` border; hover lifts 2px. Technology icons rest in monochrome (`grayscale` + 80% opacity) and regain their brand colors on hover, so the page keeps a single accent hue. Skill categories sit in a two-column grid (one column ≤768px); an odd last card spans both columns.
+Pill-shaped, mono 12px, `highlight-tint` background with an `outline-light` border; hover lifts 2px. Technology icons rest in monochrome (`grayscale` + 80% opacity) and regain their brand colors on hover, so the page keeps a single accent hue. Skills are a compact strip of three groups (AI in production · Backend & systems · Frontend & cloud) separated by hairlines — three columns on desktop, stacked ≤900px. The list is curated to what defines the current role (Full Stack AI Engineer), not exhaustive; older stacks live in Experience.
 
 ### Hero
 
