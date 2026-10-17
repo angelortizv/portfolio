@@ -90,7 +90,7 @@ Inspired by [React Bits](https://reactbits.dev/): a deep violet-black canvas (`#
 
 Typography stays precise: ultra-light display weights (200) let large text sit without mass, and a monospaced family carries labels, nav items and buttons so UI chrome still reads as engineering tooling. The one expressive gesture on type is the animated violet gradient on the hero surname.
 
-Interaction is smooth and luminous: cards follow the cursor with a spotlight glow, buttons light up in the signal violet, the hero name reveals with a blur-in.
+Interaction is smooth and luminous: cards follow the cursor with a spotlight glow, buttons light up in the signal violet, the hero name enters as one piece.
 
 **Key Characteristics:**
 
@@ -99,7 +99,7 @@ Interaction is smooth and luminous: cards follow the cursor with a spotlight glo
 - Ultra-light to light heading weights — mass through scale, not weight
 - All interactive chrome in monospaced uppercase
 - Rounded geometry: 14px cards, fully pill-shaped buttons, chips and filters
-- Cursor-reactive spotlight on cards; blur-in hero name
+- Cursor-reactive spotlight on cards; hero name enters as one piece (no per-word animation)
 - Everything animated respects `prefers-reduced-motion`
 
 ## Colors
@@ -113,6 +113,7 @@ One structural white, one violet signal, one deep ramp.
 ### Signal & Accents
 
 - **Signal Violet** (`#a78bfa`): The main accent. Section counters (via gradient), hover fills on buttons and active filters, selection highlight, focus rings, inline links.
+- **On Signal** (`--on-signal`: `#060010` in dark, `#ffffff` in light): text color on filled Signal Violet surfaces (button hover, active filters, text selection).
 - **Signal Tint** (`rgba(167, 139, 250, 0.14)`): Washes behind hovered nav links and the hero greeting pill.
 - **Signal Soft** (`#c4b5fd`): Lighter violet used only as the second stop of the brand gradient (`--gradient-text`: violet → soft violet).
 - **Glow** (`rgba(124, 92, 255, 0.35)`): Spotlight on cards, button hover halo, loader glow.
@@ -145,7 +146,7 @@ A lavender-white variant (`#faf8ff` canvas, `#140d30` text, signal `#6d28d9`) is
 
 ### Hierarchy
 
-- **Display** (200, `clamp(56px, 9vw, 96px)`, −0.03em): Hero name. "Angelo" blur-reveals word by word; "Ortiz." carries the animated gradient.
+- **Display** (200, `clamp(56px, 9vw, 96px)`, −0.03em): Hero name. "Angelo" and "Ortiz." enter together; "Ortiz." carries the animated gradient.
 - **Headline** (300, `clamp(40px, 8vw, 60px)`): Page-level subheadings.
 - **Title** (300, `clamp(22px, 5vw, 34px)`, 0.05em, uppercase): Numbered section headings, preceded by a gradient counter.
 - **Body** (400, 19px, 1.3; 17px ≤480px): Primary prose.
@@ -165,7 +166,7 @@ The **aurora background** is `position: fixed` behind `#content` (z-index 0 vs. 
 
 Contact has a soft radial glow behind the CTA.
 
-Navigation is `100px` at rest and `70px` once scrolled, transparent at the top and translucent glass (`--nav-bg` + `backdrop-filter`) with a violet hairline when scrolled. Mobile uses the full-screen hamburger overlay.
+Navigation is a **floating glass pill** (max 1120px wide, 60px tall, fully rounded, `--nav-bg` + `backdrop-filter`, violet hairline) centered over a transparent header. The header hides on scroll-down and returns on scroll-up. Language is a text toggle (`EN | ES`, active language underlined) rather than a flag. Mobile keeps the same pill with the hamburger inside.
 
 Breakpoints (max-width): 330 / 400 / 480 / 600 / 768 / 900 / 1080 / 1200 / 1400px.
 
@@ -186,9 +187,16 @@ Depth now comes from light, not only shadow: the aurora, translucent surfaces (`
 
 ## Components
 
-### Aurora Background (`fx/AuroraBackground`)
+### Aurora Background & Dot Grid (`fx/AuroraBackground`, `fx/DotGrid`)
 
-Static layer: three soft violet radial gradients (top-left, right-middle, bottom-left) plus a 64px grid masked toward the top. Fixed, non-interactive, `aria-hidden`. Deliberately not animated or blurred — the glow is atmosphere, and a full-screen blur/animation would cost performance on weaker devices. Opacity token `--aurora-opacity`: 1 in dark, 0.5 in light.
+A fixed, non-interactive layer mounted once at the root (`gatsby-browser.js` / `gatsby-ssr.js` via `wrapRootElement`), so it persists across page navigations without flicker. From back to front:
+
+1. Three soft violet radial gradients (top-left, right-middle, bottom-left). Opacity token `--aurora-opacity`: 1 in dark, 0.5 in light.
+2. A static 32px CSS dot texture — the fallback, hidden once the WebGL grid is running.
+3. **Interactive dot grid** (WebGL2, adapted from React Bits' Dot Grid, MIT + Commons Clause — keep the attribution header in `DotGrid.js`): ~3px dots on a 32px grid, resting at 20% alpha in `--signal-color`. The cursor pushes nearby dots through damped springs coupled to their neighbours (a connected sheet); close dots swell and shift toward `--signal-soft` with a soft halo. Masked toward the edges like the old texture. Tuned deliberately subtle (strength 0.4, little bounce, no stretch, no click shockwave).
+
+- **Intro:** on a fresh visit to the home page the dots stay hidden and bloom outward from the center (~1.1s) as the loader's curtain opens (the loader fires a `portfolio:reveal` event; a 6s fallback starts it regardless). No intro on other routes or later navigations.
+- **Behavior:** the animation loop stops when everything is at rest, pauses when the tab is hidden, and caps the pixel ratio at 2. Touch input is ignored. Under `prefers-reduced-motion` the grid is static. Without WebGL2 the CSS dots remain. Colors are read from the theme variables and refresh when the theme toggles.
 
 ### Spotlight Cards (`fx/spotlight`)
 
@@ -198,9 +206,9 @@ Static layer: three soft violet radial gradients (top-left, right-middle, bottom
 
 Animated violet→soft-violet gradient clipped to text; static under reduced motion.
 
-### Blur Text (`fx/BlurText`)
+### Case Study Card (`sections/caseStudy`)
 
-Word-by-word blur/translate reveal, triggered by IntersectionObserver; renders instantly under reduced motion.
+The one saturated block on the page: a 24px-radius violet gradient card (`#5b3df5 → #a78bfa`) with a fading dot texture, placed right after About. A mono overline ("Case study · Logistics"), an oversized light headline stating the outcome, one sentence on the author's own contribution, and a white pill CTA to the external story. Text on it is white regardless of theme.
 
 ### Buttons
 
@@ -210,7 +218,7 @@ Mono, uppercase, tracked, pill-shaped. Transparent with a violet hairline at res
 
 ### Navigation
 
-Glass header; the links sit at the true center (logo and tool buttons each take equal flexible space); links are mono, 11px, uppercase, pill-highlighted on hover with Signal Tint.
+Floating pill; the links sit at the true center (logo and tool buttons each take equal flexible space); links are mono, 11px, uppercase, pill-highlighted on hover with Signal Tint.
 
 ### Inline Links
 
@@ -226,7 +234,12 @@ The hero opens directly on the name — no rotating multilingual greeting. Order
 
 ### Loader / Splash
 
-Void-black screen with a soft violet glow behind the hexagon "A" logo. The logo draws itself with the violet gradient stroke and a drop-shadow glow, then scales away (anime.js timeline, ~3s).
+A ~2.7s sequence (anime.js), played once per browser session, skippable with a click or key press, and skipped entirely under `prefers-reduced-motion`:
+
+1. On a dark dot-textured field with a soft violet glow at the center seam, the **whole logo (hexagon and A) pulses as one unit** from the very first paint (CSS, so it also runs while the page is still hydrating), while a mono counter (`000`→`100`) and a hairline progress bar run below.
+2. The name types in letter by letter in mono.
+3. The page mounts underneath, the content steps back, and the screen splits into two halves that slide up and down (`easeInOutExpo`) to reveal the hero, whose own entrance animations begin as the curtain opens.
+   A watchdog closes the loader after 8s if the timeline ever stalls. The logo gradient uses the theme tokens (`--signal-color` → `--signal-soft`), so it also reads in the light theme.
 
 ### Fancy List & Numbered Heading
 
