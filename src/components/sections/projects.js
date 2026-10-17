@@ -54,7 +54,7 @@ const StyledProjectsSection = styled.section`
       &.active {
         background: var(--signal-color);
         border-color: var(--signal-color);
-        color: #060010;
+        color: var(--on-signal);
       }
     }
   }

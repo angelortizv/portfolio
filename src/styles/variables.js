@@ -19,6 +19,7 @@ const variables = css`
     --signal-color: #a78bfa;
     --signal-color-tint: rgba(167, 139, 250, 0.14);
     --signal-soft: #c4b5fd;
+    --on-signal: #060010;
     --glow-color: rgba(124, 92, 255, 0.35);
     --aurora-opacity: 1;
     --nav-bg: rgba(6, 0, 16, 0.55);

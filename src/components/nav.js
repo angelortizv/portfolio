@@ -11,8 +11,6 @@ import { IconLogo } from '@components/icons';
 import IconLight from './icons/light';
 import IconDark from './icons/dark';
 import Colors from '../styles/colors';
-import IconEnglish from './icons/english';
-import IconSpanish from './icons/spanish';
 import { useLanguage } from '../hooks/LanguageContext';
 import IconAccessibility from './icons/accessibility';
 import AccessibilityModal from './accessibilityModal';
@@ -22,21 +20,20 @@ const StyledHeader = styled.header`
   position: fixed;
   top: 0;
   z-index: 11;
-  padding: 0px 50px;
+  padding: 0px 40px;
   width: 100%;
   height: var(--nav-height);
   background-color: transparent;
   filter: none !important;
-  pointer-events: auto !important;
+  pointer-events: none !important;
   user-select: auto !important;
-  backdrop-filter: blur(10px);
   transition: var(--transition);
 
   @media (max-width: 1080px) {
-    padding: 0 40px;
+    padding: 0 30px;
   }
   @media (max-width: 768px) {
-    padding: 0 25px;
+    padding: 0 16px;
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -46,9 +43,6 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
-        background-color: var(--nav-bg);
-        border-bottom: 1px solid var(--outline-light);
-        box-shadow: 0 10px 30px -10px var(--bg-color-shadow);
       `};
 
     ${props =>
@@ -56,9 +50,7 @@ const StyledHeader = styled.header`
       !props.scrolledToTop &&
       css`
         height: var(--nav-scroll-height);
-        background-color: var(--nav-bg);
         transform: translateY(calc(var(--nav-scroll-height) * -1));
-        box-shadow: 0 10px 30px -10px var(--bg-color-shadow);
       `};
   }
 `;
@@ -66,10 +58,22 @@ const StyledHeader = styled.header`
 const StyledNav = styled.nav`
   ${({ theme }) => theme.mixins.flexBetween};
   position: relative;
-  width: 100%;
+  width: min(100%, 1120px);
+  height: 60px;
+  margin: 0 auto;
+  padding: 0 14px 0 18px;
   color: var(--lightest-text-color);
   counter-reset: item 0;
   z-index: 12;
+  pointer-events: auto;
+
+  /* floating glass pill */
+  border: 1px solid var(--outline-light);
+  border-radius: 999px;
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px -12px var(--bg-color-shadow);
 
   .logo {
     ${({ theme }) => theme.mixins.flexCenter};
@@ -115,6 +119,27 @@ const StyledNav = styled.nav`
     }
   }
 
+  .theme-switch button.lang-toggle {
+    width: auto;
+    padding: 0 10px !important;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+    color: var(--text-color);
+
+    @media (max-width: 480px) {
+      padding: 0 4px !important;
+      font-size: var(--fz-xxs);
+    }
+
+    span.on {
+      color: var(--primary-color);
+      border-bottom: 1px solid var(--signal-color);
+    }
+  }
+
   .tools-switcher {
     flex: 1;
     justify-content: flex-end;
@@ -122,6 +147,10 @@ const StyledNav = styled.nav`
     flex-direction: row;
     align-items: center;
     gap: 8px;
+
+    @media (max-width: 480px) {
+      gap: 0;
+    }
   }
 `;
 
@@ -257,7 +286,15 @@ const Nav = ({ isHome }) => {
 
   const LangSwitch = (
     <div className="theme-switch">
-      <button onClick={toggleLang}>{isEnglish ? <IconEnglish /> : <IconSpanish />}</button>
+      <button
+        type="button"
+        className="lang-toggle"
+        onClick={toggleLang}
+        aria-label={t('nav_lang_switch')}>
+        <span className={isEnglish ? 'on' : ''}>EN</span>
+        <span aria-hidden="true"> | </span>
+        <span className={isEnglish ? '' : 'on'}>ES</span>
+      </button>
     </div>
   );
 

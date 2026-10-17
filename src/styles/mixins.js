@@ -21,7 +21,7 @@ const button = css`
   &:active {
     background-color: var(--signal-color);
     border-color: var(--signal-color);
-    color: #060010;
+    color: var(--on-signal);
     box-shadow: 0 0 28px -4px var(--glow-color);
     outline: none;
   }
@@ -121,7 +121,7 @@ const mixins = {
     &:active {
       background-color: var(--signal-color);
       border-color: var(--signal-color);
-      color: #060010;
+      color: var(--on-signal);
       box-shadow: 0 0 28px -4px var(--glow-color);
       outline: none;
     }
@@ -150,7 +150,7 @@ const mixins = {
     &:active {
       background-color: var(--signal-color);
       border-color: var(--signal-color);
-      color: #060010;
+      color: var(--on-signal);
       box-shadow: 0 0 28px -4px var(--glow-color);
       outline: none;
     }

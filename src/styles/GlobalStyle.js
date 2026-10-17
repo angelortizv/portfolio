@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
 
   ::selection {
     background-color: var(--signal-color);
-    color: #060010;
+    color: var(--on-signal);
   }
 
   :focus:not(:focus-visible) {
