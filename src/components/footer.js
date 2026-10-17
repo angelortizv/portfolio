@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { Icon } from '@components/icons';
 import { socialMedia } from '@config';
@@ -50,6 +51,20 @@ const StyledCredit = styled.div`
 
   a {
     padding: 10px;
+  }
+
+  .footer-archive {
+    margin-top: 10px;
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
   }
 
   .footer-shortcuts {
@@ -148,8 +163,12 @@ const formatBuildDate = isoString => {
 
 const getTimeGreetingKey = () => {
   const hour = new Date().getHours();
-  if (hour >= 5 && hour < 12) {return 'footer_time_morning';}
-  if (hour >= 21 || hour < 5) {return 'footer_time_night';}
+  if (hour >= 5 && hour < 12) {
+    return 'footer_time_morning';
+  }
+  if (hour >= 21 || hour < 5) {
+    return 'footer_time_night';
+  }
   return null;
 };
 
@@ -209,6 +228,9 @@ const Footer = () => {
             {t(timeGreetingKey)}
           </div>
         )}
+        <div className="footer-archive">
+          <Link to="/archive">{t('footer_archive')}</Link>
+        </div>
         <div className="footer-shortcuts">
           <button type="button" onClick={openShortcuts}>
             {t('accessibility_text_shortcuts')}

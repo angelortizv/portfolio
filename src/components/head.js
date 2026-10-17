@@ -30,7 +30,7 @@ const Head = ({ title, description, image }) => {
   const metaDesc = t('meta_description') || defaultDescription;
 
   const seo = {
-    title: title || defaultTitle,
+    title: title || t('meta_title') || defaultTitle,
     description: description || metaDesc,
     image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname}`,

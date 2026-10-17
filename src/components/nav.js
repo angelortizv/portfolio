@@ -184,7 +184,8 @@ const StyledLinks = styled.div`
         border-radius: 999px;
 
         &:hover,
-        &:focus {
+        &:focus,
+        &[aria-current='location'] {
           color: var(--contrast-color);
           background-color: var(--signal-color-tint);
         }
@@ -198,6 +199,7 @@ const Nav = ({ isHome }) => {
   const [isMounted, setIsMounted] = useState(!isHome);
   const scrollDirection = useScrollDirection('down');
   const [scrolledToTop, setScrolledToTop] = useState(true);
+  const [activeId, setActiveId] = useState('');
   const prefersReducedMotion = usePrefersReducedMotion();
 
   const THEME_KEY = 'portfolio-theme';
@@ -255,6 +257,42 @@ const Nav = ({ isHome }) => {
     };
   }, []);
 
+  // Highlight the section currently under the reading line (home page only)
+  useEffect(() => {
+    if (!isHome) {
+      return undefined;
+    }
+    const ids = (navLinks || []).map(({ url }) => url.replace('/#', ''));
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const line = window.innerHeight * 0.35;
+      const atBottom =
+        window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 4;
+      let current = '';
+      ids.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= line) {
+          current = id;
+        }
+      });
+      setActiveId(atBottom ? ids[ids.length - 1] : current);
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }
+    };
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, [isHome]);
+
   const timeout = isHome ? loaderDelay : 0;
   const fadeClass = isHome ? 'fade' : '';
   const fadeDownClass = isHome ? 'fadedown' : '';
@@ -276,6 +314,8 @@ const Nav = ({ isHome }) => {
   const ThemeSwitch = (
     <div className="theme-switch">
       <button
+        type="button"
+        aria-label={t('nav_theme_switch')}
         onClick={() => {
           toggleTheme();
         }}>
@@ -301,6 +341,8 @@ const Nav = ({ isHome }) => {
   const OpenAccessibility = (
     <div className="theme-switch">
       <button
+        type="button"
+        aria-label={t('accessibility_text_title')}
         onClick={() => {
           setModalOpened(true);
         }}>
@@ -321,7 +363,11 @@ const Nav = ({ isHome }) => {
                 {navLinks &&
                   navLinks.map(({ url, name }, i) => (
                     <li key={i}>
-                      <Link to={url}>{t(`menu_text_${name}`)}</Link>
+                      <Link
+                        to={url}
+                        aria-current={activeId === url.replace('/#', '') ? 'location' : undefined}>
+                        {t(`menu_text_${name}`)}
+                      </Link>
                     </li>
                   ))}
               </ol>
@@ -349,7 +395,13 @@ const Nav = ({ isHome }) => {
                     navLinks.map(({ url, name }, i) => (
                       <CSSTransition key={i} classNames={fadeDownClass} timeout={timeout}>
                         <li key={i} style={{ transitionDelay: `${isHome ? i * 100 : 0}ms` }}>
-                          <Link to={url}>{t(`menu_text_${name}`)}</Link>
+                          <Link
+                            to={url}
+                            aria-current={
+                              activeId === url.replace('/#', '') ? 'location' : undefined
+                            }>
+                            {t(`menu_text_${name}`)}
+                          </Link>
                         </li>
                       </CSSTransition>
                     ))}
