@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 import { useLanguage } from '../../hooks/LanguageContext';
-import { GradientText, BlurText } from '../fx';
+import { GradientText } from '../fx';
 // import { email } from '@config';
 
 const StyledHeroSection = styled.section`
@@ -105,7 +105,7 @@ const Hero = () => {
 
   const two = (
     <h2 className="big-heading">
-      <BlurText text="Angelo" step={140} delay={navDelay} /> <GradientText>Ortiz.</GradientText>
+      Angelo <GradientText>Ortiz.</GradientText>
     </h2>
   );
   const three = <h3 className="big-heading">{t('hero_txt_keywords')}</h3>;
