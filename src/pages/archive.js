@@ -1,16 +1,37 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
-import styled from 'styled-components';
-import { srConfig } from '@config';
-import sr from '@utils/sr';
+import styled, { css, keyframes } from 'styled-components';
 import { Layout } from '@components';
 import { Icon } from '@components/icons';
-import { usePrefersReducedMotion } from '@hooks';
-import { LanguageProvider, useLanguage } from '../hooks/LanguageContext';
+import { useLanguage } from '../hooks/LanguageContext';
+
+const fadeUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+`;
+
+// Pure-CSS entrance: it starts at the very first paint, so there is no flash of visible content
+// before the reveal (ScrollReveal only hides elements a tick after mount).
+const revealIn = (delay = 0) => css`
+  @media (prefers-reduced-motion: no-preference) {
+    animation: ${fadeUp} 600ms cubic-bezier(0.645, 0.045, 0.355, 1) ${delay}ms both;
+  }
+`;
+
+const StyledHeader = styled.header`
+  ${revealIn()};
+`;
 
 const StyledTableContainer = styled.div`
+  ${revealIn(200)};
   margin: 100px -20px;
 
   @media (max-width: 768px) {
@@ -132,41 +153,26 @@ const StyledTableContainer = styled.div`
 
 const ArchivePage = ({ location, data }) => {
   const projects = data.allMarkdownRemark.edges;
-  const revealTitle = useRef(null);
-  const revealTable = useRef(null);
-  const revealProjects = useRef([]);
-  const prefersReducedMotion = usePrefersReducedMotion();
-
   const { t } = useLanguage();
-
-  useEffect(() => {
-    if (prefersReducedMotion) {
-      return;
-    }
-
-    sr.reveal(revealTitle.current, srConfig());
-    sr.reveal(revealTable.current, srConfig(200, 0));
-    revealProjects.current.forEach((ref, i) => sr.reveal(ref, srConfig(i * 10)));
-  }, []);
 
   return (
     <Layout location={location}>
       <Helmet title="Archive" />
 
       <main>
-        <header ref={revealTitle}>
-          <h1 className="big-heading">{t("full_archive_text_title")}</h1>
-          <p className="subtitle">{t("full_archive_text_subtitle")}</p>
-        </header>
+        <StyledHeader>
+          <h1 className="big-heading">{t('full_archive_text_title')}</h1>
+          <p className="subtitle">{t('full_archive_text_subtitle')}</p>
+        </StyledHeader>
 
-        <StyledTableContainer ref={revealTable}>
+        <StyledTableContainer>
           <table>
             <thead>
               <tr>
-                <th>{t("full_archive_text_table_year")}</th>
-                <th>{t("full_archive_text_table_title")}</th>
-                <th className="hide-on-mobile">{t("full_archive_text_table_made")}</th>
-                <th className="hide-on-mobile">{t("full_archive_text_table_tech")}</th>
+                <th>{t('full_archive_text_table_year')}</th>
+                <th>{t('full_archive_text_table_title')}</th>
+                <th className="hide-on-mobile">{t('full_archive_text_table_made')}</th>
+                <th className="hide-on-mobile">{t('full_archive_text_table_tech')}</th>
                 <th>Link</th>
               </tr>
             </thead>
@@ -175,7 +181,7 @@ const ArchivePage = ({ location, data }) => {
                 projects.map(({ node }, i) => {
                   const { date, github, external, title, tech, company } = node.frontmatter;
                   return (
-                    <tr key={i} ref={el => (revealProjects.current[i] = el)}>
+                    <tr key={i}>
                       <td className="overline year">{`${new Date(date).getFullYear()}`}</td>
 
                       <td className="title">{title}</td>
