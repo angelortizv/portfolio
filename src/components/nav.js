@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { navLinks } from '@config';
 import { loaderDelay } from '@utils';
 import { useScrollDirection, usePrefersReducedMotion } from '@hooks';
@@ -55,6 +55,16 @@ const StyledHeader = styled.header`
   }
 `;
 
+const logoSpin = keyframes`
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+`;
+
+const logoPulse = keyframes`
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.18); }
+`;
+
 const StyledNav = styled.nav`
   ${({ theme }) => theme.mixins.flexBetween};
   position: relative;
@@ -88,8 +98,30 @@ const StyledNav = styled.nav`
       svg {
         fill: none;
         transition: var(--transition);
-        transition: var(--transition);
         user-select: none;
+        overflow: visible;
+      }
+
+      /* hover / keyboard focus: the hexagon turns once and the A pulses */
+      @media (prefers-reduced-motion: no-preference) {
+        &:hover svg,
+        &:focus-visible svg {
+          filter: drop-shadow(0 0 8px var(--glow-color));
+        }
+
+        &:hover #Shape,
+        &:focus-visible #Shape {
+          transform-box: fill-box;
+          transform-origin: center;
+          animation: ${logoSpin} 1.1s cubic-bezier(0.65, 0, 0.35, 1) 1;
+        }
+
+        &:hover svg path,
+        &:focus-visible svg path {
+          transform-box: fill-box;
+          transform-origin: center;
+          animation: ${logoPulse} 1.1s ease-in-out 1;
+        }
       }
     }
   }

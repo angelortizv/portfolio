@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 import { navDelay, loaderDelay } from '@utils';
 import { usePrefersReducedMotion } from '@hooks';
 import { useLanguage } from '../../hooks/LanguageContext';
-import { GradientText } from '../fx';
+import { GradientText, LocalTime } from '../fx';
 // import { email } from '@config';
 
 const StyledHeroSection = styled.section`
@@ -97,12 +97,33 @@ const Hero = () => {
       return;
     }
 
-    const timeout = setTimeout(() => setIsMounted(true), navDelay);
-    return () => clearTimeout(timeout);
+    let timeout;
+    const start = delay => {
+      timeout = setTimeout(() => setIsMounted(true), delay);
+    };
+    // While the loader intro plays, the entrance waits for the curtain to start opening
+    const onCurtain = () => start(150);
+    if (window.__introPending) {
+      window.addEventListener('portfolio:reveal', onCurtain, { once: true });
+    } else {
+      start(navDelay);
+    }
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener('portfolio:reveal', onCurtain);
+    };
   }, []);
 
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
 
+  const clock = (
+    <LocalTime
+      place="Cartago"
+      zone="America/Costa_Rica"
+      offset="UTC−6"
+      locale={lang === 'es' ? 'es-CR' : 'en-US'}
+    />
+  );
   const two = (
     <h1 className="big-heading">
       Angelo <GradientText>Ortiz.</GradientText>
@@ -131,7 +152,7 @@ const Hero = () => {
     </a>
   );
 
-  const items = [two, three, four, proudly, five];
+  const items = [clock, two, three, four, proudly, five];
 
   return (
     <StyledHeroSection>
