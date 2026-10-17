@@ -12,11 +12,11 @@
   "hero_txt_about": "I make AI systems survive contact with production. I work where client requirements, platform limits, and business commitments meet — LLM agents, evals, real-time systems, and the full stack that makes them usable.",
   "hero_btn_cta": "Get in touch",
   "hero_text_proud": "Proudly from 🇨🇷",
-  "hero_txt_silia": "Currently Technical Lead, Implementations at",
+  "hero_txt_silia": "Now at",
 
   "about_text_title": "About Me",
   "about_text_tec": "Technological Institute of Costa Rica",
-  "about_text_desc_1": "Hello! I'm Angelo Ortiz Vega — Technical Lead for Implementations at Silia, AI Engineer, and former University Lecturer from Costa Rica. I make AI systems survive contact with production: I sign off technical estimates, decide when an AI agent is ready to go live, and act as the technical counterpart to client IT teams. Before that, I led development on a logistics platform handling 220K weekly trips, where I drove the build of a real-time monitoring system unifying telemetry, vehicle, driver, and incident data — and designed the ETA prediction algorithm behind it.",
+  "about_text_desc_1": "Hello! I'm Angelo Ortiz Vega — Technical Lead for Implementations at Silia, AI Engineer, and former University Lecturer from Costa Rica. I make AI systems survive contact with production: I sign off technical estimates, decide when an AI agent is ready to go live, and act as the technical counterpart to client IT teams.",
   "about_text_desc_2": "I'm a Computer Engineer from the Technological Institute of Costa Rica, with a foundation that runs deeper than web: FPGA and Verilog signal processing, CUDA parallel computing, computer architecture, and compilers. That background is why I'm drawn to software that touches the physical world — vehicles, sensors, telemetry, systems where something real depends on the output.",
   "about_text_desc_3_1": "I hold a degree in Computer Engineering from the ",
   "about_text_desc_3_2": ", with a foundation in systems and computer architecture. From 2022 to 2026 I also taught Artificial Intelligence, Machine Learning, Deep Learning, and Full Stack Development at ",
@@ -39,10 +39,11 @@
 
   "experience_text_title": "Where I've Worked",
   "experience_text_archive": "Looking for side projects and older work? Browse the archive →",
-  "case_study_traxion_tag": "Case study · Logistics",
+  "case_study_traxion_tag": "Creai case study · Logistics",
   "case_study_traxion_headline": "How TRAXION stopped tying growth to headcount with AI",
   "case_study_traxion_role": "My part: the real-time monitoring system and the ETA prediction algorithm behind the platform.",
-  "case_study_traxion_label": "Read the TRAXION case study →",
+  "case_study_traxion_cta": "Read the story on Creai →",
+  "case_study_traxion_label": "Read the TRAXION case study on Creai →",
   "case_study_traxion_url": "https://www.creai.mx/success-stories/traxion-ai-mobility-operations",
   "experience_text_subtitle": "Roles where I've led and shipped products.",
   "job_title_ucreativa": "University Lecturer",
@@ -55,11 +56,11 @@
 
   "job_title_silia": "Technical Lead, Implementations",
   "jobs_silia": [
-    "Own the technical solution for the Implementations area: sign off estimates, decide when an AI agent is ready to go live, and define the hypercare window for each release.",
-    "Act as the technical counterpart to client IT teams on integrations, access, infrastructure, and security.",
-    "Unblock the team when it hits a platform limit, distribute technical work across implementers, and escalate diagnoses — not symptoms — to the platform team.",
-    "Settle feasibility by testing, not opinion: stand up a test agent and verify end to end before answering whether something can be done.",
-    "Scope every PoC and demo in writing — what it shows, what it doesn't, and what is simulated — so it never turns into an unplanned commitment."
+    "Take AI agents from agreed scope to production for enterprise clients on Silia's agentic platform, owning the technical side of every implementation.",
+    "Sign off estimates only after a data gate: no number is closed on assumed volume or unconfirmed integrations.",
+    "Decide go-live against a written checklist — joint testing done, client deliverables closed, nothing in flight on the platform side — and hold the release, with a reason and a new date, when it isn't met. Define the hypercare window of every release: how long, who responds, and when.",
+    "Settle feasibility by testing, not opinion, and scope every PoC and demo in writing so it never turns into an unplanned commitment.",
+    "Act as the technical counterpart to client IT teams, and unblock the implementation team when it hits a platform limit."
   ],
 
   "job_title_freelancer1": "Freelance Consultant",
@@ -154,9 +155,9 @@
 
   "contact_text_over": "What's Next?",
   "contact_text_title": "Get In Touch",
-  "contact_text_desc": "Working on something interesting? Have a question, or just want to say hi — I'll get back to you.",
-  "contact_text_cta": "Need an AI agent that survives production? Let's talk.",
-  "contact_location": "San José, Costa Rica · UTC−6",
+  "contact_text_desc": "If you want to talk about AI in production, trade notes on implementations, or just say hi, write me. I'll get back to you.",
+  "contact_text_cta": "I'm not looking for new opportunities right now, but I'm always up for a good conversation.",
+  "contact_location": "Cartago, Costa Rica · UTC−6",
   "contact_location_aria": "Location and timezone",
   "contact_btn_hello": "Say Hello",
   "contact_btn_copy": "Copy email",
@@ -186,6 +187,11 @@
   "accessibility_text_invert": "Invert Colors",
 
   "nav_lang_switch": "Switch language",
+  "hero_txt_silia_after": ", taking AI agents live for enterprise clients.",
+  "about_text_desc_1b": "Before that, I led development on a logistics platform handling 220K weekly trips, where I drove the build of a real-time monitoring system unifying telemetry, vehicle, driver, and incident data — and designed the ETA prediction algorithm behind it.",
+  "meta_title": "Angelo Ortiz Vega — Technical Lead & AI Engineer",
+  "nav_theme_switch": "Toggle light/dark theme",
+  "footer_archive": "Archive: side projects and older work",
   "general_close": "Close",
   "general_scroll_to_top": "Scroll to top",
 

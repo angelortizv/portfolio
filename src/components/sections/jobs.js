@@ -8,6 +8,11 @@ import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 import { useLanguage } from '../../hooks/LanguageContext';
 
+// Pull the numbers (220K, 8.5K, 20+, 250+...) out of a bullet so the outcome reads first
+const METRIC = /(\d+(?:[.,]\d+)?(?:K|M)?\+?%?)/g;
+const emphasize = text =>
+  text.split(METRIC).map((part, i) => (i % 2 ? <strong key={i}>{part}</strong> : part));
+
 const StyledJobsSection = styled.section`
   .experience-intro {
     margin: -10px 0 40px;
@@ -210,6 +215,11 @@ const StyledTabPanel = styled.div`
     font-family: var(--font-mono);
     font-size: var(--fz-sm);
     color: var(--signal-color);
+  }
+
+  li strong {
+    color: var(--lightest-text-color);
+    font-weight: 500;
   }
 
   .range {
@@ -441,7 +451,7 @@ const Jobs = () => {
 
                         <ul>
                           {jobKeys.map((key, index) => (
-                            <li key={index}>{t(key)}</li>
+                            <li key={index}>{emphasize(t(key))}</li>
                           ))}
                         </ul>
 

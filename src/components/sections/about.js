@@ -4,7 +4,6 @@ import styled, { keyframes } from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
-import AboutFooter from '../aboutFooter';
 import { useLanguage } from '../../hooks/LanguageContext';
 
 const StyledAboutSection = styled.section`
@@ -151,8 +150,10 @@ const About = () => {
       <div className="inner">
         <StyledText>
           <div>
+            <p>{t('about_text_desc_1')}</p>
+
             <p>
-              {t('about_text_desc_1')}{' '}
+              {t('about_text_desc_1b')}{' '}
               <a href={t('case_study_traxion_url')} target="_blank" rel="noopener noreferrer">
                 {t('case_study_traxion_label')}
               </a>
@@ -205,7 +206,6 @@ const About = () => {
               alt="Angelo Ortiz Vega"
             />
           </div>
-          <AboutFooter />
         </StyledPic>
       </div>
     </StyledAboutSection>

@@ -25,7 +25,7 @@ const StyledHeroSection = styled.section`
     padding-bottom: 10vh;
   }
 
-  h3 {
+  .role {
     margin-top: 10px;
     color: var(--light-text-color);
     line-height: 1;
@@ -104,11 +104,11 @@ const Hero = () => {
   const { t } = useLanguage();
 
   const two = (
-    <h2 className="big-heading">
+    <h1 className="big-heading">
       Angelo <GradientText>Ortiz.</GradientText>
-    </h2>
+    </h1>
   );
-  const three = <h3 className="big-heading">{t('hero_txt_keywords')}</h3>;
+  const three = <p className="role big-heading">{t('hero_txt_keywords')}</p>;
   const four = (
     <>
       <p>{t('hero_txt_about')}</p>
@@ -119,7 +119,7 @@ const Hero = () => {
           <a href="https://www.silia.com/" target="_blank" rel="noopener noreferrer">
             @Silia
           </a>
-          .
+          {t('hero_txt_silia_after')}
         </span>
       </SiliaLine>
     </>

@@ -81,7 +81,6 @@ const StyledGallerySection = styled.section`
     font-size: var(--fz-sm);
     text-align: center;
     backdrop-filter: blur(4px);
-    text-transform: capitalize;
   }
 
   .scroll-buttons {
@@ -144,7 +143,6 @@ const LightboxCaption = styled.p`
   font-size: var(--fz-sm);
   color: var(--text-color);
   text-align: center;
-  text-transform: capitalize;
 `;
 
 const LightboxNav = styled.button`
@@ -214,7 +212,19 @@ const LightboxClose = styled.button`
   }
 `;
 
-const formatName = name => name.replace(/^\d+[-_]/, '').replace(/[-_]/g, ' ');
+const LOWERCASE_WORDS = ['de', 'del', 'la', 'el', 'y'];
+const formatName = name =>
+  name
+    .replace(/^\d+[-_]/, '')
+    .replace(/[-_]/g, ' ')
+    .split(' ')
+    .map((word, i) => {
+      const lower = word.toLowerCase();
+      return i > 0 && LOWERCASE_WORDS.includes(lower)
+        ? lower
+        : lower.charAt(0).toUpperCase() + lower.slice(1);
+    })
+    .join(' ');
 
 const Gallery = () => {
   const data = useStaticQuery(graphql`

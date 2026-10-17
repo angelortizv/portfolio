@@ -86,6 +86,7 @@ const StyledCaseStudy = styled.section`
     font-size: var(--fz-xs);
     letter-spacing: 0.08em;
     text-transform: uppercase;
+    white-space: nowrap;
     transition: var(--transition);
 
     &:hover,
@@ -124,7 +125,7 @@ const CaseStudy = () => {
             href={t('case_study_traxion_url')}
             target="_blank"
             rel="noopener noreferrer">
-            {t('case_study_traxion_label')}
+            {t('case_study_traxion_cta')}
           </a>
         </div>
       </div>

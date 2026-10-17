@@ -166,7 +166,7 @@ The **aurora background** is `position: fixed` behind `#content` (z-index 0 vs. 
 
 Contact has a soft radial glow behind the CTA.
 
-Navigation is a **floating glass pill** (max 1120px wide, 60px tall, fully rounded, `--nav-bg` + `backdrop-filter`, violet hairline) centered over a transparent header. The header hides on scroll-down and returns on scroll-up. Language is a text toggle (`EN | ES`, active language underlined) rather than a flag. Mobile keeps the same pill with the hamburger inside.
+Navigation is a **floating glass pill** (max 1120px wide, 60px tall, fully rounded, `--nav-bg` + `backdrop-filter`, violet hairline) centered over a transparent header. The header hides on scroll-down and returns on scroll-up. The link for the section under the reading line gets the hover tint (`aria-current="location"`, home page only). Language is a text toggle (`EN | ES`, active language underlined) rather than a flag. Mobile keeps the same pill with the hamburger inside.
 
 Breakpoints (max-width): 330 / 400 / 480 / 600 / 768 / 900 / 1080 / 1200 / 1400px.
 
@@ -219,6 +219,10 @@ Mono, uppercase, tracked, pill-shaped. Transparent with a violet hairline at res
 ### Navigation
 
 Floating pill; the links sit at the true center (logo and tool buttons each take equal flexible space); links are mono, 11px, uppercase, pill-highlighted on hover with Signal Tint.
+
+### Experience metrics
+
+Numbers inside bullets (220K, 8.5K, 20+, 250+…) are wrapped in `<strong>` and lifted to the heading text color, so the outcome reads first.
 
 ### Inline Links
 

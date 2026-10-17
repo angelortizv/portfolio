@@ -12,11 +12,11 @@
   "hero_txt_about": "Hago que los sistemas de IA sobrevivan el contacto con producción. Trabajo donde se encuentran los requerimientos del cliente, los límites de la plataforma y los compromisos del negocio — agentes LLM, evals, sistemas en tiempo real y el stack completo que los hace usables.",
   "hero_btn_cta": "Ponte en contacto",
   "hero_text_proud": "Orgullosamente de 🇨🇷",
-  "hero_txt_silia": "Actualmente Technical Lead, Implementations en",
+  "hero_txt_silia": "Ahora en",
 
   "about_text_title": "Acerca de mí",
   "about_text_tec": "Instituto Tecnológico de Costa Rica",
-  "about_text_desc_1": "¡Hola! Soy Angelo Ortiz Vega — Technical Lead de Implementations en Silia, AI Engineer y ex Profesor Universitario de Costa Rica. Hago que los sistemas de IA sobrevivan el contacto con producción: firmo estimaciones técnicas, decido cuándo un agente de IA está listo para salir a producción y soy la contraparte técnica de los equipos de TI de los clientes. Antes lideré el desarrollo de una plataforma logística que maneja 220K viajes semanales, donde impulsé la construcción de un sistema de monitoreo en tiempo real que unifica telemetría, vehículo, conductor e incidentes — y diseñé el algoritmo de predicción de ETA que lo alimenta.",
+  "about_text_desc_1": "¡Hola! Soy Angelo Ortiz Vega — Technical Lead de Implementations en Silia, AI Engineer y ex Profesor Universitario de Costa Rica. Hago que los sistemas de IA sobrevivan el contacto con producción: firmo estimaciones técnicas, decido cuándo un agente de IA está listo para salir a producción y soy la contraparte técnica de los equipos de TI de los clientes.",
   "about_text_desc_2": "Soy Ingeniero en Computadores del Instituto Tecnológico de Costa Rica, con una base que va más allá de la web: procesamiento de señales con FPGA y Verilog, computación paralela con CUDA, arquitectura de computadoras y compiladores. Ese background es por qué me atraen los sistemas que tocan el mundo físico — vehículos, sensores, telemetría, sistemas donde algo real depende del resultado.",
   "about_text_desc_3_1": "Soy graduado en Ingeniería en Computadores del ",
   "about_text_desc_3_2": ", con una base en sistemas y arquitectura de computadoras. De 2022 a 2026 también enseñé Inteligencia Artificial, Machine Learning, Deep Learning y Desarrollo Full Stack en la ",
@@ -39,10 +39,11 @@
 
   "experience_text_title": "Donde he trabajado",
   "experience_text_archive": "¿Buscas proyectos personales y trabajos anteriores? Explora el archivo →",
-  "case_study_traxion_tag": "Caso de estudio · Logística",
+  "case_study_traxion_tag": "Caso de estudio de Creai · Logística",
   "case_study_traxion_headline": "Cómo TRAXION dejó de atar su crecimiento a la plantilla con IA",
   "case_study_traxion_role": "Mi parte: el sistema de monitoreo en tiempo real y el algoritmo de predicción de ETA detrás de la plataforma.",
-  "case_study_traxion_label": "Lee el caso de estudio de TRAXION →",
+  "case_study_traxion_cta": "Lee la historia en Creai →",
+  "case_study_traxion_label": "Lee el caso de estudio de TRAXION en Creai →",
   "case_study_traxion_url": "https://www.creai.mx/es-mx/success-stories/traxion-ia-operaciones-de-movilidad",
   "experience_text_subtitle": "Roles donde he liderado y llevado productos a producción.",
   "job_title_ucreativa": "Profesor Universitario",
@@ -55,11 +56,11 @@
 
   "job_title_silia": "Technical Lead, Implementations",
   "jobs_silia": [
-    "Soy responsable de la solución técnica del área de Implementación: firmo estimaciones, decido cuándo un agente de IA está listo para salir a producción y defino la ventana de hypercare de cada pase.",
-    "Soy la contraparte técnica de los equipos de TI de los clientes en integraciones, accesos, infraestructura y seguridad.",
-    "Destrabo al equipo cuando se topa con un límite de la plataforma, reparto el trabajo técnico entre los implementadores y escalo diagnósticos —no síntomas— al equipo de plataforma.",
-    "Resuelvo la factibilidad probando, no opinando: levanto un agente de prueba y lo verifico de punta a punta antes de responder si algo se puede hacer.",
-    "Acoto por escrito cada PoC y demo —qué muestra, qué no y qué es simulado— para que nunca se convierta en un compromiso no planeado."
+    "Llevo agentes de IA desde el alcance acordado hasta producción para clientes empresariales en la plataforma agéntica de Silia, siendo responsable del lado técnico de cada implementación.",
+    "Firmo estimaciones solo después de una validación de datos: ningún número se cierra sobre un volumen supuesto o integraciones sin confirmar.",
+    "Decido el pase a producción contra una lista de verificación escrita — pruebas conjuntas hechas, entregables del cliente cerrados, nada en vuelo del lado de la plataforma — y detengo el pase, con una razón y una nueva fecha, cuando no se cumple. Defino la ventana de hypercare de cada pase: cuánto dura, quién responde y cuándo.",
+    "Resuelvo la factibilidad probando, no opinando, y acoto por escrito cada PoC y demo para que nunca se convierta en un compromiso no planeado.",
+    "Soy la contraparte técnica de los equipos de TI de los clientes y destrabo al equipo de implementación cuando se topa con un límite de la plataforma."
   ],
 
   "job_title_freelancer1": "Consultor Freelance",
@@ -154,9 +155,9 @@
 
   "contact_text_over": "¿Qué sigue?",
   "contact_text_title": "Ponte en contacto",
-  "contact_text_desc": "¿Estás trabajando en algo interesante? ¿Tienes alguna pregunta o simplemente quieres saludar? Te respondo.",
-  "contact_text_cta": "¿Necesitas un agente de IA que sobreviva a producción? Hablemos.",
-  "contact_location": "San José, Costa Rica · UTC−6",
+  "contact_text_desc": "Si quieres hablar de IA en producción, intercambiar ideas sobre implementaciones o simplemente saludar, escríbeme. Te respondo.",
+  "contact_text_cta": "Ahora mismo no estoy buscando nuevas oportunidades, pero siempre estoy disponible para una buena charla.",
+  "contact_location": "Cartago, Costa Rica · UTC−6",
   "contact_location_aria": "Ubicación y zona horaria",
   "contact_btn_hello": "Decir Hola",
   "contact_btn_copy": "Copiar correo",
@@ -186,6 +187,11 @@
   "accessibility_text_invert": "Invertir Colores",
 
   "nav_lang_switch": "Cambiar idioma",
+  "hero_txt_silia_after": ", llevando agentes de IA a producción para clientes empresariales.",
+  "about_text_desc_1b": "Antes lideré el desarrollo de una plataforma logística que maneja 220K viajes semanales, donde impulsé la construcción de un sistema de monitoreo en tiempo real que unifica telemetría, vehículo, conductor e incidentes — y diseñé el algoritmo de predicción de ETA que lo alimenta.",
+  "meta_title": "Angelo Ortiz Vega — Technical Lead y AI Engineer",
+  "nav_theme_switch": "Cambiar entre tema claro y oscuro",
+  "footer_archive": "Archivo: proyectos personales y trabajos anteriores",
   "general_close": "Cerrar",
   "general_scroll_to_top": "Ir hacia arriba",
 

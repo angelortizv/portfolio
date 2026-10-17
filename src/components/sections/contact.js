@@ -78,7 +78,9 @@ const StyledContactSection = styled.section`
   }
 
   .title {
-    font-size: clamp(40px, 5vw, 60px);
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.2;
+    text-wrap: balance;
   }
 
   .response-time {
@@ -163,7 +165,7 @@ const Contact = () => {
 
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
-      <h2 className="numbered-heading overline">{t('contact_text_over')}</h2>
+      <p className="numbered-heading overline">{t('contact_text_over')}</p>
 
       <h2 className="title">{t('contact_text_cta')}</h2>
 
