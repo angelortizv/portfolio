@@ -39,6 +39,11 @@
 
   "experience_text_title": "Where I've Worked",
   "experience_text_archive": "Looking for side projects and older work? Browse the archive →",
+  "case_study_traxion_tag": "Case study · Logistics",
+  "case_study_traxion_headline": "How TRAXION stopped tying growth to headcount with AI",
+  "case_study_traxion_role": "My part: the real-time monitoring system and the ETA prediction algorithm behind the platform.",
+  "case_study_traxion_label": "Read the TRAXION case study →",
+  "case_study_traxion_url": "https://www.creai.mx/success-stories/traxion-ai-mobility-operations",
   "experience_text_subtitle": "Roles where I've led and shipped products.",
   "job_title_ucreativa": "University Lecturer",
   "jobs_ucreativa": [
@@ -180,6 +185,7 @@
   "accessibility_text_grayscale": "Grayscale",
   "accessibility_text_invert": "Invert Colors",
 
+  "nav_lang_switch": "Switch language",
   "general_close": "Close",
   "general_scroll_to_top": "Scroll to top",
 

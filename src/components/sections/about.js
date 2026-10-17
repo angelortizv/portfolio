@@ -151,7 +151,12 @@ const About = () => {
       <div className="inner">
         <StyledText>
           <div>
-            <p>{t('about_text_desc_1')}</p>
+            <p>
+              {t('about_text_desc_1')}{' '}
+              <a href={t('case_study_traxion_url')} target="_blank" rel="noopener noreferrer">
+                {t('case_study_traxion_label')}
+              </a>
+            </p>
 
             <p>{t('about_text_desc_2')}</p>
 

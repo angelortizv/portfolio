@@ -39,6 +39,11 @@
 
   "experience_text_title": "Donde he trabajado",
   "experience_text_archive": "¿Buscas proyectos personales y trabajos anteriores? Explora el archivo →",
+  "case_study_traxion_tag": "Caso de estudio · Logística",
+  "case_study_traxion_headline": "Cómo TRAXION dejó de atar su crecimiento a la plantilla con IA",
+  "case_study_traxion_role": "Mi parte: el sistema de monitoreo en tiempo real y el algoritmo de predicción de ETA detrás de la plataforma.",
+  "case_study_traxion_label": "Lee el caso de estudio de TRAXION →",
+  "case_study_traxion_url": "https://www.creai.mx/es-mx/success-stories/traxion-ia-operaciones-de-movilidad",
   "experience_text_subtitle": "Roles donde he liderado y llevado productos a producción.",
   "job_title_ucreativa": "Profesor Universitario",
   "jobs_ucreativa": [
@@ -180,6 +185,7 @@
   "accessibility_text_grayscale": "Escala de Grises",
   "accessibility_text_invert": "Invertir Colores",
 
+  "nav_lang_switch": "Cambiar idioma",
   "general_close": "Cerrar",
   "general_scroll_to_top": "Ir hacia arriba",
 

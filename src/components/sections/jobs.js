@@ -205,6 +205,13 @@ const StyledTabPanel = styled.div`
     border-top: 1px solid var(--outline-light);
   }
 
+  .case-study-link {
+    margin-top: 10px;
+    font-family: var(--font-mono);
+    font-size: var(--fz-sm);
+    color: var(--signal-color);
+  }
+
   .range {
     color: var(--light-text-color);
     font-family: var(--font-mono);
@@ -230,6 +237,7 @@ const Jobs = () => {
               range
               type
               url
+              caseStudy
             }
             html
           }
@@ -408,7 +416,8 @@ const Jobs = () => {
                   aria-hidden={activeTabId !== i}
                   hidden={activeTabId !== i}>
                   {roles.map(({ frontmatter }, roleIndex) => {
-                    const { title, url, company, range, type, location, desc } = frontmatter;
+                    const { title, url, company, range, type, location, desc, caseStudy } =
+                      frontmatter;
                     const bullets = t(`jobs_${desc}`);
                     const jobKeys = Array.isArray(bullets) ? bullets : [bullets];
 
@@ -435,6 +444,16 @@ const Jobs = () => {
                             <li key={index}>{t(key)}</li>
                           ))}
                         </ul>
+
+                        {caseStudy && (
+                          <a
+                            className="inline-link case-study-link"
+                            href={t(`case_study_${caseStudy}_url`)}
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            {t(`case_study_${caseStudy}_label`)}
+                          </a>
+                        )}
                       </div>
                     );
                   })}
