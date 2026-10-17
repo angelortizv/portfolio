@@ -5,7 +5,6 @@ import { Head, Loader, Nav, Social, Email, Footer, KeyboardShortcuts } from '@co
 import { KeyboardShortcutsProvider } from '../hooks/KeyboardShortcutsContext';
 import { GlobalStyle, theme } from '@styles';
 import ScrollProgressBar from './scrollProgressBar';
-import { AuroraBackground } from './fx';
 
 const StyledContent = styled.div`
   display: flex;
@@ -21,7 +20,10 @@ const StyledContent = styled.div`
 
 const Layout = ({ children, location }) => {
   const isHome = location.pathname === '/';
+  // The loader overlay stays mounted while it reveals the page, so the content mounts
+  // (contentReady) a little before the loader unmounts (isLoading).
   const [isLoading, setIsLoading] = useState(isHome);
+  const [contentReady, setContentReady] = useState(!isHome);
 
   // Sets target="_blank" rel="noopener noreferrer" on external links
   const handleExternalLinks = () => {
@@ -37,7 +39,7 @@ const Layout = ({ children, location }) => {
   };
 
   useEffect(() => {
-    if (isLoading) {
+    if (!contentReady) {
       return;
     }
 
@@ -53,7 +55,7 @@ const Layout = ({ children, location }) => {
     }
 
     handleExternalLinks();
-  }, [isLoading]);
+  }, [contentReady]);
 
   return (
     <>
@@ -67,12 +69,16 @@ const Layout = ({ children, location }) => {
             Skip to Content
           </a>
 
-          {isLoading && isHome ? (
-            <Loader finishLoading={() => setIsLoading(false)} />
-          ) : (
+          {isLoading && isHome && (
+            <Loader
+              onReveal={() => setContentReady(true)}
+              finishLoading={() => setIsLoading(false)}
+            />
+          )}
+
+          {contentReady && (
             <KeyboardShortcutsProvider>
               <StyledContent>
-                <AuroraBackground />
                 <Nav isHome={isHome} />
                 <Social isHome={isHome} />
                 <Email isHome={isHome} />

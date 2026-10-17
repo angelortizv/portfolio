@@ -5,8 +5,8 @@ const IconLoader = () => (
     <title>Loader Logo</title>
     <defs>
       <linearGradient id="loaderGradient" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stopColor="#a78bfa" />
-        <stop offset="100%" stopColor="#c4b5fd" />
+        <stop offset="0%" style={{ stopColor: 'var(--signal-color)' }} />
+        <stop offset="100%" style={{ stopColor: 'var(--signal-soft)' }} />
       </linearGradient>
     </defs>
     <g>
