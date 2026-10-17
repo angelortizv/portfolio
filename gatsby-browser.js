@@ -4,9 +4,13 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-import React from "react";
-import { LanguageProvider } from "./src/hooks/LanguageContext";
+import React from 'react';
+import { LanguageProvider } from './src/hooks/LanguageContext';
+import { AuroraBackground } from './src/components/fx';
 
 export const wrapRootElement = ({ element }) => (
-  <LanguageProvider>{element}</LanguageProvider>
+  <LanguageProvider>
+    <AuroraBackground />
+    {element}
+  </LanguageProvider>
 );

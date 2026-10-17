@@ -7,6 +7,7 @@
 import React from 'react';
 import { LanguageProvider } from './src/hooks/LanguageContext';
 import Colors from './src/styles/colors';
+import { AuroraBackground } from './src/components/fx';
 
 // Inline script so loader and first paint use saved theme (or default dark)
 const themeScript = `
@@ -28,4 +29,9 @@ export const onRenderBody = ({ setHeadComponents }) => {
   ]);
 };
 
-export const wrapRootElement = ({ element }) => <LanguageProvider>{element}</LanguageProvider>;
+export const wrapRootElement = ({ element }) => (
+  <LanguageProvider>
+    <AuroraBackground />
+    {element}
+  </LanguageProvider>
+);
