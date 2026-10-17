@@ -238,12 +238,12 @@ The hero opens directly on the name — no rotating multilingual greeting. Order
 
 ### Loader / Splash
 
-A ~2.7s sequence (anime.js), played once per browser session, skippable with a click or key press, and skipped entirely under `prefers-reduced-motion`:
+A short intro (~1.8s by design), played once per browser session, skippable with a click or key press, and skipped entirely under `prefers-reduced-motion`:
 
-1. On a dark dot-textured field with a soft violet glow at the center seam, the **whole logo (hexagon and A) pulses as one unit** from the very first paint (CSS, so it also runs while the page is still hydrating), while a mono counter (`000`→`100`) and a hairline progress bar run below.
-2. The name types in letter by letter in mono.
-3. The page mounts underneath, the content steps back, and the screen splits into two halves that slide up and down (`easeInOutExpo`) to reveal the hero, whose own entrance animations begin as the curtain opens.
-   A watchdog closes the loader after 8s if the timeline ever stalls. The logo gradient uses the theme tokens (`--signal-color` → `--signal-soft`), so it also reads in the light theme.
+1. On a dark dot-textured field with a soft violet glow at the center seam, the **whole logo (hexagon and A) pulses as one unit** from the very first paint (CSS, so it also runs while the page is still hydrating). There is no progress counter or bar.
+2. At ~250ms the page mounts underneath the loader (so the heavy React work happens while the screen is only the pulsing logo, never during the curtain), and the name types in in mono. A quiet "Click or press any key to skip" hint fades in at ~600ms.
+3. At ~1.0s the content steps back; at ~1.1s the screen splits into two halves that slide up and down (`easeInOutExpo`, 700ms). At that moment the loader fires `portfolio:reveal` — the hero entrance and the dot-grid intro start on that event, so both play as the curtain opens, not behind it.
+   Accessibility: the loader is a `role="status"` live region with a visually hidden "Loading" label. A watchdog closes it after 6s if the timeline ever stalls. The logo gradient uses the theme tokens (`--signal-color` → `--signal-soft`), so it also reads in the light theme.
 
 ### Fancy List & Numbered Heading
 

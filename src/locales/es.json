@@ -144,6 +144,7 @@
   "gallery_text_less": "Ver Menos",
   "gallery_text_more": "Ver Más",
   "gallery_empty": "Aún no hay fotos.",
+  "gallery_photo": "Foto de la galería",
   "gallery_open_lightbox": "Ver tamaño completo",
   "gallery_scroll_left": "Desplazar galería a la izquierda",
   "gallery_scroll_right": "Desplazar galería a la derecha",
@@ -190,6 +191,8 @@
   "meta_title": "Angelo Ortiz Vega — Technical Lead y AI Engineer",
   "nav_theme_switch": "Cambiar entre tema claro y oscuro",
   "footer_archive": "Archivo: proyectos personales y trabajos anteriores",
+  "loader_loading": "Cargando",
+  "loader_skip": "Haz clic o pulsa una tecla para saltar",
   "general_close": "Cerrar",
   "general_scroll_to_top": "Ir hacia arriba",
 

@@ -507,10 +507,10 @@ const DotGrid = ({
     };
 
     // The loader tells us when its curtain starts to open; fall back after a while regardless
-    // the loader fires the event ~250ms before its curtain starts to open
+    // the loader fires the event as its curtain starts to open
     let introTimer = 0;
     const onReveal = () => {
-      introTimer = window.setTimeout(startIntro, 250);
+      introTimer = window.setTimeout(startIntro, 100);
     };
     window.addEventListener('portfolio:reveal', onReveal);
     const introFallback = waitRef.current ? window.setTimeout(startIntro, 6000) : 0;

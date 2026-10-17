@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
 import styled, { keyframes } from 'styled-components';
 import { IconLoader } from '@components/icons';
+import { useLanguage } from '../hooks/LanguageContext';
 
 const SEEN_KEY = 'portfolio-loader-seen';
 const NAME = 'ANGELO ORTIZ';
@@ -21,11 +22,6 @@ const logoPulse = keyframes`
     transform: scale(1.07);
     filter: drop-shadow(0 0 26px var(--glow-color));
   }
-`;
-
-const bootSweep = keyframes`
-  0%   { transform: scaleX(0.05); }
-  100% { transform: scaleX(0.5); }
 `;
 
 const StyledLoader = styled.div`
@@ -93,12 +89,6 @@ const StyledLoader = styled.div`
     }
   }
 
-  &.booting {
-    .progress .bar i {
-      animation: ${bootSweep} 1.2s ease-in-out infinite alternate;
-    }
-  }
-
   .wordmark {
     position: absolute;
     top: calc(50% + 78px);
@@ -118,41 +108,31 @@ const StyledLoader = styled.div`
     }
   }
 
-  .progress-wrap {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .skip-hint {
     position: absolute;
     bottom: clamp(28px, 6vh, 56px);
     left: 0;
     right: 0;
-    display: flex;
-    justify-content: center;
-    pointer-events: none;
-  }
-
-  .progress {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+    text-align: center;
     font-family: var(--font-mono);
     font-size: var(--fz-xxs);
-    letter-spacing: 0.2em;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
     color: var(--text-color);
-
-    .bar {
-      width: 140px;
-      height: 1px;
-      background: var(--outline-light);
-      overflow: hidden;
-
-      i {
-        display: block;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, var(--signal-color), var(--signal-soft));
-        transform: scaleX(0);
-        transform-origin: left center;
-      }
-    }
+    opacity: 0;
+    pointer-events: none;
   }
 `;
 
@@ -160,17 +140,28 @@ const Loader = ({ onReveal, finishLoading }) => {
   const rootRef = useRef(null);
   const timeline = useRef(null);
   const finished = useRef(false);
-  const revealed = useRef(false);
-  const [percent, setPercent] = useState(0);
-  const [booting, setBooting] = useState(true);
+  const mounted = useRef(false);
+  const curtainStarted = useRef(false);
+  const { t } = useLanguage();
 
-  const reveal = () => {
-    if (revealed.current) {
+  // The page mounts underneath early, while the screen is just the pulsing logo, so all that
+  // React work is done long before the curtain starts moving.
+  const mountPage = () => {
+    if (mounted.current) {
       return;
     }
-    revealed.current = true;
-    window.dispatchEvent(new Event('portfolio:reveal'));
+    mounted.current = true;
     onReveal();
+  };
+
+  // Tells the hero and the dot grid to begin their own entrances as the curtain opens
+  const openCurtain = () => {
+    if (curtainStarted.current) {
+      return;
+    }
+    curtainStarted.current = true;
+    window.__introPending = false;
+    window.dispatchEvent(new Event('portfolio:reveal'));
   };
 
   const finish = () => {
@@ -178,7 +169,8 @@ const Loader = ({ onReveal, finishLoading }) => {
       return;
     }
     finished.current = true;
-    reveal();
+    mountPage();
+    openCurtain();
     try {
       window.sessionStorage.setItem(SEEN_KEY, '1');
     } catch (e) {
@@ -198,81 +190,65 @@ const Loader = ({ onReveal, finishLoading }) => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (seen || reduced) {
       finish();
-      return;
+      return undefined;
     }
 
-    setBooting(false);
+    window.__introPending = true;
     const q = sel => rootRef.current.querySelectorAll(sel);
-    const counter = { value: 0 };
 
     const tl = anime.timeline({ easing: 'easeInOutQuart', complete: finish });
     timeline.current = tl;
 
     tl
-      // 1. the counter and the progress bar run while the logo keeps pulsing (CSS)
-      .add({
-        targets: counter,
-        value: 100,
-        duration: 1400,
-        round: 1,
-        easing: 'easeInOutSine',
-        update: () => setPercent(counter.value),
-      })
-      .add(
-        {
-          targets: q('.progress .bar i'),
-          scaleX: [0, 1],
-          duration: 1400,
-          easing: 'easeInOutSine',
-        },
-        0,
-      )
-      // 2. the name types in, letter by letter
+      // the page mounts right away, hidden behind the loader
+      .add({ targets: rootRef.current, duration: 1, begin: mountPage }, 250)
+      // the name types in
       .add(
         {
           targets: q('.wordmark .ch'),
           opacity: [0, 1],
           translateY: [8, 0],
-          duration: 380,
-          delay: anime.stagger(32),
+          duration: 300,
+          delay: anime.stagger(24),
           easing: 'easeOutQuart',
         },
-        700,
+        250,
       )
-      // the page mounts underneath just before the curtain opens
-      .add({ targets: rootRef.current, duration: 1, begin: reveal }, 1700)
-      // 3. content steps back, then the two halves split open
+      // a quiet hint that the intro can be skipped
+      .add({ targets: q('.skip-hint'), opacity: [0, 0.8], duration: 400, easing: 'linear' }, 600)
+      // content steps back, then the two halves split open
       .add(
         {
-          targets: [q('.stage')[0], q('.progress')[0]],
-          opacity: [1, 0],
-          scale: [1, 0.94],
-          duration: 320,
+          targets: [q('.stage')[0], q('.skip-hint')[0]],
+          opacity: 0,
+          scale: 0.94,
+          duration: 260,
           easing: 'easeInQuad',
         },
-        1850,
+        1000,
       )
       .add(
         {
           targets: q('.panel.top'),
           translateY: ['0%', '-100%'],
-          duration: 750,
+          duration: 700,
           easing: 'easeInOutExpo',
+          begin: openCurtain,
         },
-        1950,
+        1100,
       )
       .add(
         {
           targets: q('.panel.bottom'),
           translateY: ['0%', '100%'],
-          duration: 750,
+          duration: 700,
           easing: 'easeInOutExpo',
         },
-        1950,
+        1100,
       );
 
     // Safety net: never leave the visitor on the intro if the timeline stalls
-    const watchdog = setTimeout(finish, 8000);
+    const watchdog = setTimeout(finish, 6000);
 
     // Any click or key press skips the intro
     const skip = () => {
@@ -290,7 +266,7 @@ const Loader = ({ onReveal, finishLoading }) => {
   }, []);
 
   return (
-    <StyledLoader className={`loader${booting ? ' booting' : ''}`} ref={rootRef}>
+    <StyledLoader className="loader" ref={rootRef} role="status" aria-live="polite">
       <Helmet bodyAttributes={{ class: `hidden` }} />
 
       <div className="panel top" />
@@ -309,14 +285,10 @@ const Loader = ({ onReveal, finishLoading }) => {
         </div>
       </div>
 
-      <div className="progress-wrap" aria-hidden="true">
-        <div className="progress">
-          <span>{String(percent).padStart(3, '0')}</span>
-          <div className="bar">
-            <i />
-          </div>
-        </div>
-      </div>
+      <span className="sr-only">{t('loader_loading')}</span>
+      <p className="skip-hint" aria-hidden="true">
+        {t('loader_skip')}
+      </p>
     </StyledLoader>
   );
 };
