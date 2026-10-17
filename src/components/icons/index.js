@@ -54,5 +54,8 @@ export { default as IconCpp } from './cpp';
 export { default as IconCUDA } from './cuda';
 export { default as IconVerilogFPGA } from './verilogfpga';
 export { default as IconEvals } from './evals';
+export { default as IconClaude } from './claude';
+export { default as IconOpenAI } from './openai';
+export { default as IconGemini } from './gemini';
 export { default as IconRealTimeSystems } from './realtimesystems';
 export { default as IconSystemDesign } from './systemdesign';
