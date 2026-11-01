@@ -69,6 +69,26 @@ const StyledCaseStudy = styled.section`
     gap: 28px;
   }
 
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    margin-top: 26px;
+    font-family: var(--font-mono);
+    font-size: var(--fz-xs);
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.78);
+
+    strong {
+      display: block;
+      margin-bottom: 2px;
+      color: #fff;
+      font-size: var(--fz-xl);
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+  }
+
   p {
     margin: 0;
     color: rgba(255, 255, 255, 0.92);
@@ -116,6 +136,20 @@ const CaseStudy = () => {
         <div className="content">
           <span className="label">{t('case_study_traxion_tag')}</span>
           <h2>{t('case_study_traxion_headline')}</h2>
+          <div className="stats" aria-label={t('case_study_traxion_stats_aria')}>
+            <span>
+              <strong>220K</strong>
+              {t('case_study_traxion_stat_trips')}
+            </span>
+            <span>
+              <strong>8.5K</strong>
+              {t('case_study_traxion_stat_drivers')}
+            </span>
+            <span>
+              <strong>10K</strong>
+              {t('case_study_traxion_stat_vehicles')}
+            </span>
+          </div>
         </div>
 
         <div className="aside">

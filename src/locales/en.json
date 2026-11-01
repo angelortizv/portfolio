@@ -1,8 +1,7 @@
 {
   "menu_text_about": "About",
   "menu_text_experience": "Experience",
-  "menu_text_work": "Projects",
-  "menu_text_blog": "Blog",
+  "menu_text_projects": "Projects",
   "menu_text_gallery": "Gallery",
   "menu_text_contact": "Contact",
 
@@ -27,7 +26,6 @@
   "about_text_desc_5_c": ", or curating ",
   "about_text_desc_5_blog": ", writing on ",
   "about_text_desc_5_blog_name": "my blog",
-  "about_text_resume": "View my resume",
 
   "skills_text_title": "Skills & Stack",
   "skills_text_subtitle": "What I build with, day to day.",
@@ -63,6 +61,10 @@
   "case_study_traxion_cta": "Read the story on Creai →",
   "case_study_traxion_label": "Read the TRAXION case study on Creai →",
   "case_study_traxion_url": "https://www.creai.mx/success-stories/traxion-ai-mobility-operations",
+  "case_study_traxion_stat_trips": "weekly trips",
+  "case_study_traxion_stat_drivers": "drivers",
+  "case_study_traxion_stat_vehicles": "vehicles",
+  "case_study_traxion_stats_aria": "Scale of the platform in production",
   "experience_text_subtitle": "Roles where I've led and shipped products.",
   "job_title_ucreativa": "University Lecturer",
   "jobs_ucreativa": [
@@ -156,10 +158,6 @@
   "projects_show_more": "Show more",
   "projects_show_less": "Show less",
 
-  "blog_section_title": "Latest on the Blog",
-  "blog_section_intro": "Recent writing on software, AI, and what I'm learning.",
-  "blog_section_link": "View all posts at angelortizv.com",
-
   "gallery_text_title": "My life in pictures",
   "gallery_text_less": "Show Less",
   "gallery_text_more": "Show More",
@@ -173,9 +171,9 @@
   "gallery_next": "Next photo",
 
   "contact_text_over": "What's Next?",
-  "contact_text_title": "Get In Touch",
   "contact_text_desc": "If you want to talk about AI in production, trade notes on implementations, or just say hi, write me. I'll get back to you.",
-  "contact_text_cta": "I'm not looking for new opportunities right now, but I'm always up for a good conversation.",
+  "contact_text_cta": "Always up for a good conversation.",
+  "contact_text_note": "Not actively looking for new roles right now — but a hard problem or a good idea always gets a reply.",
   "contact_location": "Cartago, Costa Rica · UTC−6",
   "contact_location_aria": "Location and timezone",
   "contact_btn_hello": "Say Hello",

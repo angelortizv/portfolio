@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
+import { socialMedia } from '@config';
 import { useLanguage } from '../hooks/LanguageContext';
 
 // https://www.gatsbyjs.com/docs/add-seo-component/
@@ -36,6 +37,20 @@ const Head = ({ title, description, image }) => {
     url: `${siteUrl}${pathname}`,
   };
 
+  // Structured data so search engines connect the site, the socials and the blog
+  const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Angelo Ortiz Vega',
+    jobTitle: 'Technical Lead, Implementations · AI Engineer',
+    worksFor: { '@type': 'Organization', name: 'Silia' },
+    alumniOf: { '@type': 'CollegeOrUniversity', name: 'Instituto Tecnológico de Costa Rica' },
+    address: { '@type': 'PostalAddress', addressLocality: 'Cartago', addressCountry: 'CR' },
+    url: siteUrl,
+    image: seo.image,
+    sameAs: [...(socialMedia || []).map(({ url }) => url), 'https://angelortizv.com'],
+  };
+
   return (
     <Helmet title={title} defaultTitle={seo.title} titleTemplate={`%s | ${defaultTitle}`}>
       <html lang={lang === 'es' ? 'es' : 'en'} />
@@ -58,6 +73,8 @@ const Head = ({ title, description, image }) => {
       <meta name="twitter:image" content={seo.image} />
 
       <meta name="google-site-verification" content="DCl7VAf9tcz6eD9gb67NfkNnJ1PKRNcg8qQiwpbx9Lk" />
+
+      <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
     </Helmet>
   );
 };

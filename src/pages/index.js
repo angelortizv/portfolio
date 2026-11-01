@@ -9,7 +9,7 @@ import {
   Skills,
   RequestAnatomy,
   Jobs,
-  Blog,
+  Featured,
   Gallery,
   Contact,
 } from '@components';
@@ -27,7 +27,7 @@ const IndexPage = ({ location }) => (
       <Skills />
       <RequestAnatomy />
       <Jobs />
-      <Blog />
+      <Featured />
       <Gallery />
       <Contact />
     </StyledMainContainer>
