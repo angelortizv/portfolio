@@ -19,4 +19,5 @@ export { default as Blog } from './sections/blog';
 export { default as Gallery } from './sections/gallery';
 export { default as Contact } from './sections/contact';
 export { default as Skills } from './sections/skills';
+export { default as RequestAnatomy } from './sections/requestAnatomy';
 export { default as AboutFooter } from './sections/about';
