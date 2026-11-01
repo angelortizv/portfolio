@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import { Link, useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import sr from '@utils/sr';
@@ -296,6 +296,28 @@ const StyledProject = styled.li`
   }
 `;
 
+// The home page shows a short, curated list; everything else lives in /archive.
+const FEATURED_PICKS = ['TopspinAI', 'Easy Hop', 'AI Engineering Notes'];
+
+const StyledArchiveLink = styled(Link)`
+  display: block;
+  width: fit-content;
+  margin: 80px auto 0;
+  font-family: var(--font-mono);
+  font-size: var(--fz-sm);
+  color: var(--light-text-color);
+  transition: var(--transition);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--signal-color);
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 50px;
+  }
+`;
+
 const Featured = () => {
   const data = useStaticQuery(graphql`
     {
@@ -324,7 +346,13 @@ const Featured = () => {
     }
   `);
 
-  const featuredProjects = data.featured.edges.filter(({ node }) => node);
+  const featuredProjects = data.featured.edges
+    .filter(({ node }) => node && FEATURED_PICKS.includes(node.frontmatter.title))
+    .sort(
+      (a, b) =>
+        FEATURED_PICKS.indexOf(a.node.frontmatter.title) -
+        FEATURED_PICKS.indexOf(b.node.frontmatter.title),
+    );
   const revealTitle = useRef(null);
   const revealProjects = useRef([]);
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -364,7 +392,7 @@ const Featured = () => {
                     </h3>
 
                     <div className="project-description">
-                      <p>{t(`projects_${  desc}`)}</p>
+                      <p>{t(`projects_${desc}`)}</p>
                     </div>
 
                     {tech.length && (
@@ -399,6 +427,8 @@ const Featured = () => {
             );
           })}
       </StyledProjectsGrid>
+
+      <StyledArchiveLink to="/archive">{t('archive_text_subtitle')} →</StyledArchiveLink>
     </section>
   );
 };

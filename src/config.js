@@ -26,6 +26,10 @@ module.exports = {
       url: '/#jobs',
     },
     {
+      name: 'projects',
+      url: '/#projects',
+    },
+    {
       name: 'gallery',
       url: '/#gallery',
     },
@@ -57,121 +61,4 @@ module.exports = {
     viewFactor,
     viewOffset: { top: 0, right: 0, bottom: 0, left: 0 },
   }),
-
-  translations: [
-    {
-      language: 'English',
-      symbol: 'en',
-      text: 'Hi, my name is',
-      flag: '🏴󠁧󠁢󠁥󠁮󠁧󠁿',
-    },
-    {
-      language: 'Mandarin',
-      symbol: 'zh',
-      text: '你好，我的名字是',
-      flag: '🇨🇳',
-    },
-    {
-      language: 'Arabic',
-      symbol: 'ar',
-      text: 'مرحبا "أسمي هو',
-      flag: '🇸🇦',
-    },
-    {
-      language: 'Dutch',
-      symbol: 'nl',
-      text: 'Hallo mijn naam is',
-      flag: '🇳🇱',
-    },
-    {
-      language: 'French',
-      symbol: 'fr',
-      text: `Salut je m'appelle`,
-      flag: '🇫🇷',
-    },
-    {
-      language: 'German',
-      symbol: 'de',
-      text: 'Hi, mein Name ist',
-      flag: '🇩🇪',
-    },
-    {
-      language: 'Italian',
-      symbol: 'it',
-      text: 'Ciao, mi chiamo',
-      flag: '🇮🇹',
-    },
-    {
-      language: 'Japanese',
-      symbol: 'ja',
-      text: 'こんにちは、私の名前は',
-      flag: '🇯🇵',
-    },
-    {
-      language: 'Russian',
-      symbol: 'ru',
-      text: 'Привет, меня зовут',
-      flag: '🇷🇺',
-    },
-    {
-      language: 'Spanish',
-      symbol: 'es',
-      text: 'Hola, mi nombre es',
-      flag: '🇪🇸',
-    },
-    {
-      language: 'Turkish',
-      symbol: 'tr',
-      text: 'Merhaba, benim adım',
-      flag: '🇹🇷',
-    },
-    {
-      language: 'Ukrainian',
-      symbol: 'uk',
-      text: 'Привіт, я мене звати',
-      flag: '🇺🇦',
-    },
-    {
-      language: 'Vietnamese',
-      symbol: 'vi',
-      text: 'Xin chào, tôi tên là',
-      flag: '🇻🇳',
-    },
-    {
-      language: 'Korean',
-      symbol: 'ko',
-      text: '안녕하세요, 제 이름은',
-      flag: '🇰🇷',
-    },
-    {
-      language: 'Polish',
-      symbol: 'pl',
-      text: 'Cześć, nazywam się',
-      flag: '🇵🇱',
-    },
-    {
-      language: 'Portuguese',
-      symbol: 'pt',
-      text: 'Olá, meu nome é',
-      flag: '🇵🇹',
-    },
-    {
-      language: 'Romanian',
-      symbol: 'ro',
-      text: 'Bună ziua, numele meu este',
-      flag: '🇷🇴',
-    },
-    {
-      language: 'Swedish',
-      symbol: 'sv',
-      text: 'Hej, mitt namn är',
-      flag: '🇸🇪',
-    },
-    {
-      language: 'Thai',
-      symbol: 'th',
-      text: 'สวัสดีค่ะ, ฉันชื่อ',
-      flag: '🇹🇭',
-    },
-  ],
 };

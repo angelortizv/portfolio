@@ -83,6 +83,13 @@ const StyledContactSection = styled.section`
     text-wrap: balance;
   }
 
+  .note {
+    margin-top: 14px;
+    font-size: var(--fz-sm);
+    color: var(--text-color);
+    opacity: 0.85;
+  }
+
   .response-time {
     font-family: var(--font-mono);
     font-size: var(--fz-xxs);
@@ -170,6 +177,8 @@ const Contact = () => {
       <h2 className="title">{t('contact_text_cta')}</h2>
 
       <p>{t('contact_text_desc')}</p>
+
+      <p className="note">{t('contact_text_note')}</p>
 
       <p className="location" aria-label={t('contact_location_aria')}>
         {t('contact_location')}

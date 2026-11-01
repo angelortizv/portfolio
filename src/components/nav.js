@@ -252,6 +252,7 @@ const Nav = ({ isHome }) => {
     for (const prop in Colors[mode]) {
       root.style.setProperty(prop, Colors[mode][prop]);
     }
+    root.dataset.theme = mode;
     setIsDarkMode(mode === 'dark');
   }, []);
 
@@ -268,6 +269,7 @@ const Nav = ({ isHome }) => {
     for (const prop in Colors[mode]) {
       root.style.setProperty(prop, Colors[mode][prop]);
     }
+    root.dataset.theme = mode;
     window.localStorage.setItem(THEME_KEY, mode);
     setIsDarkMode(!IsDarkMode);
   };

@@ -210,6 +210,10 @@ Animated violet→soft-violet gradient clipped to text; static under reduced mot
 
 The one saturated block on the page: a 24px-radius violet gradient card (`#5b3df5 → #a78bfa`) with a fading dot texture, placed right after About. A mono overline ("Case study · Logistics"), an oversized light headline stating the outcome, one sentence on the author's own contribution, and a white pill CTA to the external story. Text on it is white regardless of theme.
 
+### Agent Anatomy figure (`sections/requestAnatomy`)
+
+An interactive isometric "bench model" of one LLM-agent run (section 03, after Skills), built with the Anatomy isometric kit (MIT, vendored at `components/iso/iso-kit.mjs`). A task leaves the terminal console as a violet pulse on an engraved bus trace; the model core (the big canister) thinks while its lid vents breathe, then calls its tools in turn — a web-search mast whose beacon blinks, a stack of database platters whose top ring lights, and a document drawer that ejects a lit card — and writes the answer back (lamp on the console). A face-up dial gauge runs in near real time: one turn = 10 s, and the step times are honest budgets (plan ~1.25 s, web ~0.9 s, DB query ~0.15 s, docs ~0.35 s), so the figure argues visually that most of an agent run is the model thinking, not the tools. Click/Enter runs a task; presses cycle three task profiles (2 tools · 1 tool · 3 tools ≈ 4.3 / 2.6 / 5.6 s) and an idle tour plays them. Geometry is precomputed in `geometry.mjs`; `live.mjs` (framework-free) drives the needle, pulse, card and lamps. Kit tokens are remapped to the site palette in both themes (the nav sets `html[data-theme]`); the one `lit` accent is Signal Violet, honoring The One Accent Rule. Still, reduced-motion-safe, and the loop stops when offscreen or settled.
+
 ### Buttons
 
 Mono, uppercase, tracked, pill-shaped. Transparent with a violet hairline at rest; on hover/focus fill with Signal Violet, text inverts to `#060010`, and the Button Halo appears. Transition `0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)`.
